@@ -16,7 +16,6 @@ export default defineConfig({
         cultura: resolve(__dirname, 'cultura.html'),
         biblioteca: resolve(__dirname, 'biblioteca.html'),
         geografia: resolve(__dirname, 'geografia.html'),
-        educacion: resolve(__dirname, 'educacion.html'),
         sanidad: resolve(__dirname, 'sanidad.html'),
         deportes: resolve(__dirname, 'deportes.html'),
         sociedad: resolve(__dirname, 'sociedad.html'),
