@@ -1,0 +1,226 @@
+/* ==============================
+   HISTORIA MODULE — TIMELINE
+   ============================== */
+
+.container {
+  padding: 4rem 1rem;
+  background-color: var(--lemon-chiffon);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  color: var(--oxford-navy);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ── Contenedor del Timeline ── */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Línea vertical central */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  background: linear-gradient(to bottom, var(--goldenrod), var(--copperwood));
+  border-radius: 4px;
+}
+
+/* ── Ítem del Timeline ── */
+.timelineItem {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+  width: 45%;
+}
+
+/* Ítems impares → lado izquierdo */
+.timelineItem:nth-child(odd) {
+  margin-left: 0;
+  margin-right: auto;
+  flex-direction: row-reverse;
+}
+
+/* Ítems pares → lado derecho */
+.timelineItem:nth-child(even) {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* ── Año / Etiqueta ── */
+.year {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--oxford-navy);
+  background-color: var(--goldenrod);
+  border-radius: 20px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  position: absolute;
+  top: 10px;
+  z-index: 3;
+}
+
+/* Ítems impares: año a la derecha del contenido (junto a la línea) */
+.timelineItem:nth-child(odd) .year {
+  right: -30%;
+}
+
+/* Ítems pares: año a la izquierda del contenido (junto a la línea) */
+.timelineItem:nth-child(even) .year {
+  left: -30%;
+}
+
+/* ── Nodo circular en la línea ── */
+.year::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background-color: var(--copperwood);
+  border: 3px solid var(--goldenrod);
+  border-radius: 50%;
+  z-index: 4;
+}
+
+/* Nodo: ítems impares → nodo a la derecha de la etiqueta */
+.timelineItem:nth-child(odd) .year::after {
+  right: -22px;
+  left: auto;
+}
+
+/* Nodo: ítems pares → nodo a la izquierda de la etiqueta */
+.timelineItem:nth-child(even) .year::after {
+  left: -22px;
+  right: auto;
+}
+
+/* ── Contenido / Tarjeta ── */
+.content {
+  flex: 1;
+}
+
+.card {
+  background-color: var(--copperwood);
+  border-radius: 12px;
+  padding: 1.2rem;
+  color: var(--lemon-chiffon);
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* Flecha: ítems pares → apunta a la izquierda (hacia la línea) */
+.timelineItem:nth-child(even) .card::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 18px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent var(--copperwood) transparent transparent;
+}
+
+/* Flecha: ítems impares → apunta a la derecha (hacia la línea) */
+.timelineItem:nth-child(odd) .card::before {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 18px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--copperwood);
+}
+
+.cardImage {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--lemon-chiffon);
+}
+
+.cardDesc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  opacity: 0.92;
+}
+
+/* ==============================
+   RESPONSIVE — MÓVIL
+   ============================== */
+@media (max-width: 767px) {
+  /* Línea va a la izquierda en móvil */
+  .timeline::before {
+    left: 20px;
+    transform: none;
+  }
+
+  .timelineItem,
+  .timelineItem:nth-child(odd),
+  .timelineItem:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    flex-direction: row;
+    padding-left: 50px;
+  }
+
+  /* Año en posición estática */
+  .year,
+  .timelineItem:nth-child(odd) .year,
+  .timelineItem:nth-child(even) .year {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  /* Nodo pegado a la línea izquierda */
+  .timelineItem:nth-child(odd) .year::after,
+  .timelineItem:nth-child(even) .year::after {
+    left: -38px;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Flecha apunta siempre a la izquierda */
+  .timelineItem:nth-child(odd) .card::before,
+  .timelineItem:nth-child(even) .card::before {
+    left: -10px;
+    right: auto;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--copperwood) transparent transparent;
+  }
+}

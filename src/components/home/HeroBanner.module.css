@@ -1,0 +1,117 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slideBlurBg {
+  position: absolute;
+  top: -10%; /* Sobredimensionado para que el blur no deje bordes duros */
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.4); /* Fondo desenfocado y oscuro */
+  z-index: 1;
+}
+
+.slideImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain; /* Esto asegura que la imagen NUNCA se recorte */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); /* Sombra para resaltar la foto */
+}
+
+.heroOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  z-index: 3;
+}
+
+.titleContainer {
+  text-align: center;
+  padding-top: 3rem;
+  z-index: 10;
+  position: relative;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--oxford-navy);
+  text-shadow: 0 2px 5px rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+.bottomContent {
+  padding: 1.5rem;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.captionContainer {
+  color: var(--color-texto-inverso);
+}
+
+.caption {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.indicators {
+  display: flex;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transicion-suave);
+  border: none;
+  padding: 0;
+}
+
+.dot.active {
+  background-color: var(--goldenrod);
+  transform: scale(1.2);
+}

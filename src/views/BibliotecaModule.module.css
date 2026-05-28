@@ -1,0 +1,146 @@
+.container {
+  padding: 4rem 1rem;
+  background-color: var(--color-fondo-blanco);
+  min-height: 80vh;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: var(--oxford-navy);
+  font-size: 2rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  border: 1px solid var(--oxford-navy);
+  background-color: transparent;
+  color: var(--oxford-navy);
+  font-size: 0.95rem;
+}
+
+.tab.active {
+  background-color: var(--oxford-navy);
+  color: var(--color-texto-inverso);
+}
+
+.list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 100px; /* Espacio para el reproductor flotante */
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--lemon-chiffon);
+  border-radius: var(--radio-borde);
+  transition: var(--transicion-suave);
+  cursor: pointer;
+}
+
+.listItem:hover {
+  transform: translateX(5px);
+  box-shadow: var(--sombra-suave);
+}
+
+.itemImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 1.5rem;
+}
+
+.itemInfo {
+  flex: 1;
+}
+
+.itemTitle {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--black);
+  margin-bottom: 0.25rem;
+}
+
+.itemAuthor {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.itemCategory {
+  font-size: 0.85rem;
+  color: var(--copperwood);
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.arrow {
+  color: var(--copperwood);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Reproductor Mock */
+.player {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background-color: var(--copperwood);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.playerImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--goldenrod);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.playBtn {
+  background-color: var(--goldenrod);
+  color: var(--copperwood);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,111 @@
+/* Sociedad.module.css – módulo principal */
+
+.sociedadContainer {
+  padding: 0 0 3rem;
+  background: linear-gradient(180deg, #0F204B 0px, #0F204B 260px, #F4EBD9 260px, #F4EBD9 100%);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  padding: 3.5rem 1.5rem 2.5rem;
+  color: #fff;
+}
+.headerBadge {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(6px);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 0.8rem;
+  color: rgba(255,255,255,0.85);
+}
+.title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ── Tabs ── */
+.tabsWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -1.2rem;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+}
+.tabsContainer {
+  display: flex;
+  gap: 0.5rem;
+  background: #fff;
+  padding: 0.4rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(15,32,75,0.15);
+}
+.tabButton {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #666;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.28s ease;
+}
+.tabButton:hover {
+  background: rgba(15,32,75,0.05);
+  color: #0F204B;
+}
+.tabButton.active {
+  background: var(--tab-accent, #0F204B);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(15,32,75,0.18);
+}
+.tabIcon { font-size: 1.15rem; }
+.tabLabel { white-space: nowrap; }
+
+/* ── Content ── */
+.contentArea {
+  max-width: 920px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .title { font-size: 1.8rem; }
+  .subtitle { font-size: 0.95rem; }
+  .tabButton { padding: 0.55rem 0.9rem; font-size: 0.85rem; }
+  .tabIcon { font-size: 1rem; }
+  .contentArea { padding: 0 0.8rem; }
+  .sociedadContainer {
+    background: linear-gradient(180deg, #0F204B 0px, #0F204B 220px, #F4EBD9 220px, #F4EBD9 100%);
+  }
+  .header { padding: 2.5rem 1rem 2rem; }
+}

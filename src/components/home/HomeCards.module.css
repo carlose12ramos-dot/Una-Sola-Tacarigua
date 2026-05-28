@@ -1,0 +1,95 @@
+.container {
+  padding: -4rem 0 4rem 0; /* Subirlo un poco solapando el hero? El mockup lo muestra debajo. */
+  margin-top: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.card {
+  border-radius: var(--radio-borde);
+  padding: 1.5rem;
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardPrimary {
+  background-color: var(--copperwood);
+  color: var(--color-texto-inverso);
+  display: flex;
+  flex-direction: row; /* Imagen a la izquierda, texto a la derecha */
+  gap: 1rem;
+}
+
+.cardWhite {
+  background-color: var(--color-fondo-blanco);
+  color: var(--black);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+}
+
+.cardPrimary .cardTitle {
+  color: var(--color-texto-inverso);
+}
+
+.cardWhite .cardTitle {
+  color: var(--oxford-navy);
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.imageWrapper {
+  flex-shrink: 0;
+  width: 100px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.btn {
+  background-color: var(--goldenrod);
+  color: var(--black);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px; /* Botones más redondeados tipo píldora en el mockup */
+  font-weight: bold;
+  font-size: 0.9rem;
+  align-self: flex-start; /* Alinear a la izquierda */
+  cursor: pointer;
+  transition: var(--transicion-suave);
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}

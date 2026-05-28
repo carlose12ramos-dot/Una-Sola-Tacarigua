@@ -1,0 +1,23 @@
+/* src/styles/variables.css */
+:root {
+  /* 
+   * Identidad Visual - Tacarigua Digital (Mockups V2)
+   * Filosofía Antigravity - CSS Modular y Ligero
+   */
+  
+  --lemon-chiffon: #fff8c8ff;
+  --copperwood: #bc6c25ff;
+  --oxford-navy: #1d3557ff;
+  --goldenrod: #daa520ff;
+  --black: #000000ff;
+  
+  /* 
+   * Variables Adicionales para Consistencia 
+   */
+  --color-texto-inverso: #FFFFFF;
+  --color-fondo-blanco: #FFFFFF;
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --radio-borde: 12px; /* Mayor radio para coincidir con los mockups */
+  --sombra-suave: 0 4px 6px rgba(0,0,0,0.1);
+  --transicion-suave: all 0.3s ease;
+}
