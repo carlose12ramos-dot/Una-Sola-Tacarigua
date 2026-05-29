@@ -1,24 +1,59 @@
-/* ==============================
-   HISTORIA MODULE — TIMELINE
-   ============================== */
+/* Historia — Timeline */
 
 .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: 4rem 1rem;
-  background-color: var(--lemon-chiffon);
 }
 
 .header {
   text-align: center;
   margin-bottom: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  border: 1px solid rgba(218, 165, 32, 0.15);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--goldenrod), var(--copper));
+  color: var(--oxford-navy);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .title {
   color: var(--oxford-navy);
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: var(--fuente-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
 }
 
-/* ── Contenedor del Timeline ── */
+.divider {
+  width: 120px;
+  height: 4px;
+  margin: 0 auto 1.25rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--goldenrod), var(--copper));
+}
+
+.lead {
+  font-size: 1.05rem;
+  color: var(--oxford-navy);
+  opacity: 0.75;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Timeline */
 .timeline {
   position: relative;
   max-width: 900px;
@@ -26,7 +61,6 @@
   padding: 2rem 0;
 }
 
-/* Línea vertical central */
 .timeline::before {
   content: '';
   position: absolute;
@@ -35,192 +69,165 @@
   left: 50%;
   transform: translateX(-50%);
   width: 3px;
-  background: linear-gradient(to bottom, var(--goldenrod), var(--copperwood));
+  background: linear-gradient(to bottom, var(--goldenrod), var(--copper));
   border-radius: 4px;
 }
 
-/* ── Ítem del Timeline ── */
 .timelineItem {
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   display: flex;
   align-items: flex-start;
   width: 45%;
 }
 
-/* Ítems impares → lado izquierdo */
-.timelineItem:nth-child(odd) {
+.left {
   margin-left: 0;
   margin-right: auto;
   flex-direction: row-reverse;
 }
 
-/* Ítems pares → lado derecho */
-.timelineItem:nth-child(even) {
+.right {
   margin-left: auto;
   margin-right: 0;
 }
 
-/* ── Año / Etiqueta ── */
-.year {
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: var(--oxford-navy);
-  background-color: var(--goldenrod);
-  border-radius: 20px;
-  padding: 4px 12px;
-  white-space: nowrap;
+.nodeWrapper {
   position: absolute;
-  top: 10px;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 3;
 }
 
-/* Ítems impares: año a la derecha del contenido (junto a la línea) */
-.timelineItem:nth-child(odd) .year {
-  right: -30%;
-}
-
-/* Ítems pares: año a la izquierda del contenido (junto a la línea) */
-.timelineItem:nth-child(even) .year {
-  left: -30%;
-}
-
-/* ── Nodo circular en la línea ── */
-.year::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 14px;
-  height: 14px;
-  background-color: var(--copperwood);
-  border: 3px solid var(--goldenrod);
+.node {
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  z-index: 4;
+  background: var(--copper);
+  border: 3px solid var(--goldenrod);
+  box-shadow: 0 0 0 4px rgba(218, 165, 32, 0.2);
 }
 
-/* Nodo: ítems impares → nodo a la derecha de la etiqueta */
-.timelineItem:nth-child(odd) .year::after {
-  right: -22px;
-  left: auto;
-}
-
-/* Nodo: ítems pares → nodo a la izquierda de la etiqueta */
-.timelineItem:nth-child(even) .year::after {
-  left: -22px;
-  right: auto;
-}
-
-/* ── Contenido / Tarjeta ── */
-.content {
-  flex: 1;
-}
-
+/* Cards */
 .card {
-  background-color: var(--copperwood);
-  border-radius: 12px;
-  padding: 1.2rem;
-  color: var(--lemon-chiffon);
-  position: relative;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  background: white;
+  border-radius: var(--radio-borde);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--sombra-suave);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transicion-suave);
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  box-shadow: var(--sombra-premium);
+  border-color: rgba(218, 165, 32, 0.25);
 }
 
-/* Flecha: ítems pares → apunta a la izquierda (hacia la línea) */
-.timelineItem:nth-child(even) .card::before {
-  content: '';
-  position: absolute;
-  left: -10px;
-  top: 18px;
-  border-width: 10px 10px 10px 0;
-  border-style: solid;
-  border-color: transparent var(--copperwood) transparent transparent;
+.cardActive {
+  composes: card;
+  border-color: var(--goldenrod);
+  box-shadow: var(--sombra-premium);
 }
 
-/* Flecha: ítems impares → apunta a la derecha (hacia la línea) */
-.timelineItem:nth-child(odd) .card::before {
-  content: '';
+.cardHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.yearBadge {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--oxford-navy);
+  background: var(--goldenrod);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+}
+
+.tagBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cream);
+  background: var(--oxford-navy);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+}
+
+.cardTitle {
+  flex: 1;
+  font-family: var(--fuente-display);
+  font-size: 1.1rem;
+  color: var(--oxford-navy);
+  margin: 0;
+  padding-right: 1.5rem;
+}
+
+.expandIcon {
   position: absolute;
-  right: -10px;
-  top: 18px;
-  border-width: 10px 0 10px 10px;
-  border-style: solid;
-  border-color: transparent transparent transparent var(--copperwood);
+  top: 1.25rem;
+  right: 1.25rem;
+  color: var(--copper);
+  font-size: 0.85rem;
+}
+
+.card {
+  position: relative;
+}
+
+.cardBody {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(29, 53, 87, 0.1);
+  animation: fadeInUp 0.4s ease-out;
 }
 
 .cardImage {
   width: 100%;
-  height: 140px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
-}
-
-.cardTitle {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-  color: var(--lemon-chiffon);
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .cardDesc {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  opacity: 0.92;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--oxford-navy);
+  opacity: 0.85;
 }
 
-/* ==============================
-   RESPONSIVE — MÓVIL
-   ============================== */
+/* Mobile */
 @media (max-width: 767px) {
-  /* Línea va a la izquierda en móvil */
   .timeline::before {
     left: 20px;
     transform: none;
   }
 
   .timelineItem,
-  .timelineItem:nth-child(odd),
-  .timelineItem:nth-child(even) {
+  .left,
+  .right {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
     flex-direction: row;
-    padding-left: 50px;
+    padding-left: 48px;
   }
 
-  /* Año en posición estática */
-  .year,
-  .timelineItem:nth-child(odd) .year,
-  .timelineItem:nth-child(even) .year {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-  }
-
-  /* Nodo pegado a la línea izquierda */
-  .timelineItem:nth-child(odd) .year::after,
-  .timelineItem:nth-child(even) .year::after {
-    left: -38px;
-    right: auto;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  /* Flecha apunta siempre a la izquierda */
-  .timelineItem:nth-child(odd) .card::before,
-  .timelineItem:nth-child(even) .card::before {
-    left: -10px;
-    right: auto;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent var(--copperwood) transparent transparent;
+  .nodeWrapper {
+    left: 20px;
+    transform: translateX(-50%);
   }
 }

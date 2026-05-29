@@ -1,23 +1,40 @@
-/* src/styles/variables.css */
+/* Tacarigua Digital — Design Tokens */
 :root {
-  /* 
-   * Identidad Visual - Tacarigua Digital (Mockups V2)
-   * Filosofía Antigravity - CSS Modular y Ligero
-   */
-  
-  --lemon-chiffon: #fff8c8ff;
-  --copperwood: #bc6c25ff;
-  --oxford-navy: #1d3557ff;
-  --goldenrod: #daa520ff;
-  --black: #000000ff;
-  
-  /* 
-   * Variables Adicionales para Consistencia 
-   */
-  --color-texto-inverso: #FFFFFF;
+  /* Brand palette */
+  --oxford-navy: #1D3557;
+  --oxford-navy-dark: #0f1f33;
+  --goldenrod: #DAA520;
+  --copper: #BC6C25;
+  --copperwood: #BC6C25;
+  --cream: #F4F1DE;
+  --black: #111111;
+  --color-fondo-principal: #F4F1DE;
   --color-fondo-blanco: #FFFFFF;
-  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --radio-borde: 12px; /* Mayor radio para coincidir con los mockups */
-  --sombra-suave: 0 4px 6px rgba(0,0,0,0.1);
-  --transicion-suave: all 0.3s ease;
+  --color-texto-inverso: #FFFFFF;
+
+  /* Legacy aliases */
+  --primary-blue: var(--oxford-navy);
+  --color-tierra: var(--copper);
+  --color-interaccion: var(--goldenrod);
+  --color-institucional: var(--oxford-navy);
+  --color-texto: var(--black);
+
+  /* Glass & effects */
+  --bg-glass: rgba(255, 255, 255, 0.75);
+  --bg-glass-oscuro: rgba(29, 53, 87, 0.85);
+  --blur-glass: blur(10px);
+  --borde-glass: 1px solid rgba(255, 255, 255, 0.3);
+
+  /* Shadows & motion */
+  --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --sombra-navbar: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --sombra-premium: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --sombra-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  --transicion-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --fuente-principal: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --fuente-display: 'Roboto Slab', Georgia, serif;
+  --radio-borde: 16px;
+  --max-width: 1280px;
 }

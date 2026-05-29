@@ -2,7 +2,7 @@
 
 .sociedadContainer {
   padding: 0 0 3rem;
-  background: linear-gradient(180deg, #0F204B 0px, #0F204B 260px, #F4EBD9 260px, #F4EBD9 100%);
+  background: linear-gradient(180deg, var(--oxford-navy) 0px, var(--oxford-navy) 260px, var(--cream) 260px, var(--cream) 100%);
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
 }
@@ -74,10 +74,10 @@
 }
 .tabButton:hover {
   background: rgba(15,32,75,0.05);
-  color: #0F204B;
+  color: var(--oxford-navy);
 }
 .tabButton.active {
-  background: var(--tab-accent, #0F204B);
+  background: var(--tab-accent, var(--oxford-navy));
   color: #fff;
   box-shadow: 0 4px 12px rgba(15,32,75,0.18);
 }
@@ -105,7 +105,7 @@
   .tabIcon { font-size: 1rem; }
   .contentArea { padding: 0 0.8rem; }
   .sociedadContainer {
-    background: linear-gradient(180deg, #0F204B 0px, #0F204B 220px, #F4EBD9 220px, #F4EBD9 100%);
+    background: linear-gradient(180deg, var(--oxford-navy) 0px, var(--oxford-navy) 220px, #F4EBD9 220px, #F4EBD9 100%);
   }
   .header { padding: 2.5rem 1rem 2rem; }
 }

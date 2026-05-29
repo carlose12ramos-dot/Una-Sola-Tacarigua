@@ -80,7 +80,7 @@
 }
 .intro em {
   font-style: italic;
-  color: #0F204B;
+  color: var(--oxford-navy);
   display: block;
   margin-top: 0.3rem;
 }
@@ -131,7 +131,7 @@
 .sectionTitle {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #0F204B;
+  color: var(--oxford-navy);
   border-bottom: 2px solid #e4eff4;
   padding-bottom: 0.5rem;
 }
@@ -179,7 +179,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.tcBody h4 { font-size: 1rem; font-weight: 700; color: #0F204B; margin: 0; }
+.tcBody h4 { font-size: 1rem; font-weight: 700; color: var(--oxford-navy); margin: 0; }
 .tcBody p  { font-size: 0.88rem; color: #555; line-height: 1.55; margin: 0; }
 
 /* ── Blockquote ── */
@@ -222,7 +222,7 @@
   box-shadow: 0 8px 22px rgba(15,32,75,0.08);
 }
 .dispensarioIcon { font-size: 1.8rem; }
-.dispensarioCard h4 { font-size: 1rem; font-weight: 700; color: #0F204B; margin: 0; }
+.dispensarioCard h4 { font-size: 1rem; font-weight: 700; color: var(--oxford-navy); margin: 0; }
 .dispensarioTipo {
   font-size: 0.7rem;
   font-weight: 600;
@@ -282,7 +282,7 @@
   justify-content: center;
   flex-shrink: 0;
 }
-.personajeCard h4 { font-size: 0.95rem; font-weight: 700; color: #0F204B; margin: 0 0 0.2rem; }
+.personajeCard h4 { font-size: 0.95rem; font-weight: 700; color: var(--oxford-navy); margin: 0 0 0.2rem; }
 .personajeCard p  { font-size: 0.85rem; color: #666; margin: 0; }
 
 @media (max-width: 600px) {

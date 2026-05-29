@@ -8,18 +8,23 @@
 .header {
   text-align: center;
   margin-bottom: 4rem;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  border: 1px solid rgba(218, 165, 32, 0.15);
 }
 
 .badge {
-  background-color: var(--lemon-chiffon);
-  color: var(--copperwood);
+  display: inline-block;
+  background: linear-gradient(135deg, var(--goldenrod), var(--copper));
+  color: var(--oxford-navy);
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.8rem;
-  letter-spacing: 2px;
-  padding: 6px 16px;
-  border-radius: 20px;
-  border: 1px solid rgba(188, 108, 37, 0.2);
+  letter-spacing: 0.08em;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
 }
 
 .title {
@@ -54,18 +59,19 @@
 }
 
 .card {
-  background-color: white;
+  background-color: var(--bg-glass);
+  backdrop-filter: var(--blur-glass);
   padding: 2.5rem 2rem;
   border-radius: var(--radio-borde);
   box-shadow: var(--sombra-suave);
-  border: 1px solid rgba(0,0,0,0.05);
+  border: var(--borde-glass);
   text-align: center;
   transition: var(--transicion-suave);
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: var(--sombra-premium);
   border-color: rgba(218, 165, 32, 0.3);
 }
 
@@ -92,12 +98,18 @@
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 3.5rem;
-  background-color: var(--lemon-chiffon);
+  background-color: var(--bg-glass);
+  backdrop-filter: var(--blur-glass);
   padding: 3.5rem;
   border-radius: var(--radio-borde);
   align-items: center;
   box-shadow: var(--sombra-suave);
-  border: 1px solid rgba(218, 165, 32, 0.15);
+  border: var(--borde-glass);
+  transition: var(--transicion-suave);
+}
+
+.aboutContent:hover {
+  box-shadow: var(--sombra-premium);
 }
 
 .textBlock {

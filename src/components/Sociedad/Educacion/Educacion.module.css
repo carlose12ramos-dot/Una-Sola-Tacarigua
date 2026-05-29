@@ -80,7 +80,7 @@
 }
 .intro em {
   font-style: italic;
-  color: #0F204B;
+  color: var(--primary-blue);
   display: block;
   margin-top: 0.3rem;
 }
@@ -97,7 +97,7 @@
 .sectionTitle {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #0F204B;
+  color: var(--primary-blue);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -137,7 +137,7 @@
 .timelineActive { background: rgba(184,134,11,0.12) !important; }
 .timelineYear {
   font-weight: 700;
-  color: #0F204B;
+  color: var(--primary-blue);
   font-size: 0.88rem;
   margin-bottom: 0.25rem;
 }
@@ -169,7 +169,7 @@
   box-shadow: 0 10px 22px rgba(15,32,75,0.1);
 }
 .cardIcon { font-size: 1.8rem; }
-.card h4 { font-size: 1rem; font-weight: 700; color: #0F204B; margin: 0; }
+.card h4 { font-size: 1rem; font-weight: 700; color: var(--primary-blue); margin: 0; }
 .nivel {
   font-size: 0.72rem;
   font-weight: 600;
@@ -202,7 +202,7 @@
   justify-content: center;
   flex-shrink: 0;
 }
-.educadorCard h4 { font-size: 1rem; font-weight: 700; color: #0F204B; margin: 0 0 0.3rem; }
+.educadorCard h4 { font-size: 1rem; font-weight: 700; color: var(--primary-blue); margin: 0 0 0.3rem; }
 .educadorCard p  { font-size: 0.88rem; color: #555; line-height: 1.55; margin: 0; }
 
 @media (max-width: 600px) {

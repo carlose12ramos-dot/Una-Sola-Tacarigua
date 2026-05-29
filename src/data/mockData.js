@@ -263,3 +263,33 @@ export const adminModerationMock = [
     imagen: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop'
   }
 ];
+
+export const costumbresMock = [
+  {
+    id: 1,
+    titulo: 'Cruz de Mayo',
+    descripcion: 'Velorio de Cruz de Mayo celebrado cada 3 de mayo con cantos de galerón, décimas y salves. La cruz se adorna con flores y frutos de la temporada.',
+    imagen: 'https://images.unsplash.com/photo-1579730531558-f544bc343209?w=600&h=400&fit=crop'
+  },
+  {
+    id: 2,
+    titulo: 'Quema de Judas',
+    descripcion: 'Tradición del Domingo de Resurrección donde se elabora un muñeco de trapo que representa a Judas y personajes locales, acompañado de un testamento en verso antes de ser quemado.',
+    imagen: 'https://images.unsplash.com/photo-1542602715-998846c4f02a?w=600&h=400&fit=crop'
+  }
+];
+
+export const gastronomiaMock = [
+  {
+    id: 1,
+    titulo: 'Sancocho de Pescado Margariteño',
+    descripcion: 'Sopa tradicional a base de pescado fresco (generalmente corocoro o jurel), verduras y un toque de ají dulce.',
+    imagen: 'https://images.unsplash.com/photo-1548943487-a2e4b43b5936?w=600&h=400&fit=crop'
+  },
+  {
+    id: 2,
+    titulo: 'Empanadas de Cazón',
+    descripcion: 'Masa de maíz amarillo frita, rellena del tradicional guiso de cazón desmenuzado con onoto y aliños.',
+    imagen: 'https://images.unsplash.com/photo-1628203597705-090c238b1399?w=600&h=400&fit=crop'
+  }
+];

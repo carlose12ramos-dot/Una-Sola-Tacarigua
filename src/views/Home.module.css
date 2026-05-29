@@ -1,0 +1,382 @@
+.section {
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, rgba(244, 241, 222, 0.3) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--goldenrod), var(--copper));
+  color: var(--oxford-navy);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.sectionTitle {
+  color: var(--oxford-navy);
+  margin-bottom: 1.5rem;
+}
+
+.sectionDesc {
+  font-size: 1.125rem;
+  color: var(--oxford-navy);
+  opacity: 0.75;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.card {
+  display: block;
+  border-radius: var(--radio-borde);
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--sombra-suave);
+  transition: var(--transicion-suave);
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-hover);
+  border-color: rgba(218, 165, 32, 0.3);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(29, 53, 87, 0.6), transparent);
+}
+
+.iconBadge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--goldenrod), var(--copper));
+  color: var(--oxford-navy);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.body {
+  padding: 1.25rem;
+}
+
+.cardTitle {
+  font-family: var(--fuente-display);
+  font-size: 1.125rem;
+  color: var(--oxford-navy);
+  margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: var(--oxford-navy);
+  opacity: 0.7;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.cardLink {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--copper);
+  transition: var(--transicion-suave);
+}
+
+.card:hover .cardLink {
+  color: var(--goldenrod);
+}
+
+/* Highlight cards (mock data) */
+.highlightSection {
+  padding: 4rem 1rem;
+  background: white;
+}
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .highlightGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.highlightCard {
+  border-radius: var(--radio-borde);
+  padding: 1.5rem;
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transicion-suave);
+  border: 2px solid transparent;
+}
+
+.highlightCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-premium);
+  border-color: rgba(218, 165, 32, 0.2);
+}
+
+.highlightPrimary {
+  composes: highlightCard;
+  background: linear-gradient(135deg, var(--copper) 0%, #a05a1f 100%);
+  color: var(--cream);
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.highlightWhite {
+  composes: highlightCard;
+  background: var(--cream);
+  color: var(--oxford-navy);
+}
+
+.highlightImage {
+  flex-shrink: 0;
+  width: 100px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.highlightImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlightContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.highlightTitle {
+  font-family: var(--fuente-display);
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.highlightDesc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.highlightBtn {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background: var(--goldenrod);
+  color: var(--oxford-navy);
+  transition: var(--transicion-suave);
+}
+
+.highlightBtn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* Mission section */
+.missionSection {
+  padding: 5rem 1rem;
+}
+
+.missionGrid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .missionGrid { grid-template-columns: 1fr 1fr; }
+}
+
+.missionBadge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+  background: rgba(218, 165, 32, 0.15);
+  color: var(--copper);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.missionTitle {
+  color: var(--oxford-navy);
+  margin-bottom: 1.5rem;
+}
+
+.missionText {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--oxford-navy);
+  opacity: 0.8;
+  margin-bottom: 1.25rem;
+}
+
+.missionTextSecondary {
+  composes: missionText;
+  font-size: 1rem;
+  opacity: 0.75;
+  margin-bottom: 2rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, rgba(29, 53, 87, 0.05), rgba(218, 165, 32, 0.05));
+  border: 2px solid rgba(218, 165, 32, 0.2);
+  transition: var(--transicion-suave);
+}
+
+.stat:hover {
+  transform: scale(1.05);
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--goldenrod);
+  font-family: var(--fuente-display);
+  margin-bottom: 0.25rem;
+}
+
+.statValueAlt {
+  composes: statValue;
+  color: var(--copper);
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--oxford-navy);
+  opacity: 0.7;
+}
+
+.imageBlock {
+  position: relative;
+}
+
+.imageGlow {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--goldenrod), var(--copper));
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.missionImage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(29, 53, 87, 0.2);
+  border: 4px solid white;
+}
+
+.yearsBadge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 9999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--goldenrod), var(--copper));
+  box-shadow: 0 8px 24px rgba(218, 165, 32, 0.4);
+  z-index: 2;
+}
+
+.yearsValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--oxford-navy);
+  font-family: var(--fuente-display);
+}
+
+.yearsLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--oxford-navy);
+}

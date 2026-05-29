@@ -5,5 +5,27 @@
 }
 
 .mainContent {
-  flex: 1; /* Permite que el contenido principal ocupe el espacio disponible */
+  flex: 1;
+}
+
+.adminFab {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  padding: 12px 18px;
+  background: var(--oxford-navy);
+  color: white;
+  z-index: 1000;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: var(--transicion-suave);
+  border: 2px solid transparent;
+}
+
+.adminFab:hover {
+  transform: scale(1.05);
+  border-color: var(--goldenrod);
+  background: var(--oxford-navy-dark);
 }

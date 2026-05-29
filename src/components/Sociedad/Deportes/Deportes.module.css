@@ -113,13 +113,13 @@
   transition: all 0.25s ease;
 }
 .discBtn:hover {
-  border-color: #0F204B;
+  border-color: var(--primary-blue);
   box-shadow: 0 4px 12px rgba(15,32,75,0.08);
   transform: translateY(-2px);
 }
 .discBtnActive {
-  background: #0F204B !important;
-  border-color: #0F204B !important;
+  background: var(--primary-blue) !important;
+  border-color: var(--primary-blue) !important;
   color: #fff !important;
   box-shadow: 0 4px 14px rgba(15,32,75,0.22);
   transform: translateY(-2px);
@@ -153,7 +153,7 @@
 .detalleHeader h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #0F204B;
+  color: var(--primary-blue);
   margin: 0;
 }
 .detalleDesc {
@@ -186,12 +186,12 @@
   background: linear-gradient(135deg, #f4f7fb 0%, #fafcff 100%);
   border-radius: 12px;
   padding: 1.6rem;
-  border-top: 3px solid #0F204B;
+  border-top: 3px solid var(--primary-blue);
 }
 .presentacion h3 {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #0F204B;
+  color: var(--primary-blue);
   margin: 0 0 0.8rem;
 }
 .presentacion p {

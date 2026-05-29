@@ -1,89 +1,138 @@
-import React from 'react';
+import { ArrowLeft, BookOpen, Check, Clock, Users } from 'lucide-react';
 import styles from './AdminDashboardModule.module.css';
 import { adminMetricsMock, adminModerationMock } from '../data/mockData';
 
-const AdminDashboardModule = () => {
+const NAV_ITEMS = [
+  'Inicio', 'Geografía', 'Historia', 'Cultura', 'Biblioteca', 'Usuarios', 'Moderación',
+];
+
+const METRICS = [
+  { key: 'usuariosActivos', label: 'Usuarios Activos', icon: Users },
+  { key: 'cultoresValidados', label: 'Cultores Validados', icon: Check },
+  { key: 'sugerenciasPendientes', label: 'Sugerencias Pendientes', icon: Clock },
+  { key: 'elementosBiblioteca', label: 'Elementos Biblioteca', icon: BookOpen },
+];
+
+function getStatusClass(estado) {
+  if (estado === 'Aprobado') return styles.statusAprobado;
+  if (estado === 'Rechazado') return styles.statusRechazado;
+  return styles.statusPendiente;
+}
+
+function AdminDashboardModule() {
+  const pendingCount = adminModerationMock.filter((r) => r.estado === 'Pendiente').length;
+
   return (
     <div className={styles.adminContainer}>
-      {/* Sidebar */}
       <aside className={styles.sidebar}>
-        <div className={styles.sidebarLogo}>
-          Tacarigua <span>Digital</span>
+        <div className={styles.sidebarBrand}>
+          <div className={styles.brandRow}>
+            <div className={styles.brandIcon}>T</div>
+            <div>
+              <div className={styles.brandName}>Tacarigua Digital</div>
+              <div className={styles.brandSub}>Panel Admin</div>
+            </div>
+          </div>
         </div>
+
         <ul className={styles.navMenu}>
-          <li className={styles.navItem}>Inicio</li>
-          <li className={styles.navItem}>Geografía</li>
-          <li className={styles.navItem}>Historia</li>
-          <li className={styles.navItem}>Cultura</li>
-          <li className={styles.navItem}>Biblioteca</li>
-          <li className={styles.navItem}>Usuarios</li>
-          <li className={`${styles.navItem} ${styles.active}`}>Moderación</li>
+          {NAV_ITEMS.map((item) => (
+            <li
+              key={item}
+              className={item === 'Moderación' ? styles.navItemActive : styles.navItem}
+            >
+              {item}
+            </li>
+          ))}
         </ul>
+
+        <div className={styles.sidebarFooter}>
+          <a href="/" className={styles.backLink}>
+            <ArrowLeft size={16} />
+            Ver sitio público
+          </a>
+        </div>
       </aside>
 
-      {/* Main Content */}
       <main className={styles.mainContent}>
-        <header className={styles.header}>
+        <header className={styles.topBar}>
+          <h1 className={styles.pageTitle}>Panel de Administración</h1>
           <div className={styles.userProfile}>
             <div className={styles.userInfo}>
               <div className={styles.userName}>Carlos Eduardo Ramos González</div>
               <div className={styles.userRole}>SuperAdmin</div>
             </div>
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop" alt="Avatar" className={styles.userAvatar} />
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop"
+              alt="Avatar"
+              className={styles.userAvatar}
+            />
           </div>
         </header>
 
         <div className={styles.dashboard}>
           <div className={styles.dashboardHeader}>
-            <h2 className={styles.title}>Dashboard</h2>
-            <div className={styles.alertPill}>Amarillo Oro</div>
+            <h2 className={styles.sectionTitle}>Dashboard</h2>
+            <div className={styles.statusPill}>
+              <span className={styles.statusDot} />
+              {pendingCount} sugerencias pendientes
+            </div>
           </div>
 
           <div className={styles.metricsGrid}>
-            <div className={styles.metricCard}>
-              <div className={styles.metricTitle}>Usuarios Activos</div>
-              <div className={styles.metricValue}>{adminMetricsMock.usuariosActivos}</div>
-            </div>
-            <div className={styles.metricCard}>
-              <div className={styles.metricTitle}>Cultores Validados</div>
-              <div className={styles.metricValue}>{adminMetricsMock.cultoresValidados}</div>
-            </div>
-            <div className={styles.metricCard}>
-              <div className={styles.metricTitle}>Sugerencias Pendientes</div>
-              <div className={styles.metricValue}>{adminMetricsMock.sugerenciasPendientes1}</div>
-            </div>
-            <div className={styles.metricCard}>
-              <div className={styles.metricTitle}>Sugerencias Pendientes</div>
-              <div className={styles.metricValue}>{adminMetricsMock.sugerenciasPendientes2}</div>
-            </div>
+            {METRICS.map(({ key, label, icon: Icon }) => (
+              <div key={key} className={styles.metricCard}>
+                <div className={styles.metricIcon}>
+                  <Icon size={20} />
+                </div>
+                <div className={styles.metricTitle}>{label}</div>
+                <div className={styles.metricValue}>{adminMetricsMock[key]}</div>
+              </div>
+            ))}
           </div>
 
           <div className={styles.tableContainer}>
-            <h3 className={styles.tableTitle}>Bandeja de Moderación de Sugerencias</h3>
+            <div className={styles.tableHeader}>
+              <h3 className={styles.tableTitle}>Bandeja de Moderación</h3>
+              <span className={styles.tableCount}>{adminModerationMock.length} registros</span>
+            </div>
             <table className={styles.table}>
               <thead>
                 <tr>
                   <th>Usuario</th>
-                  <th>Tipo Aporte</th>
+                  <th>Tipo</th>
                   <th>Detalles</th>
                   <th>Estado</th>
-                  <th>Acciones (Validar/Rechazar)</th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                {adminModerationMock.map(row => (
+                {adminModerationMock.map((row) => (
                   <tr key={row.id} className={styles.tableRow}>
                     <td>
                       <div className={styles.userCell}>
-                        <img src={row.imagen} alt="User" className={styles.tableAvatar} />
+                        <img src={row.imagen} alt="" className={styles.tableAvatar} />
                         <span>{row.usuario}</span>
                       </div>
                     </td>
-                    <td>{row.tipo}</td>
-                    <td>{row.detalles}</td>
-                    <td>{row.estado}</td>
                     <td>
-                      <button className={styles.actionBtn}>Amarillo Oro</button>
+                      <span className={styles.tipoBadge}>{row.tipo}</span>
+                    </td>
+                    <td>{row.detalles}</td>
+                    <td>
+                      <span className={getStatusClass(row.estado)}>{row.estado}</span>
+                    </td>
+                    <td>
+                      <div className={styles.actions}>
+                        {row.estado === 'Pendiente' ? (
+                          <>
+                            <button type="button" className={styles.approveBtn}>Validar</button>
+                            <button type="button" className={styles.rejectBtn}>Rechazar</button>
+                          </>
+                        ) : (
+                          <span style={{ opacity: 0.5, fontSize: '0.8rem' }}>—</span>
+                        )}
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -94,6 +143,6 @@ const AdminDashboardModule = () => {
       </main>
     </div>
   );
-};
+}
 
 export default AdminDashboardModule;
