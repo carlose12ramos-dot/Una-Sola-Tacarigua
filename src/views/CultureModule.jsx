@@ -41,10 +41,12 @@ const CultureModule = () => {
     <section className={styles.container} id="cultura">
       <div className="container">
         <div className={styles.header}>
-          <h2 className={styles.title}>Patrimonio Cultural</h2>
-          <div className="divider" style={{ margin: '1rem auto', width: '150px' }}></div>
-          <p className={styles.description}>
-            Conoce a los hombres y mujeres que mantienen viva la llama de nuestras tradiciones, nuestras costumbres y nuestra rica gastronomía.
+          <span className={styles.badge}>Patrimonio Cultural</span>
+          <h1 className={styles.title}>Cultura Tacarigüera</h1>
+          <div className={styles.divider} style={{ margin: '1rem auto', width: '150px' }}></div>
+          <p className={styles.lead}>
+            Conoce a los hombres y mujeres que mantienen viva la llama de nuestras tradiciones,
+            cultores, artesanos y la riqueza cultural de nuestro pueblo.
           </p>
         </div>
 

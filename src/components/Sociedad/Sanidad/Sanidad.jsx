@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Sanidad.module.css';
+import { IMAGES } from '../../../data/images';
 
 const historiaAgua = [
   {
@@ -77,18 +78,21 @@ const Sanidad = () => {
       <div className={styles.hero}>
         <div className={styles.heroOverlay} />
         <img
-          src="/images/SaveClip.App_655961470_18175421617390832_5517042529558604418_n.jpg"
-          alt="Sanidad en Tacarigua"
+          src={IMAGES.centroSaludCpt3.src}
+          alt={IMAGES.centroSaludCpt3.alt}
           className={styles.heroImg}
+          onError={(e) => { e.currentTarget.src = IMAGES.centroSaludCpt3.fallback; }}
         />
         <div className={styles.heroText}>
-          <span className={styles.badge}>Módulo IV · Sociedad</span>
-          <h2>Sanidad y Salud</h2>
-          <p>
-            Desde los manantiales de la serranía hasta el acueducto submarino.
-            Una historia de agua, curanderos, parteras y la lucha por la salud pública
-            en nuestra comunidad.
-          </p>
+          <div className={styles.heroTextInner}>
+            <span className={styles.badge}>Módulo IV · Sociedad</span>
+            <h2>Sanidad y Salud</h2>
+            <p>
+              Desde los manantiales de la serranía hasta el acueducto submarino.
+              Una historia de agua, curanderos, parteras y la lucha por la salud pública
+              en nuestra comunidad.
+            </p>
+          </div>
         </div>
       </div>
 

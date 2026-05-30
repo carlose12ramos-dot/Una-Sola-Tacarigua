@@ -27,33 +27,49 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.5);
+  filter: brightness(0.52) saturate(1.05) contrast(1.05);
 }
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15,32,75,0.88) 0%, transparent 55%);
+  background:
+    linear-gradient(to top, rgba(4, 12, 29, 0.92) 0%, rgba(4, 12, 29, 0.65) 35%, rgba(4, 12, 29, 0.25) 65%, rgba(4, 12, 29, 0.12) 100%),
+    linear-gradient(to right, rgba(4, 12, 29, 0.35) 0%, transparent 50%);
 }
 .heroText {
   position: relative;
   z-index: 1;
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 1.5rem 1.5rem;
   color: #fff;
+  width: 100%;
 }
-.heroText h2 {
+.heroTextInner {
+  max-width: 640px;
+  padding: 1.1rem 1.35rem;
+  border-radius: 12px;
+  background: rgba(4, 12, 29, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+.heroTextInner h2 {
   font-size: 1.9rem;
   font-weight: 700;
   margin: 0.4rem 0 0.6rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  line-height: 1.15;
 }
-.heroText p {
+.heroTextInner p {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
   max-width: 560px;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255, 0.96);
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
 .badge {
   display: inline-block;
-  background: hsl(195,70%,42%);
+  background: hsl(195, 70%, 42%);
   color: #fff;
   font-size: 0.72rem;
   font-weight: 700;
@@ -286,8 +302,10 @@
 .personajeCard p  { font-size: 0.85rem; color: #666; margin: 0; }
 
 @media (max-width: 600px) {
-  .hero { height: 220px; }
-  .heroText h2 { font-size: 1.4rem; }
+  .hero { height: 240px; }
+  .heroTextInner { padding: 0.9rem 1rem; }
+  .heroTextInner h2 { font-size: 1.35rem; }
+  .heroTextInner p { font-size: 0.88rem; }
   .cardGrid, .tradGrid { grid-template-columns: 1fr; }
   .subTabs { gap: 0.4rem; }
   .subTab { font-size: 0.78rem; padding: 0.45rem 0.8rem; }

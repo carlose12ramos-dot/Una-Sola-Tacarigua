@@ -159,8 +159,14 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  object-fit: cover;
   border: 2px solid var(--goldenrod);
+  display: grid;
+  place-items: center;
+  background: var(--oxford-navy);
+  color: var(--goldenrod);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .dashboard {

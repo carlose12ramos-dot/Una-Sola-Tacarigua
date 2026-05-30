@@ -38,9 +38,11 @@ const Sociedad = () => {
         <div className={styles.tabsContainer}>
           {tabs.map((tab) => (
             <button
+              type="button"
               key={tab.id}
               className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ''}`}
               onClick={() => setActiveTab(tab.id)}
+              aria-pressed={activeTab === tab.id}
               style={activeTab === tab.id ? { '--tab-accent': tab.color } : {}}
             >
               <span className={styles.tabIcon}>{tab.icon}</span>

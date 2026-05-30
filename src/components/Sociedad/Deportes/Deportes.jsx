@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Deportes.module.css';
+import { IMAGES } from '../../../data/images';
 
 const disciplinas = [
   {
@@ -87,17 +88,20 @@ const Deportes = () => {
       <div className={styles.hero}>
         <div className={styles.heroOverlay} />
         <img
-          src="/images/SaveClip.App_660065822_18062828069682253_632179900671888838_n.jpg"
-          alt="Deportes en Tacarigua"
+          src={IMAGES.carreteraAraguaneyes.src}
+          alt={IMAGES.carreteraAraguaneyes.alt}
           className={styles.heroImg}
+          onError={(e) => { e.currentTarget.src = IMAGES.carreteraAraguaneyes.fallback; }}
         />
         <div className={styles.heroText}>
-          <span className={styles.badge}>Módulo V · Sociedad</span>
-          <h2>Deportes y Recreación</h2>
-          <p>
-            Tacarigua ha sido cuna de atletas excepcionales. A pesar de las carencias,
-            sus hijos han construido un historial deportivo con entusiasmo y coraje.
-          </p>
+          <div className={styles.heroTextInner}>
+            <span className={styles.badge}>Módulo V · Sociedad</span>
+            <h2>Deportes y Recreación</h2>
+            <p>
+              Tacarigua ha sido cuna de atletas excepcionales. A pesar de las carencias,
+              sus hijos han construido un historial deportivo con entusiasmo y coraje.
+            </p>
+          </div>
         </div>
       </div>
 

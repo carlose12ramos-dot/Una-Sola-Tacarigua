@@ -1,22 +1,28 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './HeroBanner.module.css';
+import { IMAGES } from '../../data/images';
 
 const SLIDES = [
   {
-    image: 'https://images.unsplash.com/photo-1576469197040-d06a796697cd?w=1200&h=600&fit=crop',
+    image: IMAGES.plazaHexagonal,
     title: '¡Bienvenidos a la Parroquia Guevara!',
-    subtitle: 'Descubre la riqueza cultural e histórica de Tacarigua en la Isla de Margarita',
+    subtitle: 'La Tacarigua de Margarita — memoria, cultura y tradición en el corazón de Nueva Esparta',
   },
   {
-    image: 'https://images.unsplash.com/photo-1643238974302-381f0fbd8211?w=1200&h=600&fit=crop',
-    title: 'Patrimonio Histórico',
-    subtitle: 'Explora nuestras tradiciones y arquitectura colonial',
+    image: IMAGES.p6100004,
+    title: 'La Atenas Neoespartana',
+    subtitle: '28,3 % de profesionales universitarios y una tradición educativa desde 1875',
   },
   {
-    image: 'https://images.unsplash.com/photo-1585607344893-43a4bd91169a?w=1200&h=600&fit=crop',
-    title: 'Cultura Viva',
-    subtitle: 'Celebramos nuestras festividades y expresiones artísticas',
+    image: IMAGES.paisajeHero,
+    title: 'Memoria Histórica Viva',
+    subtitle: '438 años de cultura, desde los indios Tacaribas hasta la comunidad de hoy',
+  },
+  {
+    image: IMAGES.iglesiaPlazaAerea,
+    title: 'Patrimonio Cultural',
+    subtitle: 'Fiestas patronales, música folklórica y tradiciones artesanales de los Olleros',
   },
 ];
 
@@ -42,7 +48,12 @@ function HeroBanner() {
           className={index === currentIndex ? styles.slideActive : styles.slide}
           aria-hidden={index !== currentIndex}
         >
-          <img src={slide.image} alt={slide.title} className={styles.slideImage} />
+          <img
+            src={slide.image.src}
+            alt={slide.image.alt}
+            className={styles.slideImage}
+            onError={(e) => { e.currentTarget.src = slide.image.fallback; }}
+          />
           <div className={styles.gradientOverlay} />
           <div className={styles.radialOverlay} />
 

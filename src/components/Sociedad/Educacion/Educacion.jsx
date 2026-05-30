@@ -1,55 +1,56 @@
 import React, { useState } from 'react';
 import styles from './Educacion.module.css';
+import { IMAGES } from '../../../data/images';
 
 const escuelas = [
   {
     nombre: 'U.E. Napoleón Narváez',
     nivel: 'Educación Básica',
     descripcion:
-      'Una de las instituciones educativas más antiguas de Tacarigua. Lleva el nombre de un ilustre hijo de la tierra tacarigüera y ha formado a generaciones de estudiantes desde sus primeras décadas de funcionamiento.',
+      'Fundada en 1946. Lleva el nombre del ilustre historiador neoespartano Napoleón Narváez. Ha formado generaciones de tacarigüeros y cuenta con biblioteca escolar desde 1987.',
     icono: '🏫',
   },
   {
     nombre: 'U.E. Cruz Millán García',
-    nivel: 'Educación Básica',
+    nivel: 'Educación Básica — El Salado',
     descripcion:
-      'Institución dedicada a la formación integral de niños y jóvenes, en honor al educador Cruz Millán García, quien dejó una profunda huella en la vida escolar de la comunidad tacarigüera.',
+      'Escuela estadal graduada en El Salado. Formó a músicos como Lico Lárez y ha sido sede de formación para docentes y estudiantes de toda la parroquia.',
     icono: '📚',
   },
   {
-    nombre: 'U.E. Divina Pastora',
-    nivel: 'Educación Básica',
+    nombre: 'U.E. Colegio Divina Pastora',
+    nivel: 'Educación Integral',
     descripcion:
-      'Con arraigo en la fe y la tradición local, esta escuela ha sido pilar de la formación primaria en el sector sur de Tacarigua, reuniendo a familias de varias generaciones bajo su techo.',
+      'Fundada el 23 de septiembre de 1993 por la Licenciada Yumeli Rivera Núñez. Proyecto educativo basado en valores, educación progresista y participativa.',
     icono: '✏️',
   },
 ];
 
 const hitos = [
   {
-    año: '1830',
-    evento:
-      'Venezuela comienza a planificar su sistema educativo con la Constitución de ese año, asignando la Educación Primaria a las Diputaciones Provinciales.',
-  },
-  {
-    año: '1833',
-    evento:
-      'El Vicepresidente Andrés Narvarte crea el Colegio Nacional de Margarita en La Asunción, primer hito de la educación secundaria en Nueva Esparta.',
-  },
-  {
     año: '1875',
     evento:
-      'Llegan las primeras escuelas formales a Tacarigua, marcando el inicio de la educación popular en la comunidad.',
+      'Antonio Guzmán Blanco decreta la Escuela Federal N° 860 el 12 de julio. Primer preceptor: Ignacio Jiménez, con 42 alumnos varones de Tacarigua, Tacarigüita, El Alto del Gallego y El Río (hoy San Sebastián).',
   },
   {
-    año: '1929',
+    año: '1897',
     evento:
-      'Consolidación del sistema escolar tacarigüero con la presencia de maestros normalistas que elevan el nivel educativo de la población.',
+      'Creada la primera Escuela Federal Femenina N° 155 de Tacarigua — Corazón de Jesús, el 21 de marzo.',
   },
   {
-    año: '1951–1964',
+    año: '1946',
     evento:
-      'Era de los Maestros Normalistas. Educadores de alta vocación transforman las escuelas de Tacarigua, sentando bases sólidas para las generaciones venideras.',
+      'Se funda la Escuela Napoleón Narváez, consolidando la tradición educativa que llevaría a Tacarigua a ser reconocida como La Atenas Neoespartana.',
+  },
+  {
+    año: '1973',
+    evento:
+      'Inaugurada la Casa de la Cultura en Corazón de Jesús por el Gobernador Bernardo Acosta, fortaleciendo la vida cultural comunitaria.',
+  },
+  {
+    año: '1993',
+    evento:
+      'Fundación del Colegio Divina Pastora por Yumeli Rivera Núñez, ampliando la oferta educativa integral en la parroquia.',
   },
 ];
 
@@ -57,12 +58,17 @@ const educadores = [
   {
     nombre: 'Ignacio Jiménez',
     descripcion:
-      'Figura clave en la educación tacarigüera del siglo XIX. Sus rasgos biográficos son testimonio del sacrificio y la vocación de los primeros maestros de la comunidad.',
+      'Primer preceptor oficial de la Escuela Federal N° 860 (1875–1883). Regentaba una escuelita particular antes de la oficialización. Falleció el 24 de octubre de 1883, rodeado de sus familiares.',
+  },
+  {
+    nombre: 'Napoleón Narváez',
+    descripcion:
+      'Historiador neoespartano epónimo de la escuela fundada en 1946. Documentó la historia de Margarita y Tacarigua, incluyendo la participación de José Jesús Guevara en el Congreso de Angostura.',
   },
   {
     nombre: 'Maestros Normalistas (1951–1964)',
     descripcion:
-      'Un grupo de docentes formados en las Escuelas Normales del país que llegaron a Tacarigua y transformaron la enseñanza con metodología y dedicación ejemplar.',
+      'Docentes formados en Escuelas Normales que transformaron la enseñanza en Tacarigua con metodología y dedicación ejemplar, sentando bases para el 28,3 % de profesionales universitarios.',
   },
 ];
 
@@ -75,18 +81,21 @@ const Educacion = () => {
       <div className={styles.hero}>
         <div className={styles.heroOverlay} />
         <img
-          src="/images/SaveClip.App_649857402_17940416358159625_3299975488844600819_n.jpg"
-          alt="Educación en Tacarigua"
+          src={IMAGES.educacionHero.src}
+          alt={IMAGES.educacionHero.alt}
           className={styles.heroImg}
+          onError={(e) => { e.currentTarget.src = IMAGES.educacionHero.fallback; }}
         />
         <div className={styles.heroText}>
-          <span className={styles.badge}>Módulo II · Sociedad</span>
-          <h2>Educación en Tacarigua</h2>
-          <p>
-            Desde 1875, Tacarigua ha construido su historia educativa con el esfuerzo de
-            maestros, familias y comunidades enteras. Un camino de conocimiento que parte
-            desde la enseñanza bajo los cerros hasta las aulas modernas de hoy.
-          </p>
+          <div className={styles.heroTextInner}>
+            <span className={styles.badge}>Módulo II · Sociedad</span>
+            <h2>Educación en Tacarigua</h2>
+            <p>
+              Desde el 12 de julio de 1875, cuando Guzmán Blanco decretó la Escuela Federal N° 860,
+              Tacarigua ha construido su historia educativa con el esfuerzo de maestros, familias
+              y comunidades enteras — camino que la llevó a ser reconocida como La Atenas Neoespartana.
+            </p>
+          </div>
         </div>
       </div>
 

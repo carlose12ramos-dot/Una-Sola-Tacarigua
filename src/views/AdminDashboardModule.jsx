@@ -62,11 +62,7 @@ function AdminDashboardModule() {
               <div className={styles.userName}>Carlos Eduardo Ramos González</div>
               <div className={styles.userRole}>SuperAdmin</div>
             </div>
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop"
-              alt="Avatar"
-              className={styles.userAvatar}
-            />
+            <div className={styles.userAvatar} aria-hidden="true">CR</div>
           </div>
         </header>
 

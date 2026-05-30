@@ -2,35 +2,36 @@ import { Link } from 'react-router-dom';
 import { Palette, Map, Users, Building } from 'lucide-react';
 import HeroBanner from '../components/home/HeroBanner';
 import { homeCardsMock } from '../data/mockData';
+import { IMAGES } from '../data/images';
 import styles from './Home.module.css';
 
 const FEATURED = [
   {
     path: '/cultura',
     title: 'Cultura',
-    description: 'Tradiciones, festividades, gastronomía y expresiones artísticas de Tacarigua',
-    image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&h=400&fit=crop',
+    description: '76 libros de autores tacarigüeros, conjuntos musicales, patronos, artesanía de los Olleros y tradiciones de más de 438 años',
+    image: IMAGES.culturaComunitaria,
     icon: Palette,
   },
   {
     path: '/geografia',
     title: 'Geografía',
-    description: 'Conoce el territorio, clima y recursos naturales de la Parroquia Guevara',
-    image: 'https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=600&h=400&fit=crop',
+    description: 'El Valle de los Olleros, la Banda del Norte, el Portachuelo del Norte y la serranía que abastece de agua a la parroquia',
+    image: IMAGES.portachuelo,
     icon: Map,
   },
   {
     path: '/sociedad',
     title: 'Sociedad',
-    description: 'Servicios de salud, educación, deportes e historia comunitaria',
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop',
+    description: 'Educación desde 1875, sanidad desde los manantiales guaiqueríes y deportes con medallas olímpicas de Nicomedes Maza González',
+    image: IMAGES.educacionHero,
     icon: Users,
   },
   {
-    path: '/nosotros',
-    title: 'Nosotros',
-    description: 'Historia, valores y misión de Tacarigua Digital',
-    image: 'https://images.unsplash.com/photo-1627666338597-ce13e208a93d?w=600&h=400&fit=crop',
+    path: '/historia',
+    title: 'Historia',
+    description: 'Desde el encuentro con Miguel Maza de Lizana en 1579 hasta Diego B. Urbaneja, Presidente de Venezuela, nacido en Tacarigua',
+    image: IMAGES.muralUrbaneja,
     icon: Building,
   },
 ];
@@ -54,7 +55,13 @@ function Home() {
             {FEATURED.map(({ path, title, description, image, icon: Icon }) => (
               <Link key={path} to={path} className={styles.card}>
                 <div className={styles.imageWrapper}>
-                  <img src={image} alt={title} className={styles.image} />
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className={styles.image}
+                    loading="lazy"
+                    onError={(e) => { e.currentTarget.src = image.fallback; }}
+                  />
                   <div className={styles.imageOverlay} />
                   <div className={styles.iconBadge}>
                     <Icon size={22} />
@@ -105,35 +112,40 @@ function Home() {
             <span className={styles.missionBadge}>Nuestra Misión</span>
             <h2 className={styles.missionTitle}>Tu Portal Cultural Digital</h2>
             <p className={styles.missionText}>
-              Tacarigua Digital es una plataforma moderna que preserva y promueve el patrimonio cultural,
-              histórico y social de la Parroquia Guevara en la Isla de Margarita.
+              Tacarigua Digital preserva la Memoria Histórica de la Parroquia Guevara:
+              investigación comunitaria iniciada en febrero de 2018 que documentó cinco módulos
+              — Historia, Educación, Cultura, Sanidad y Deportes — con fuentes verificadas.
             </p>
             <p className={styles.missionTextSecondary}>
-              Nuestra misión es conectar a la comunidad con sus raíces, facilitando el acceso a información
-              sobre cultura, geografía, servicios y eventos que definen nuestra identidad regional.
+              Desde los indios Tacaribas y el Valle de los Olleros, pasando por héroes de la
+              Independencia y la Atenas Neoespartana, hasta los cultores y deportistas de hoy:
+              esta plataforma conecta a la comunidad con sus raíces documentadas.
             </p>
             <div className={styles.stats}>
               <div className={styles.stat}>
-                <div className={styles.statValue}>500+</div>
-                <div className={styles.statLabel}>Artículos</div>
+                <div className={styles.statValue}>76</div>
+                <div className={styles.statLabel}>Libros publicados</div>
               </div>
               <div className={styles.stat}>
-                <div className={styles.statValueAlt}>50+</div>
-                <div className={styles.statLabel}>Lugares</div>
+                <div className={styles.statValueAlt}>5</div>
+                <div className={styles.statLabel}>Módulos históricos</div>
               </div>
               <div className={styles.stat}>
-                <div className={styles.statValue}>24/7</div>
-                <div className={styles.statLabel}>Acceso</div>
+                <div className={styles.statValue}>28,3%</div>
+                <div className={styles.statLabel}>Profesionales universitarios</div>
               </div>
             </div>
           </div>
 
           <div className={styles.imageBlock}>
             <div className={styles.imageGlow} />
-            <img
-              src="https://images.unsplash.com/photo-1741272689174-f7f03b09a0ab?w=800&h=600&fit=crop"
-              alt="Cultura de Tacarigua"
-              className={styles.missionImage}
+            <video
+              src="/images/videos/Tacarigua.mp4"
+              className={styles.missionVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
             />
             <div className={styles.yearsBadge}>
               <span className={styles.yearsValue}>300+</span>
