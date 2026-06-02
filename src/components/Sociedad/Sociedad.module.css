@@ -114,3 +114,23 @@
   }
   .header { padding: 2.5rem 1rem 2rem; }
 }
+
+@media (max-width: 900px) {
+  .sociedadContainer {
+    padding: 2.5rem 1rem;
+  }
+
+  .tabsContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .tabsWrapper {
+    padding: 0 0.5rem;
+  }
+
+  .contentArea {
+    padding: 0 0.75rem;
+  }
+}

@@ -12,3 +12,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>,
 )
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', async () => {
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    registrations.forEach((registration) => registration.unregister());
+    console.log('Service Worker desregistrado para evitar caché antigua.');
+  });
+}
+

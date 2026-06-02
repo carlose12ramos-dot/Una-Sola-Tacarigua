@@ -62,6 +62,42 @@ button {
   border-radius: 2px;
 }
 
+img, picture, svg, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  width: 100%;
+  padding: 3rem 0;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.85rem;
+  }
+
+  .divider {
+    width: 100px;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }

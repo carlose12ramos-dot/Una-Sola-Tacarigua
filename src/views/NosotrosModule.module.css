@@ -150,6 +150,26 @@
 
 /* Responsive styles */
 @media (max-width: 900px) {
+  .nosotrosContainer {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .lead {
+    max-width: 100%;
+  }
+
+  .grid {
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.8rem 1.4rem;
+  }
+
   .aboutContent {
     grid-template-columns: 1fr;
     padding: 2rem;

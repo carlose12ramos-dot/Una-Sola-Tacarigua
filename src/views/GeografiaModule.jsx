@@ -1,116 +1,172 @@
-import { useState } from 'react';
 import styles from './GeografiaModule.module.css';
-import { IMAGES } from '../data/images';
 
-const sectionsData = [
+const sections = [
   {
-    id: 'valle',
-    title: 'El Valle de los Olleros',
-    description: 'Extensión territorial desde El Portachuelo hasta Pedro González, donde indígenas de El Cercao, Tacarigua, Santa Ana, La Vecindad, Altagracia y Pedro González fabricaban cerámica de barro: ánforas, pimpinas, tinajones y platos.',
-    detail: 'Se conoce como El Valle de los Olleros a toda aquella extensión donde los pobladores prehispánicos y coloniales desarrollaron la alfarería. Los productos pasaron de uso doméstico a objetos de intercambio comercial con otras comunidades de la isla.',
-    imageKey: 'valleOlleros',
-    icon: '🏺',
+    id: 'ubicacion',
+    title: 'Ubicación',
+    content: `Tacarigua se encuentra en la parte centro-norte de la isla de Margarita, en un semivalle de clima benigno a unos 81 metros sobre el nivel del mar, entre la capital del estado La Asunción al este y Santa Ana del Norte al oeste. Dista aproximadamente 7,7 km de Juan Griego y 12,3 km de Porlamar.`,
+    icon: '📍',
   },
   {
-    id: 'banda',
-    title: 'La Banda del Norte',
-    description: 'Término del siglo XVI con el cual los españoles dividieron el territorio margariteño. Tacarigua fue catalogada como la Banda del Norte del Portezuelo, desde las estribaciones del cerro hasta las aguas de Juangriego.',
-    detail: 'Comprendía Tacarigua, Santa Ana, El Cercao, La Vecindad y Juangriego — este último era el puerto de la Banda del Norte. La Banda del Sur se extendía desde El Portachuelo hacia La Asunción.',
-    imageKey: 'bandaNorte',
-    icon: '🗺️',
-  },
-  {
-    id: 'portachuelo',
-    title: 'El Portachuelo del Norte',
-    description: 'Punto clave para la defensa de la Isla de Margarita. Quien tomara el Portachuelo tenía asegurado el triunfo. Contaba con una batería de tres cañones, incluyendo el "Burro Negro" apuntando hacia Juangriego.',
-    detail: 'Defendido heroicamente por el Capitán José Victorino Guzmán durante la Independencia con su grito: "Ni uno más pa\'bajo cará...". Vestigios de la batería aún existen en el sitio. Conecta Tacarigua con Tacarigüita (El Portachuelo).',
-    imageKey: 'portachuelo',
-    icon: '⚔️',
-  },
-  {
-    id: 'cerros',
-    title: 'Serranía y Manantiales',
-    description: 'La serranía tacarigüera abarca desde el Cerro Pelón hasta la Palma Real, pasando por El Tamoco, Chupacachimbo, El Peñón, La Matica Redonda, El Rincón, Tibio y La Barca, hasta colindar con el Parque Nacional Cerro Copey.',
-    detail: 'Los indios Tacaribas se asentaron en estas estribaciones atraídos por la abundancia de agua y la fertilidad del valle. Los españoles denominaron la zona como "la savaneta del Portezuelo de la Banda del Norte".',
-    imageKey: 'serrania',
+    id: 'relieve',
+    title: 'Relieve',
+    content: `El poblado está rodeado de un sistema de cerros que lo delimitan y abastecen de agua. Los más destacados son El Tamoco, La Palma Real, El Mureche, Cerro Pelón y El Portachuelo — conocido históricamente como El Portezuelo de la Banda del Norte —, este último el paso natural estratégico que comunica esa Banda del Norte con el resto de la isla y que fue escenario de múltiples combates entre 1813 y 1902.`,
     icon: '⛰️',
   },
   {
-    id: 'recursos',
-    title: 'Productos Originarios y Agrícolas',
-    description: 'Los guaiqueríes cultivaban piña, lechoza, maíz, yuca, papa y tomate. Los españoles introdujeron café, caña de azúcar, naranja, limón y mango. La caña se convirtió en símbolo de la tacarigüedad en el Valle de las Tacariguas.',
-    detail: 'De esta serranía se desprenden dos valles: el del norte regado por el río Tacarigua, y el del sur costeado por los cerros de la Vega de San Juan y el Copey. Ambos son de gran importancia agrícola para la isla.',
-    imageKey: 'agricultura',
-    icon: '🌾',
+    id: 'hidrologia',
+    title: 'Hidrología',
+    content: `Tacarigua constituye una de las zonas de mayor riqueza hídrica de la isla. Un estudio de la Universidad Central de Venezuela de 1971 la describió como “la zona hídrica más importante del Oriente del País”. Sus cerros alimentan varias quebradas y pozas de agua cristalina que desde tiempos prehispánicos atrajeron asentamientos humanos, entre ellos el manantial de Belén y la quebrada del Orinoco.`,
+    icon: '💧',
+  },
+  {
+    id: 'organizacion',
+    title: 'Organización territorial',
+    content: `Históricamente el poblado se ha organizado en tres núcleos originales: Tacarigua Afuera, Tacarigua Adentro y Tacarigüita. A estos se suman los sectores más recientes de Corazón de Jesús, San Sebastián, Toporo y El Conchal, este último vinculado a la infancia del prócer Diego Bautista Urbaneja Alayón.`,
+    icon: '🗺️',
+  },
+  {
+    id: 'demografia',
+    title: 'Población y vivienda',
+    content: `Según el I Censo Popular de Tacarigua realizado en noviembre de 2002 —que abarcó solo el sector Tacarigua Arriba— la población era de 1.944 habitantes, de los cuales el 52,5 % eran mujeres. Entre 1950 y 1981 la población creció un 60 % y el número de viviendas un 89 %. Del total censado en 2002, el 20,4 % eran profesionales universitarios y el 13,9 % técnicos superiores o bachilleres cursando educación superior. Solo 84 personas eran analfabetas, el 97 % de ellas mayores de 60 años. El pueblo cuenta con cuatro centros de educación primaria —dos nacionales y dos privados— y un liceo de educación media general.`,
+    icon: '👥',
+  },
+];
+
+const censusData = [
+  { year: '1881', housing: '871', population: '—' },
+  { year: '1950', housing: '243', population: '1.170' },
+  { year: '1961', housing: '340', population: '1.192' },
+  { year: '1971', housing: '362', population: '1.384' },
+  { year: '1981', housing: '460', population: '1.871' },
+  { year: '2002', housing: '459', population: '1.944' },
+];
+
+const highlights = [
+  {
+    icon: '📍',
+    title: 'Centro-norte de Margarita',
+    description: 'Tacarigua está a 81 metros sobre el mar, entre La Asunción y Santa Ana del Norte.',
+  },
+  {
+    icon: '💧',
+    title: 'Riqueza hídrica',
+    description: 'El área es una de las zonas hídricas más importantes del oriente venezolano.',
+  },
+  {
+    icon: '🏘️',
+    title: 'Núcleos originales',
+    description: 'Tacarigua Afuera, Tacarigua Adentro y Tacarigüita son sus tres núcleos históricos.',
   },
 ];
 
 function GeografiaModule() {
-  const [activeSection, setActiveSection] = useState('valle');
-  const activeData = sectionsData.find((sec) => sec.id === activeSection);
-
   return (
     <div className={styles.geografiaContainer}>
       <header className={styles.header}>
         <span className={styles.badge}>Geografía</span>
-        <h1 className={styles.title}>Geografía de la Parroquia Guevara</h1>
+        <h1 className={styles.title}>Geografía de Tacarigua</h1>
         <div className={styles.divider} />
         <p className={styles.lead}>
-          El Valle de los Olleros, la Banda del Norte y la serranía que protege a Tacarigua:
-          territorio, agua y tradición agrícola en la Isla de Margarita.
+          Documento completo de TacariguaGeografía con la ubicación, relieve, hidrología, organización territorial, evolución poblacional y datos clave del valle.
         </p>
+        <div className={styles.heroActions}>
+          <a
+            className={styles.ctaButton}
+            href="/TacariguaGeografía.pdf"
+            download
+            target="_blank"
+            rel="noreferrer"
+          >
+            Descargar PDF de TacariguaGeografía
+          </a>
+        </div>
       </header>
 
-      <section className={styles.mainGrid}>
-        <aside className={styles.sidebar}>
-          {sectionsData.map((sec) => (
-            <button
-              key={sec.id}
-              type="button"
-              className={`${styles.navButton} ${activeSection === sec.id ? styles.navButtonActive : ''}`}
-              onClick={() => setActiveSection(sec.id)}
-            >
-              <span className={styles.btnIcon}>{sec.icon}</span>
-              <span className={styles.btnTitle}>{sec.title}</span>
-            </button>
-          ))}
-        </aside>
-
-        <article className={styles.contentCard}>
-          <div className={styles.imageContainer}>
-            <img
-              src={IMAGES[activeData.imageKey].src}
-              alt={IMAGES[activeData.imageKey].alt}
-              className={styles.cardImage}
-              onError={(e) => { e.currentTarget.src = IMAGES[activeData.imageKey].fallback; }}
-            />
-            <div className={styles.imageOverlay}>
-              <span className={styles.categoryBadge}>{activeData.icon} {activeData.title}</span>
+      <section className={styles.highlightGrid}>
+        {highlights.map((item) => (
+          <article key={item.title} className={styles.highlightCard}>
+            <div className={styles.highlightIcon}>{item.icon}</div>
+            <div>
+              <h3 className={styles.highlightTitle}>{item.title}</h3>
+              <p className={styles.highlightText}>{item.description}</p>
             </div>
-          </div>
-          <div className={styles.cardBody}>
-            <h2 className={styles.cardTitle}>{activeData.title}</h2>
-            <p className={styles.cardDescription}>{activeData.description}</p>
-            <div className={styles.detailsBox}>
-              <h3 className={styles.detailsTitle}>Datos documentados</h3>
-              <p className={styles.detailsText}>{activeData.detail}</p>
-            </div>
-          </div>
-        </article>
+          </article>
+        ))}
       </section>
 
-      <section className={styles.statsSection}>
-        <div className={styles.statCard}>
-          <div className={styles.statValue}>🏺 Valle de los Olleros</div>
-          <div className={styles.statLabel}>Tradición alfarera</div>
+      <section className={styles.mapSection}>
+        <div className={styles.mapHeader}>
+          <h2 className={styles.mapTitle}>Mapa y ubicación</h2>
+          <p className={styles.mapText}>
+            Vista interactiva del casco de Tacarigua y su valle, con un mapa embebido para consulta directa.
+          </p>
         </div>
-        <div className={styles.statCard}>
-          <div className={styles.statValue}>⚔️ Portachuelo</div>
-          <div className={styles.statLabel}>Batería "Burro Negro"</div>
+
+        <div className={styles.mapContainer}>
+          <iframe
+            title="Mapa de Tacarigua"
+            src="https://www.google.com/maps?q=Tacarigua%2C%20Nueva%20Esparta%2C%20Venezuela&output=embed"
+            className={styles.mapIframe}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
-        <div className={styles.statCard}>
-          <div className={styles.statValue}>🌾 Caña de Azúcar</div>
-          <div className={styles.statLabel}>Símbolo tacarigüero</div>
+      </section>
+
+      <section className={styles.featureGrid}>
+        {sections.map((section) => (
+          <article key={section.id} className={styles.featureCard}>
+            <div className={styles.featureBody}>
+              <div className={styles.featureBadge}>{section.icon}</div>
+              <h3 className={styles.featureTitle}>{section.title}</h3>
+              <p className={styles.featureText}>{section.content}</p>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className={styles.statsAndTable}>
+        <div className={styles.statsPanel}>
+          <div className={styles.statCardLarge}>
+            <span className={styles.statValue}>81 m</span>
+            <span className={styles.statLabel}>Altura sobre el nivel del mar</span>
+          </div>
+          <div className={styles.statCardLarge}>
+            <span className={styles.statValue}>1.944</span>
+            <span className={styles.statLabel}>Habitantes en 2002</span>
+          </div>
+          <div className={styles.statCardLarge}>
+            <span className={styles.statValue}>4</span>
+            <span className={styles.statLabel}>Centros educativos</span>
+          </div>
+        </div>
+
+        <div className={styles.sectionCard}>
+          <h2 className={styles.sectionTitle}>Evolución poblacional</h2>
+          <p className={styles.sectionText}>
+            El documento registra el crecimiento de habitantes y viviendas en Tacarigua, con un fuerte avance entre 1950 y 1981 y una población de 1.944 personas en 2002.
+          </p>
+          <div className={styles.tableWrapper}>
+            <table className={styles.censusTable}>
+              <thead>
+                <tr>
+                  <th>Año</th>
+                  <th>Viviendas</th>
+                  <th>Habitantes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {censusData.map((row) => (
+                  <tr key={row.year}>
+                    <td>{row.year}</td>
+                    <td>{row.housing}</td>
+                    <td>{row.population}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
     </div>
