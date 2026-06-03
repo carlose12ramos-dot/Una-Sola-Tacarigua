@@ -33,8 +33,7 @@
 
 .sectionDesc {
   font-size: 1.125rem;
-  color: var(--oxford-navy);
-  opacity: 0.75;
+  color: #000;
   max-width: 42rem;
   margin: 0 auto;
 }
@@ -120,8 +119,8 @@
 
 .cardDesc {
   font-size: 0.875rem;
-  color: var(--oxford-navy);
-  opacity: 0.7;
+  color: #000;
+  opacity: 1;
   line-height: 1.5;
   margin-bottom: 1rem;
 }
@@ -185,6 +184,11 @@
   color: var(--oxford-navy);
 }
 
+.highlightWhite .highlightDesc {
+  color: #000;
+  opacity: 1;
+}
+
 .highlightImage {
   flex-shrink: 0;
   width: 100px;
@@ -219,6 +223,11 @@
   margin-bottom: 1rem;
 }
 
+.highlightWhite .highlightDesc {
+  color: #000;
+  opacity: 1;
+}
+
 .highlightBtn {
   align-self: flex-start;
   padding: 0.5rem 1rem;
@@ -233,6 +242,178 @@
 .highlightBtn:hover {
   filter: brightness(1.1);
   transform: translateY(-2px);
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 12, 29, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 50;
+}
+
+.modalContent {
+  width: min(820px, 100%);
+  max-height: min(90vh, 100%);
+  overflow: auto;
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 40px 90px rgba(4, 12, 29, 0.15);
+  position: relative;
+}
+
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(29, 53, 87, 0.9);
+  color: white;
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+
+.modalHeader {
+  padding: 1.75rem 1.75rem 0;
+}
+
+.modalHeader h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  color: var(--oxford-navy);
+}
+
+.modalHeader p {
+  margin: 0;
+  color: #000;
+  line-height: 1.75;
+}
+
+.modalBody {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  align-items: start;
+}
+
+.modalMediaColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modalImageLarge {
+  min-height: 320px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #f4f1eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(218, 165, 32, 0.75);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+}
+
+.modalImageLarge img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.modalImageLarge img:hover,
+.modalGalleryItem img:hover {
+  transform: scale(1.05);
+}
+
+.modalImageLabel {
+  font-size: 0.95rem;
+  color: #000;
+  text-align: center;
+}
+
+.modalText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1rem;
+  text-align: left;
+  color: #000;
+}
+
+.modalText p {
+  margin: 0;
+  text-align: justify;
+  text-align-last: left;
+  color: #000;
+}
+
+.modalDetail {
+  margin: 0;
+  color: #000;
+  line-height: 1.8;
+}
+
+.modalGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.modalGalleryItem {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #f7f5ef;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.modalGalleryItem:hover {
+  transform: scale(1.03);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.09);
+}
+
+.modalGalleryItemActive {
+  border-color: var(--goldenrod);
+}
+
+.modalGalleryItem img {
+  width: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.modalGalleryItem span {
+  display: block;
+  padding: 0.75rem 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: #000;
+}
+
+@media (max-width: 760px) {
+  .modalBody {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .modalGallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Mission section */
@@ -274,15 +455,15 @@
 .missionText {
   font-size: 1.125rem;
   line-height: 1.7;
-  color: var(--oxford-navy);
-  opacity: 0.8;
+  color: #000;
+  opacity: 1;
   margin-bottom: 1.25rem;
 }
 
 .missionTextSecondary {
   composes: missionText;
   font-size: 1rem;
-  opacity: 0.75;
+  opacity: 1;
   margin-bottom: 2rem;
 }
 
@@ -321,12 +502,14 @@
 .statLabel {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--oxford-navy);
-  opacity: 0.7;
+  color: #000;
+  opacity: 1;
 }
 
 .imageBlock {
   position: relative;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .imageGlow {
@@ -339,6 +522,23 @@
   background: linear-gradient(135deg, var(--goldenrod), var(--copper));
   opacity: 0.1;
   z-index: 0;
+}
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.videoGrid video {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(29, 53, 87, 0.2);
+  border: 4px solid white;
+  position: relative;
+  z-index: 1;
 }
 
 .missionImage {
@@ -433,8 +633,13 @@
   }
 
   .missionImage,
-  .missionVideo {
-    height: 300px;
+  .missionVideo,
+  .videoGrid video {
+    height: 220px;
+  }
+
+  .videoGrid {
+    grid-template-columns: 1fr;
   }
 
   .yearsBadge {

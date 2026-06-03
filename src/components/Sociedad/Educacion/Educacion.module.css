@@ -56,7 +56,7 @@
 
 .lead {
   font-size: 1.15rem;
-  color: #555;
+  color: #000;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
@@ -198,7 +198,7 @@
 }
 .timelineContent p {
   font-size: 0.91rem;
-  color: #444;
+  color: #000;
   line-height: 1.55;
   margin: 0;
 }
@@ -232,7 +232,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.card p { font-size: 0.88rem; color: #555; line-height: 1.55; margin: 0; }
+.card p { font-size: 0.88rem; color: #000; line-height: 1.55; margin: 0; }
 
 /* ── Educadores ── */
 .educadoresList { display: flex; flex-direction: column; gap: 1rem; }
@@ -258,7 +258,7 @@
   flex-shrink: 0;
 }
 .educadorCard h4 { font-size: 1rem; font-weight: 700; color: var(--primary-blue); margin: 0 0 0.3rem; }
-.educadorCard p  { font-size: 0.88rem; color: #555; line-height: 1.55; margin: 0; }
+.educadorCard p  { font-size: 0.88rem; color: #000; line-height: 1.55; margin: 0; }
 
 @media (max-width: 600px) {
   .hero { height: 240px; }
@@ -267,3 +267,4 @@
   .heroTextInner p { font-size: 0.88rem; }
   .cardGrid { grid-template-columns: 1fr; }
 }
+

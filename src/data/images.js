@@ -1,5 +1,5 @@
 /**
- * Catálogo central de imágenes locales — Tacarigua Digital.
+ * Catálogo central de imágenes locales — Una Sola Tacarigua.
  * Rutas relativas a /public/images (servidas como /images/...).
  * Preferir variantes WebP; fallback JPG cuando aún no exista la conversión.
  */
@@ -32,6 +32,22 @@ export const IMAGES = {
   paisajeHero: {
     ...img('paisaje-hero-tacarigua.webp', 'hero-bg.jpg'),
     alt: 'Paisaje del valle tacarigüero con montañas y vegetación',
+  },
+  mapaTacarigua: {
+    ...img('Mapa%20Tacarigua.png', 'Mapa%20Tacarigua.png'),
+    alt: 'Mapa de Tacarigua que muestra la ubicación del valle y la Parroquia Guevara en Margarita',
+  },
+  culturaInicio: {
+    ...img('culturainicio.jpg', 'culturainicio.jpg'),
+    alt: 'Imagen de inicio que representa la cultura de Una Sola Tacarigua',
+  },
+  mapaInicio: {
+    ...img('mapainicio.jpg', 'mapainicio.jpg'),
+    alt: 'Imagen de inicio para la sección de geografía de Una Sola Tacarigua',
+  },
+  historiaT: {
+    ...img('historiat.jpg', 'historiat.jpg'),
+    alt: 'Imagen de inicio para la sección de historia de Una Sola Tacarigua',
   },
   p6100004: {
     ...img('iglesiasansebastian.webp', 'iglesiasansebastian.jpg'),

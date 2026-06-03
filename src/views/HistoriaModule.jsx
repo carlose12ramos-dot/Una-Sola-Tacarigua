@@ -15,18 +15,18 @@ const COMMUNITY_VIDEOS = [
 
 const LEGAL_DOCUMENTS = [
   {
-    src: IMAGES.documentoLegalFundacion.src,
-    fullSrc: '/images/documentolegalfundación.png',
-    alt: IMAGES.documentoLegalFundacion.alt,
-    title: 'Documento Legal de Fundación',
-    description: 'Documento original de fundación de Tacarigua, testimonio histórico del establecimiento de la parroquia.',
-  },
-  {
     src: IMAGES.docLegalFun.src,
     fullSrc: '/images/doclegalfun.png',
     alt: IMAGES.docLegalFun.alt,
-    title: 'Documento Legal',
-    description: 'Documento complementario sobre la organización y demarcación territorial de Tacarigua.',
+    title: 'Documento Legal de Tacarigua',
+    description: 'Documento histórico que registra la organización y demarcación territorial del valle de Tacarigua, clave para entender su identidad comunitaria.',
+  },
+  {
+    src: IMAGES.documentoLegalFundacion.src,
+    fullSrc: '/images/documentolegalfundación.png',
+    alt: IMAGES.documentoLegalFundacion.alt,
+    title: 'Acta de Fundación',
+    description: 'Documento original de fundación de Tacarigua, testimonio histórico del establecimiento de la parroquia.',
   },
 ];
 
@@ -129,8 +129,8 @@ const HistoriaModule = () => {
     setActiveId(activeId === id ? null : id);
   };
 
-  const openModal = (src, alt) => {
-    setModalImage({ src, alt });
+  const openModal = (documentData) => {
+    setModalImage(documentData);
   };
 
   const closeModal = () => {
@@ -212,15 +212,22 @@ const HistoriaModule = () => {
                   alt={doc.alt}
                   className={styles.documentImage}
                   loading="lazy"
-                  onClick={() => openModal(doc.fullSrc, doc.alt)}
+                  onClick={() => openModal(doc)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === 'Enter' && openModal(doc.fullSrc, doc.alt)}
+                  onKeyDown={(e) => e.key === 'Enter' && openModal(doc)}
                 />
               </div>
               <div className={styles.documentContent}>
                 <h4 className={styles.documentTitle}>{doc.title}</h4>
                 <p className={styles.documentDescription}>{doc.description}</p>
+                <button
+                  type="button"
+                  className={styles.documentButton}
+                  onClick={() => openModal(doc)}
+                >
+                  Ver documento
+                </button>
               </div>
             </div>
           ))}
@@ -290,7 +297,11 @@ const HistoriaModule = () => {
         <div className={styles.modalOverlay} onClick={closeModal}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <button type="button" className={styles.modalClose} onClick={closeModal} aria-label="Cerrar">×</button>
-            <img src={modalImage.src} alt={modalImage.alt} className={styles.modalImage} />
+            <div className={styles.modalHeader}>
+              <h3>{modalImage.title}</h3>
+              <p>{modalImage.description}</p>
+            </div>
+            <img src={modalImage.fullSrc || modalImage.src} alt={modalImage.alt} className={styles.modalImage} />
           </div>
         </div>
       )}

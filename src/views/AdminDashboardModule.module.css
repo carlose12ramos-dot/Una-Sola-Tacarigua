@@ -149,6 +149,27 @@
   color: var(--oxford-navy);
 }
 
+.welcomeText {
+  margin: 0.35rem 0 0;
+  color: rgba(29, 53, 87, 0.72);
+  font-size: 0.95rem;
+}
+
+.logoutBtn {
+  background: transparent;
+  color: var(--oxford-navy);
+  border: 2px solid rgba(218, 165, 32, 0.25);
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: var(--transicion-suave);
+}
+
+.logoutBtn:hover {
+  background: rgba(218, 165, 32, 0.1);
+  border-color: rgba(218, 165, 32, 0.45);
+}
+
 .userRole {
   font-size: 0.75rem;
   color: var(--copper);

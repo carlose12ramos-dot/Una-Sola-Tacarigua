@@ -36,9 +36,9 @@
 }
 
 .lead {
-  font-size: 1.05rem;
-  color: var(--oxford-navy);
-  opacity: 0.75;
+  font-size: 1.15rem;
+  color: #000;
+  opacity: 1;
   max-width: 560px;
   margin: 0 auto;
   line-height: 1.6;

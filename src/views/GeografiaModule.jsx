@@ -22,7 +22,7 @@ const sections = [
   {
     id: 'organizacion',
     title: 'Organización territorial',
-    content: `Históricamente el poblado se ha organizado en tres núcleos originales: Tacarigua Afuera, Tacarigua Adentro y Tacarigüita. A estos se suman los sectores más recientes de Corazón de Jesús, San Sebastián, Toporo y El Conchal, este último vinculado a la infancia del prócer Diego Bautista Urbaneja Alayón.`,
+    content: `Tacarigua se presenta como una sola comunidad territorial y cultural. Sectores como Tacarigua Afuera, Tacarigua Adentro, Tacarigüita, Corazón de Jesús, San Sebastián, Toporo y El Conchal forman un mismo valle compartido por su gente y su historia.`,
     icon: '🗺️',
   },
   {
@@ -55,8 +55,8 @@ const highlights = [
   },
   {
     icon: '🏘️',
-    title: 'Núcleos originales',
-    description: 'Tacarigua Afuera, Tacarigua Adentro y Tacarigüita son sus tres núcleos históricos.',
+    title: 'Un solo territorio',
+    description: 'Tacarigua se presenta como una sola comunidad integrada por sectores como Corazón de Jesús, San Sebastián y Tacarigüita.',
   },
 ];
 

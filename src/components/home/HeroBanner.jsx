@@ -10,6 +10,11 @@ const SLIDES = [
     subtitle: 'La Tacarigua de Margarita — memoria, cultura y tradición en el corazón de Nueva Esparta',
   },
   {
+    image: IMAGES.mapaTacarigua,
+    title: 'Mapa de Una Sola Tacarigua',
+    subtitle: 'Descubre el valle, los cerros y el paso del Portachuelo que unen a toda la comunidad.',
+  },
+  {
     image: IMAGES.p6100004,
     title: 'La Atenas Neoespartana',
     subtitle: '28,3 % de profesionales universitarios y una tradición educativa desde 1875',
@@ -59,7 +64,7 @@ function HeroBanner() {
 
           <div className={styles.content}>
             <div className={styles.badge}>
-              <span className={styles.badgeText}>Tacarigua Digital</span>
+              <span className={styles.badgeText}>Una Sola Tacarigua</span>
             </div>
             <h1 className={styles.title}>{slide.title}</h1>
             <p className={styles.subtitle}>{slide.subtitle}</p>

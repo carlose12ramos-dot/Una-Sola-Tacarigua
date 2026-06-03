@@ -4,6 +4,34 @@
   "framework": "vite",
   "rewrites": [
     {
+      "source": "/admin.html",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/historia.html",
+      "destination": "/historia.html"
+    },
+    {
+      "source": "/cultura.html",
+      "destination": "/cultura.html"
+    },
+    {
+      "source": "/biblioteca.html",
+      "destination": "/biblioteca.html"
+    },
+    {
+      "source": "/geografia.html",
+      "destination": "/geografia.html"
+    },
+    {
+      "source": "/sociedad.html",
+      "destination": "/sociedad.html"
+    },
+    {
+      "source": "/nosotros.html",
+      "destination": "/nosotros.html"
+    },
+    {
       "source": "/((?!.*\\.).*)",
       "destination": "/index.html"
     }

@@ -19,7 +19,7 @@ function getStatusClass(estado) {
   return styles.statusPendiente;
 }
 
-function AdminDashboardModule() {
+function AdminDashboardModule({ adminUser, onLogout }) {
   const pendingCount = adminModerationMock.filter((r) => r.estado === 'Pendiente').length;
 
   return (
@@ -29,7 +29,7 @@ function AdminDashboardModule() {
           <div className={styles.brandRow}>
             <div className={styles.brandIcon}>T</div>
             <div>
-              <div className={styles.brandName}>Tacarigua Digital</div>
+              <div className={styles.brandName}>Una Sola Tacarigua</div>
               <div className={styles.brandSub}>Panel Admin</div>
             </div>
           </div>
@@ -56,13 +56,22 @@ function AdminDashboardModule() {
 
       <main className={styles.mainContent}>
         <header className={styles.topBar}>
-          <h1 className={styles.pageTitle}>Panel de Administración</h1>
+          <div>
+            <h1 className={styles.pageTitle}>Panel de Administración</h1>
+            <p className={styles.welcomeText}>Bienvenido, {adminUser?.nombre || 'Administrador'}</p>
+          </div>
+
           <div className={styles.userProfile}>
             <div className={styles.userInfo}>
-              <div className={styles.userName}>Carlos Eduardo Ramos González</div>
-              <div className={styles.userRole}>SuperAdmin</div>
+              <div className={styles.userName}>{adminUser?.nombre || 'Carlos Eduardo Ramos González'}</div>
+              <div className={styles.userRole}>{adminUser?.rol === 'admin' ? 'SuperAdmin' : adminUser?.rol}</div>
             </div>
-            <div className={styles.userAvatar} aria-hidden="true">CR</div>
+            <div className={styles.userAvatar} aria-hidden="true">
+              {adminUser?.nombre ? adminUser.nombre.split(' ').map((word) => word[0]).join('').slice(0, 2) : 'CR'}
+            </div>
+            <button type="button" className={styles.logoutBtn} onClick={onLogout}>
+              Cerrar sesión
+            </button>
           </div>
         </header>
 

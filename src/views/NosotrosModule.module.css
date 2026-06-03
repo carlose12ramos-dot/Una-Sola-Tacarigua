@@ -44,7 +44,7 @@
 
 .lead {
   font-size: 1.15rem;
-  color: #555;
+  color: #000;
   max-width: 750px;
   margin: 0 auto;
   line-height: 1.7;
@@ -89,7 +89,7 @@
 
 .cardDesc {
   font-size: 0.95rem;
-  color: #555;
+  color: #000;
   line-height: 1.6;
 }
 
@@ -127,7 +127,7 @@
 .text {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #333;
+  color: #000;
 }
 
 .imageBlock {
@@ -180,3 +180,4 @@
     height: 220px;
   }
 }
+

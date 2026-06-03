@@ -30,11 +30,9 @@ function Navbar() {
       <div className={styles.inner}>
         <div className={styles.row}>
           <Link to="/" className={styles.logo} onClick={closeMobile}>
-            <div className={styles.logoIcon}>
-              <span className={styles.logoLetter}>T</span>
-            </div>
+            <div className={styles.logoIcon} aria-hidden="true" />
             <div className={styles.logoText}>
-              <span className={styles.logoTitle}>Tacarigua Digital</span>
+              <span className={styles.logoTitle}>Una Sola Tacarigua</span>
               <span className={styles.logoSubtitle}>Cultura y Tradición</span>
             </div>
           </Link>

@@ -1,0 +1,292 @@
+.loginPage {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: linear-gradient(180deg, var(--color-fondo-principal) 0%, var(--color-fondo-blanco) 100%);
+}
+
+
+.loginCard {
+  position: relative;
+  width: min(940px, 100%);
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--sombra-premium);
+  border: 1px solid rgba(29, 53, 87, 0.12);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.brandSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 2.25rem;
+  background: linear-gradient(180deg, rgba(29, 53, 87, 0.96) 0%, rgba(29, 53, 87, 0.88) 100%);
+  color: var(--color-texto-inverso);
+  overflow: hidden;
+}
+
+.brandBadge {
+  display: inline-flex;
+  gap: 0.85rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+.brandMark {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.brandTag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.brandLogo {
+  width: min(230px, 100%);
+  height: 230px;
+  display: grid;
+  place-items: center;
+  padding: 1rem 0 2rem;
+  z-index: 1;
+  background: linear-gradient(135deg, var(--goldenrod), var(--copper));
+  mask: url('/images/logotacarigua.png') no-repeat center/contain;
+  -webkit-mask: url('/images/logotacarigua.png') no-repeat center/contain;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+
+.brandCopy {
+  color: rgba(255, 255, 255, 0.92);
+  z-index: 1;
+}
+
+.brandCopy h2 {
+  margin: 0;
+  font-size: clamp(2.4rem, 3.5vw, 3.4rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  font-family: var(--fuente-display);
+  color: #ffffff;
+}
+
+.brandCopy p {
+  margin: 1.5rem 0 0;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1rem;
+  max-width: 28rem;
+}
+
+.brandCopy h2,
+.brandMark,
+.brandTag {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+.formSide {
+  position: relative;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.96);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formSide::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 4rem);
+  background: rgba(29, 53, 87, 0.08);
+  left: 0;
+  top: 2rem;
+}
+
+.loginForm {
+  padding: 2rem;
+  display: grid;
+  gap: 1.25rem;
+  background: rgba(244, 241, 222, 0.98);
+  border-radius: 1.75rem;
+  border: 1px solid rgba(218, 165, 32, 0.14);
+  box-shadow: 0 16px 40px rgba(29, 53, 87, 0.05);
+}
+
+.headline {
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.kicker {
+  display: inline-flex;
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(218, 165, 32, 0.18);
+  color: var(--copper);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.headline h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.05;
+  color: var(--oxford-navy);
+  font-family: var(--fuente-display);
+}
+
+.subtitle {
+  margin: 1rem 0 0;
+  color: rgba(29, 53, 87, 0.82);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.loginForm {
+  padding: 2rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.fieldGroup {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.fieldGroup label {
+  font-weight: 700;
+  color: #2d3c5d;
+  font-size: 0.95rem;
+}
+
+.fieldGroup input {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(29, 53, 87, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--oxford-navy);
+  padding: 1rem 1.1rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fieldGroup input:focus {
+  outline: none;
+  border-color: rgba(218, 165, 32, 0.65);
+  box-shadow: 0 0 0 4px rgba(218, 165, 32, 0.14);
+}
+
+.loginError {
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: rgba(212, 24, 61, 0.1);
+  color: #8f1d34;
+  font-weight: 600;
+  border: 1px solid rgba(212, 24, 61, 0.16);
+}
+
+.submitButton {
+  width: 100%;
+  border: none;
+  border-radius: 9999px;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--oxford-navy);
+  background: linear-gradient(135deg, var(--goldenrod), var(--copper));
+  box-shadow: 0 16px 26px rgba(218, 165, 32, 0.24);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.hintPanel {
+  border-top: 1px solid rgba(29, 53, 87, 0.12);
+  padding: 1.5rem 2rem 2rem;
+  color: rgba(29, 53, 87, 0.78);
+  background: rgba(255, 255, 255, 0.86);
+  border-radius: 1.35rem;
+  margin-top: 1.5rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.hintTitle {
+  font-weight: 700;
+  color: #1f2d46;
+  margin-bottom: 0.5rem;
+}
+
+.hintPanel p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+@media (max-width: 840px) {
+  .loginCard {
+    grid-template-columns: 1fr;
+  }
+
+  .brandSide,
+  .formSide {
+    padding: 1.75rem;
+  }
+
+  .brandCopy h2 {
+    font-size: clamp(1.6rem, 4vw, 2rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .loginPage {
+    padding: 1.25rem;
+  }
+
+  .loginCard {
+    border-radius: 1.5rem;
+  }
+
+  .brandSide,
+  .formSide {
+    padding: 1.5rem;
+  }
+
+  .loginForm {
+    padding: 0;
+  }
+
+  .hintPanel {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+}

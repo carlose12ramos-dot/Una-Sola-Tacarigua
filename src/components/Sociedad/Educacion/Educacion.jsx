@@ -30,7 +30,7 @@ const hitos = [
   {
     año: '1875',
     evento:
-      'Antonio Guzmán Blanco decreta la Escuela Federal N° 860 el 12 de julio. Primer preceptor: Ignacio Jiménez, con 42 alumnos varones de Tacarigua, Tacarigüita, El Alto del Gallego y El Río (hoy San Sebastián).',
+      'Antonio Guzmán Blanco decreta la Escuela Federal N° 860 el 12 de julio. Primer preceptor: Ignacio Jiménez, con 42 alumnos de sectores de una sola Tacarigua, incluidos Tacarigua, Tacarigüita, El Alto del Gallego y El Río (hoy San Sebastián).',
   },
   {
     año: '1897',

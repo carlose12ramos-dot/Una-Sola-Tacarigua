@@ -1,4 +1,4 @@
-// Service Worker for Tacarigua Digital PWA
+// Service Worker for Una Sola Tacarigua PWA
 // This enables offline functionality and caching
 
 const CACHE_NAME = 'tacarigua-digital-v1';

@@ -25,7 +25,7 @@ export function Footer() {
                 <span className="font-bold text-lg" style={{ color: 'var(--oxford-navy)' }}>T</span>
               </div>
               <h3 style={{ color: 'var(--cream)' }}>
-                Tacarigua Digital
+                Una Sola Tacarigua
               </h3>
             </div>
             <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--cream)', opacity: 0.85 }}>
@@ -179,7 +179,7 @@ export function Footer() {
         <div className="border-t mt-10 pt-8" style={{ borderColor: 'rgba(218, 165, 32, 0.2)' }}>
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm" style={{ color: 'var(--cream)', opacity: 0.7 }}>
-              © 2026 Tacarigua Digital. Todos los derechos reservados.
+              © 2026 Una Sola Tacarigua. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6">
               <a

@@ -4,11 +4,15 @@ import { homeCardsMock } from '../../data/mockData';
 
 const HomeCards = () => {
   const [cards, setCards] = useState([]);
+  const [activeCard, setActiveCard] = useState(null);
 
   useEffect(() => {
     // Simular carga Offline-First
     setCards(homeCardsMock);
   }, []);
+
+  const openCard = (card) => setActiveCard(card);
+  const closeCard = () => setActiveCard(null);
 
   return (
     <section className={styles.container}>
@@ -28,12 +32,34 @@ const HomeCards = () => {
               <div className={styles.contentWrapper}>
                 <h3 className={styles.cardTitle}>{card.titulo}</h3>
                 <p className={styles.description}>{card.descripcion}</p>
-                <button className={styles.btn}>Ver Más</button>
+                <button type="button" className={styles.btn} onClick={() => openCard(card)}>
+                  Ver Más
+                </button>
               </div>
             </article>
           );
         })}
       </div>
+
+      {activeCard && (
+        <div className={styles.modalOverlay} role="dialog" aria-modal="true" aria-label={activeCard.titulo} onClick={closeCard}>
+          <div className={styles.modalContent} onClick={(event) => event.stopPropagation()}>
+            <button type="button" className={styles.modalClose} onClick={closeCard} aria-label="Cerrar modal">×</button>
+            <div className={styles.modalBody}>
+              {activeCard.imagen && (
+                <div className={styles.modalImageWrapper}>
+                  <img src={activeCard.imagen} alt={activeCard.titulo} />
+                </div>
+              )}
+              <div className={styles.modalText}>
+                <h3 className={styles.modalTitle}>{activeCard.titulo}</h3>
+                <p>{activeCard.descripcion}</p>
+                {activeCard.detalle && <p className={styles.modalDetail}>{activeCard.detalle}</p>}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

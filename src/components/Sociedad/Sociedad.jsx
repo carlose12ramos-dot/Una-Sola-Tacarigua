@@ -26,7 +26,7 @@ const Sociedad = () => {
     <div className={styles.sociedadContainer}>
       {/* Header */}
       <div className={styles.header}>
-        <span className={styles.headerBadge}>Tacarigua Digital</span>
+        <span className={styles.headerBadge}>Una Sola Tacarigua</span>
         <h1 className={styles.title}>Sociedad Tacarigüera</h1>
         <p className={styles.subtitle}>
           Educación, salud y deporte: los pilares de nuestra comunidad insular

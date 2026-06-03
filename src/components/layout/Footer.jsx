@@ -22,7 +22,7 @@ function Footer() {
               <div className={styles.brandIcon}>
                 <span className={styles.brandLetter}>T</span>
               </div>
-              <h3 className={styles.brandTitle}>Tacarigua Digital</h3>
+              <h3 className={styles.brandTitle}>Una Sola Tacarigua</h3>
             </div>
             <p className={styles.brandDesc}>
               Tu portal digital para descubrir la rica cultura, historia y servicios de la Parroquia Guevara en la Isla de Margarita.
@@ -72,7 +72,7 @@ function Footer() {
         <div className={styles.bottomBar}>
           <div>
             <p className={styles.copyright}>
-              &copy; {new Date().getFullYear()} Tacarigua Digital. Todos los derechos reservados.
+              &copy; {new Date().getFullYear()} Una Sola Tacarigua. Todos los derechos reservados.
             </p>
             <p className={styles.devCredit}>Desarrollado por Carlos Eduardo Ramos González</p>
           </div>

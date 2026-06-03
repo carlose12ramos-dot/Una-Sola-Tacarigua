@@ -6,11 +6,11 @@ function NosotrosModule() {
     <div className={styles.nosotrosContainer}>
       <header className={styles.header}>
         <span className={styles.badge}>Memoria Histórica</span>
-        <h1 className={styles.title}>Sobre Tacarigua Digital</h1>
+        <h1 className={styles.title}>Sobre Una Sola Tacarigua</h1>
         <div className={styles.divider} />
         <p className={styles.lead}>
-          Plataforma geocultural para preservar y difundir la memoria histórica verificada
-          de la Parroquia Guevara, basada en la investigación comunitaria iniciada en 2018.
+          Plataforma comunitaria para preservar y difundir la memoria histórica de una sola Tacarigua:
+          un valle compartido que une a sectores como Corazón de Jesús, San Sebastián y Tacarigüita.
         </p>
       </header>
 
@@ -59,7 +59,7 @@ function NosotrosModule() {
 
       <section className={styles.aboutContent}>
         <div className={styles.textBlock}>
-          <h2 className={styles.sectionTitle}>¿Por qué Tacarigua Digital?</h2>
+          <h2 className={styles.sectionTitle}>¿Por qué Una Sola Tacarigua?</h2>
           <p className={styles.text}>
             La Parroquia Guevara atesora siglos de historia: desde el encuentro de los indios
             Tacaribas con Miguel Maza de Lizana en 1579, pasando por héroes de la Independencia
@@ -68,7 +68,7 @@ function NosotrosModule() {
             y actualizada en 2022, no debe quedar en el olvido.
           </p>
           <p className={styles.text}>
-            Tacarigua Digital nace como la plataforma que lleva esa investigación al mundo
+            Una Sola Tacarigua nace como la plataforma que lleva esa investigación al mundo
             digital: accesible, moderada y fiel a las fuentes comunitarias que la hicieron posible.
           </p>
         </div>

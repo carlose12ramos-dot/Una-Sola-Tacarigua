@@ -145,7 +145,7 @@
 .discLabel {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #555;
+  color: #000;
   text-align: center;
   line-height: 1.2;
 }
@@ -175,7 +175,7 @@
 .detalleDesc {
   font-size: 0.93rem;
   line-height: 1.7;
-  color: #444;
+  color: #000;
   margin-bottom: 1rem;
 }
 .datosLista {
@@ -213,7 +213,7 @@
 .presentacion p {
   font-size: 0.92rem;
   line-height: 1.7;
-  color: #444;
+  color: #000;
   margin: 0 0 0.7rem;
 }
 .presentacion em { color: hsl(45,85%,42%); }
@@ -228,3 +228,4 @@
   .discIcon { font-size: 1.2rem; }
   .discLabel { font-size: 0.68rem; }
 }
+

@@ -5,7 +5,7 @@ export default function Nosotros() {
     { year: '1850', title: 'Fundación', description: 'Se establecen los primeros asentamientos en la región' },
     { year: '1920', title: 'Desarrollo', description: 'Crecimiento económico y cultural de Tacarigua' },
     { year: '1980', title: 'Modernización', description: 'Mejoras en infraestructura y servicios públicos' },
-    { year: '2020', title: 'Era Digital', description: 'Lanzamiento de Tacarigua Digital' },
+    { year: '2020', title: 'Era Digital', description: 'Lanzamiento de Una Sola Tacarigua' },
   ];
 
   const values = [

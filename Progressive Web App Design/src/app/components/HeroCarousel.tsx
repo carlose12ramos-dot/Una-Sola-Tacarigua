@@ -91,7 +91,7 @@ export function HeroCarousel({ slides, autoPlayInterval = 5000 }: HeroCarouselPr
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em'
               }}>
-                Tacarigua Digital
+                Una Sola Tacarigua
               </span>
             </div>
             <h1

@@ -5,7 +5,7 @@ import { Palette, Map, Users, Building } from 'lucide-react';
 const heroSlides: Slide[] = [
   {
     image: 'https://images.unsplash.com/photo-1576469197040-d06a796697cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2ZW5lenVlbGElMjBsYWtlJTIwbGFuZHNjYXBlJTIwc3Vuc2V0fGVufDF8fHx8MTc4MDAyODAzNXww&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Bienvenido a Tacarigua Digital',
+    title: 'Bienvenido a Una Sola Tacarigua',
     subtitle: 'Descubre la riqueza cultural e histórica de nuestra región'
   },
   {
@@ -75,7 +75,7 @@ export default function Home() {
             <ContentCard
               image="https://images.unsplash.com/photo-1627666338597-ce13e208a93d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaXN0b3JpYyUyMGJ1aWxkaW5nJTIwYXJjaGl0ZWN0dXJlJTIwaGVyaXRhZ2V8ZW58MXx8fHwxNzgwMDI4MTAzfDA&ixlib=rb-4.1.0&q=80&w=1080"
               title="Nosotros"
-              description="Historia, valores y misión de Tacarigua Digital"
+              description="Historia, valores y misión de Una Sola Tacarigua"
               icon={<Building size={24} />}
             />
           </div>
@@ -104,7 +104,7 @@ export default function Home() {
                 Tu Portal Cultural Digital
               </h2>
               <p className="mb-5 text-lg leading-relaxed" style={{ color: 'var(--oxford-navy)', opacity: 0.8 }}>
-                Tacarigua Digital es una plataforma moderna que preserva y promueve el patrimonio cultural,
+                Una Sola Tacarigua es una plataforma moderna que preserva y promueve el patrimonio cultural,
                 histórico y social de la región de Tacarigua.
               </p>
               <p className="mb-8 leading-relaxed" style={{ color: 'var(--oxford-navy)', opacity: 0.75 }}>

@@ -61,7 +61,7 @@ export function Navbar() {
                 transition: 'var(--transicion-suave)',
                 textShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
               }}>
-                Tacarigua Digital
+                Una Sola Tacarigua
               </span>
               <span className="text-xs tracking-wider" style={{
                 color: 'var(--goldenrod)',

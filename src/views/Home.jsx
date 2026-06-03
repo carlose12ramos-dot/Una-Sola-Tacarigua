@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Palette, Map, Users, Building } from 'lucide-react';
 import HeroBanner from '../components/home/HeroBanner';
@@ -10,14 +11,14 @@ const FEATURED = [
     path: '/cultura',
     title: 'Cultura',
     description: '76 libros de autores tacarigüeros, conjuntos musicales, patronos, artesanía de los Olleros y tradiciones de más de 438 años',
-    image: IMAGES.culturaComunitaria,
+    image: IMAGES.culturaInicio,
     icon: Palette,
   },
   {
     path: '/geografia',
     title: 'Geografía',
     description: 'El Valle de los Olleros, la Banda del Norte, el Portachuelo del Norte y la serranía que abastece de agua a la parroquia',
-    image: IMAGES.portachuelo,
+    image: IMAGES.mapaInicio,
     icon: Map,
   },
   {
@@ -31,12 +32,24 @@ const FEATURED = [
     path: '/historia',
     title: 'Historia',
     description: 'Desde el encuentro con Miguel Maza de Lizana en 1579 hasta Diego B. Urbaneja, Presidente de Venezuela, nacido en Tacarigua',
-    image: IMAGES.muralUrbaneja,
+    image: IMAGES.docLegalFun,
     icon: Building,
   },
 ];
 
 function Home() {
+  const [activeCard, setActiveCard] = useState(null);
+  const [activeImage, setActiveImage] = useState(null);
+
+  const openCard = (card) => {
+    setActiveCard(card);
+    setActiveImage(card.modalImages?.[0] ?? null);
+  };
+  const closeCard = () => {
+    setActiveCard(null);
+    setActiveImage(null);
+  };
+
   return (
     <>
       <HeroBanner />
@@ -82,7 +95,7 @@ function Home() {
         <div className={styles.inner}>
           <div className={styles.header}>
             <span className={styles.badge}>Destacados</span>
-            <h2 className={styles.sectionTitle}>Patrimonio de Guevara</h2>
+            <h2 className={styles.sectionTitle}>Patrimonio de Tacarigua</h2>
           </div>
           <div className={styles.highlightGrid}>
             {homeCardsMock.map((card) => (
@@ -98,11 +111,70 @@ function Home() {
                 <div className={styles.highlightContent}>
                   <h3 className={styles.highlightTitle}>{card.titulo}</h3>
                   <p className={styles.highlightDesc}>{card.descripcion}</p>
-                  <button type="button" className={styles.highlightBtn}>Ver Más</button>
+                  <button
+                    type="button"
+                    className={styles.highlightBtn}
+                    onClick={() => openCard(card)}
+                  >
+                    Ver Más
+                  </button>
                 </div>
               </article>
             ))}
           </div>
+          {activeCard && (
+            <div className={styles.modalOverlay} onClick={closeCard} role="dialog" aria-modal="true" aria-label={activeCard.titulo}>
+              <div className={styles.modalContent} onClick={(event) => event.stopPropagation()}>
+                <button type="button" className={styles.modalClose} onClick={closeCard} aria-label="Cerrar modal">×</button>
+                <div className={styles.modalHeader}>
+                  <h3 className={styles.modalTitle}>{activeCard.titulo}</h3>
+                  <p>{activeCard.descripcion}</p>
+                </div>
+                <div className={styles.modalBody}>
+                  {activeCard.modalImages?.length > 0 && (
+                    <div className={styles.modalMediaColumn}>
+                      <div className={styles.modalImageLarge}>
+                        <img
+                          src={activeImage?.src ?? activeCard.modalImages[0].src}
+                          alt={activeImage?.alt ?? activeCard.modalImages[0].alt}
+                        />
+                      </div>
+                      <span className={styles.modalImageLabel}>
+                        {activeImage?.alt ?? activeCard.modalImages[0].alt}
+                      </span>
+                      {activeCard.modalImages.length > 1 && (
+                        <div className={styles.modalGallery}>
+                          {activeCard.modalImages.map((image) => (
+                            <div
+                              key={image.src}
+                              className={`${styles.modalGalleryItem} ${activeImage?.src === image.src ? styles.modalGalleryItemActive : ''}`}
+                              onClick={() => setActiveImage(image)}
+                              role="button"
+                              tabIndex={0}
+                              onKeyDown={(e) => e.key === 'Enter' && setActiveImage(image)}
+                            >
+                              <img src={image.src} alt={image.alt} />
+                              <span>{image.alt}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  <div className={styles.modalText}>
+                    {activeCard.info?.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                    {activeCard.detalle && <p className={styles.modalDetail}>{activeCard.detalle}</p>}
+                    <p>
+                      Esta historia forma parte del patrimonio vivo de Tacarigua. Aquí se amplía el contexto
+                      y se conserva la memoria de cada hito como parte de la narrativa de Una Sola Tacarigua.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -112,7 +184,7 @@ function Home() {
             <span className={styles.missionBadge}>Nuestra Misión</span>
             <h2 className={styles.missionTitle}>Tu Portal Cultural Digital</h2>
             <p className={styles.missionText}>
-              Tacarigua Digital preserva la Memoria Histórica de la Parroquia Guevara:
+              Una Sola Tacarigua preserva la Memoria Histórica de la Parroquia Guevara:
               investigación comunitaria iniciada en febrero de 2018 que documentó cinco módulos
               — Historia, Educación, Cultura, Sanidad y Deportes — con fuentes verificadas.
             </p>
@@ -139,14 +211,22 @@ function Home() {
 
           <div className={styles.imageBlock}>
             <div className={styles.imageGlow} />
-            <video
-              src="/images/videos/Tacarigua.mp4"
-              className={styles.missionVideo}
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
+            <div className={styles.videoGrid}>
+              <video
+                src="/images/videos/Tacarigua.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              <video
+                src="/images/videos/videoss.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            </div>
             <div className={styles.yearsBadge}>
               <span className={styles.yearsValue}>300+</span>
               <span className={styles.yearsLabel}>Años</span>

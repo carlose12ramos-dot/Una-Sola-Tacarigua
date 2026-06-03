@@ -54,7 +54,7 @@
 
 .lead {
   font-size: 1.15rem;
-  color: #555;
+  color: #000;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
@@ -108,7 +108,7 @@
 .sectionText {
   font-size: 1rem;
   line-height: 1.8;
-  color: #444;
+  color: #000;
   margin: 0;
 }
 
@@ -286,7 +286,7 @@
 .cardDescription {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #444;
+  color: #000;
   margin-bottom: 2rem;
 }
 
@@ -374,7 +374,7 @@
 }
 
 .mapText {
-  color: #444;
+  color: #000;
   line-height: 1.65;
   margin: 0;
 }
@@ -468,7 +468,7 @@
 
 .highlightText {
   margin: 0;
-  color: #4a4a4a;
+  color: #000;
   line-height: 1.65;
 }
 
@@ -536,7 +536,7 @@
 
 .featureText {
   margin: 0;
-  color: #4a4a4a;
+  color: #000;
   line-height: 1.75;
 }
 
@@ -570,7 +570,7 @@
 
 .statLabel {
   font-size: 0.95rem;
-  color: #4a4a4a;
+  color: #000;
   text-transform: none;
   letter-spacing: normal;
 }
@@ -662,3 +662,4 @@
     font-size: 1.5rem;
   }
 }
+

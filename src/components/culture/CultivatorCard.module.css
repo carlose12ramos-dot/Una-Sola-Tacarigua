@@ -50,7 +50,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
-  color: #666;
+  color: #000;
   border-top: 1px solid #eee;
   padding-top: 0.75rem;
   width: 100%;
@@ -60,3 +60,4 @@
 .flag {
   font-size: 1rem;
 }
+

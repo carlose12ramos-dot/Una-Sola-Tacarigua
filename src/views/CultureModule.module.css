@@ -44,7 +44,7 @@
 
 .lead {
   font-size: 1.15rem;
-  color: #555;
+  color: #000;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
@@ -142,3 +142,4 @@
     min-width: 140px;
   }
 }
+
