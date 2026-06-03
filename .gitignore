@@ -7,3 +7,4 @@ dist-ssr
 venv/ 
 venv/ 
 .vercel
+backend/.env
