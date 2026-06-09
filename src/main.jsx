@@ -13,11 +13,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>,
 )
 
+// ── Service Worker: habilita modo offline + caché de teselas de mapa ──
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', async () => {
-    const registrations = await navigator.serviceWorker.getRegistrations();
-    registrations.forEach((registration) => registration.unregister());
-    console.log('Service Worker desregistrado para evitar caché antigua.');
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js', { scope: '/' })
+      .then(reg => {
+        console.log('[SW] Registrado. Scope:', reg.scope);
+      })
+      .catch(err => {
+        console.warn('[SW] Error al registrar:', err);
+      });
   });
 }
 

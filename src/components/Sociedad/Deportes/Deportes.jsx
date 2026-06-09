@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './Deportes.module.css';
-import { IMAGES } from '../../../data/images';
 
 const disciplinas = [
   {
@@ -84,37 +83,54 @@ const Deportes = () => {
 
   return (
     <div className={styles.container}>
-      {/* Hero */}
-      <div className={styles.hero}>
-        <div className={styles.heroOverlay} />
-        <img
-          src={IMAGES.carreteraAraguaneyes.src}
-          alt={IMAGES.carreteraAraguaneyes.alt}
-          className={styles.heroImg}
-          onError={(e) => { e.currentTarget.src = IMAGES.carreteraAraguaneyes.fallback; }}
-        />
-        <div className={styles.heroText}>
-          <div className={styles.heroTextInner}>
-            <span className={styles.badge}>Módulo V · Sociedad</span>
-            <h2>Deportes y Recreación</h2>
-            <p>
-              Tacarigua ha sido cuna de atletas excepcionales. A pesar de las carencias,
-              sus hijos han construido un historial deportivo con entusiasmo y coraje.
-            </p>
-          </div>
-        </div>
+      {/* Título principal */}
+      <div className={styles.header}>
+        <h2 className={styles.title}>Deportes en Tacarigua</h2>
       </div>
 
-      {/* Cita emblemática */}
-      <blockquote className={styles.cita}>
+      {/* Intro */}
+      <div className={styles.intro}>
         <p>
-          "Tantas victorias y no tenemos un estadio donde practicar nada… nos hemos
-          circunscrito a practicar entre cepas de guícheres, entre hierbas de chacaca,
-          entre cardones y tunas pero nadie nos quita lo bailao porque somos y estamos
-          por encima de los obstáculos que se nos presenten."
+          El deporte en Tacarigua ha sido un bastión de resistencia, orgullo y recreación.
+          Desde el béisbol aficionado con los míticos "Los Sapos" hasta las hazañas olímpicas
+          especiales, la comunidad ha encontrado en las diversas disciplinas una vía de
+          crecimiento, hermandad y superación ante las adversidades de infraestructura.
         </p>
-        <footer>— Memoria Histórica, Módulo V: Deportes, 2022</footer>
-      </blockquote>
+        <p>
+          Cada trofeo, medalla y victoria representa el espíritu indomable de un pueblo que,
+          a pesar de las limitaciones de canchas y estadios, entrena con pasión en cualquier
+          espacio disponible, llevando el nombre de Tacarigua a lo más alto a nivel nacional
+          e internacional.
+        </p>
+        <p>
+          <em>
+            "Tantas victorias y no tenemos un estadio donde practicar nada… nos hemos
+            circunscrito a practicar entre cepas de guícheres, entre hierbas de chacaca,
+            entre cardones y tunas pero nadie nos quita lo bailao porque somos y estamos
+            por encima de los obstáculos que se nos presenten."
+          </em>
+        </p>
+      </div>
+
+      {/* Botón de Descarga PDF */}
+      <div className={styles.downloadSection}>
+        <a
+          href="/MODULO-V-DEPORTES.pdf"
+          download="MODULO-V-DEPORTES.pdf"
+          className={styles.downloadBtn}
+          title="Descargar PDF del Módulo V: Deportes"
+        >
+          📥 Módulo V: Deportes
+        </a>
+        <a
+          href="/MODULO-V-DEPORTES-Final.pdf"
+          download="MODULO-V-DEPORTES-Final.pdf"
+          className={styles.downloadBtn}
+          title="Descargar PDF del Módulo V: Deportes (Versión Final)"
+        >
+          📥 Deportes (Versión Final)
+        </a>
+      </div>
 
       {/* Selector de disciplinas */}
       <div className={styles.disciplinasNav}>

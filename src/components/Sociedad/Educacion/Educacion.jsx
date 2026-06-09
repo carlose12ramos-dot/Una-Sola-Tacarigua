@@ -4,24 +4,31 @@ import { IMAGES } from '../../../data/images';
 
 const escuelas = [
   {
-    nombre: 'U.E. Napoleón Narváez',
-    nivel: 'Educación Básica',
+    nombre: 'U.E. "Napoleón Narváez"',
+    nivel: 'Educación Inicial y Básica',
     descripcion:
       'Fundada en 1946. Lleva el nombre del ilustre historiador neoespartano Napoleón Narváez. Ha formado generaciones de tacarigüeros y cuenta con biblioteca escolar desde 1987.',
     icono: '🏫',
   },
   {
-    nombre: 'U.E. Cruz Millán García',
-    nivel: 'Educación Básica — El Salado',
+    nombre: 'U.E.E. "Cruz Millán García"',
+    nivel: 'Educación Inicial, Básica y Media General',
     descripcion:
-      'Escuela estadal graduada en El Salado. Formó a músicos como Lico Lárez y ha sido sede de formación para docentes y estudiantes de toda la parroquia.',
-    icono: '📚',
+      'La U.E.E. Cruz Millán García (Unidad Educativa Estadal Cruz Millán García) es una institución pública de educación básica y media general ubicada en el Valle de Tacarigua, en el Municipio Gómez del Estado Nueva Esparta, Venezuela',
+    icono: '🏫',
   },
   {
-    nombre: 'U.E. Colegio Divina Pastora',
-    nivel: 'Educación Integral',
+    nombre: 'U.E. "Roraima"',
+    nivel: 'Educación Inicial, Básica y Media General',
     descripcion:
-      'Fundada el 23 de septiembre de 1993 por la Licenciada Yumeli Rivera Núñez. Proyecto educativo basado en valores, educación progresista y participativa.',
+      'La Unidad Educativa Roraima es un prestigioso colegio privado ubicado en el Estado Nueva Esparta, específicamente en el Municipio Gómez. Ofrece formación integral (Educación Inicial, Primaria y Media General) enfocada en la libertad, el contacto con la naturaleza y la diversión.',
+    icono: '📖',
+  },
+  {
+    nombre: 'U.E. "Colegio Divina Pastora"',
+    nivel: 'Educación Inicial, Básica y Media General',
+    descripcion:
+      'Fundada el 23 de septiembre de 1993 por la Licenciada Yumeli Rivera Núñez. Proyecto educativo privado basado en valores cristianos y humanos, con una pedagogía participativa y progresista.',
     icono: '✏️',
   },
 ];
@@ -30,27 +37,27 @@ const hitos = [
   {
     año: '1875',
     evento:
-      'Antonio Guzmán Blanco decreta la Escuela Federal N° 860 el 12 de julio. Primer preceptor: Ignacio Jiménez, con 42 alumnos de sectores de una sola Tacarigua, incluidos Tacarigua, Tacarigüita, El Alto del Gallego y El Río (hoy San Sebastián).',
+      'Decreto 1723: Antonio Guzmán Blanco crea la Escuela Federal N° 860 en Tacarigua. Primer preceptor: Ignacio Jiménez, con 42 alumnos. Esta fecha marcó el inicio de la Educación Oficial en la comunidad.',
   },
   {
     año: '1897',
     evento:
-      'Creada la primera Escuela Federal Femenina N° 155 de Tacarigua — Corazón de Jesús, el 21 de marzo.',
+      'Se crea la Escuela Federal Femenina N° 1550 en Tacarigua-Corazón de Jesús. Las primeras 30 muchachas fundadoras incluyeron a Eladia Landaeta, Cruz María Guilarte y Petra Guzmán.',
   },
   {
     año: '1946',
     evento:
-      'Se funda la Escuela Napoleón Narváez, consolidando la tradición educativa que llevaría a Tacarigua a ser reconocida como La Atenas Neoespartana.',
+      'Se funda la Escuela Napoleón Narváez mediante fusión de tres unidades educativas. Fundadores: Luis Beltrán Rivero, Pablo Romero Millán, Eustasio Marcano (Prefecto del Pueblo) y Rosendo Rivera.',
   },
   {
-    año: '1973',
+    año: '1960',
     evento:
-      'Inaugurada la Casa de la Cultura en Corazón de Jesús por el Gobernador Bernardo Acosta, fortaleciendo la vida cultural comunitaria.',
+      'Inauguración del edificio de la Escuela San Sebastián, posteriormente nombrada "Cruz Millán García" en honor a la educadora pionera.',
   },
   {
     año: '1993',
     evento:
-      'Fundación del Colegio Divina Pastora por Yumeli Rivera Núñez, ampliando la oferta educativa integral en la parroquia.',
+      'Fundación del Colegio Divina Pastora por Yumeli Rivera Núñez, con filosofía basada en valores, educación progresista y participativa. Inspirado en el milagro de la Virgen Divina Pastora.',
   },
 ];
 
@@ -58,7 +65,7 @@ const educadores = [
   {
     nombre: 'Ignacio Jiménez',
     descripcion:
-      'Primer preceptor oficial de la Escuela Federal N° 860 (1875–1883). Regentaba una escuelita particular antes de la oficialización. Falleció el 24 de octubre de 1883, rodeado de sus familiares.',
+      'Primer preceptor oficial de la Escuela Federal N° 860 (1875–1883). El "Apostól de la Educación Tacarigüera" falleció joven a los 29 años, dejando el legado que hizo de Tacarigua "La Atenas Neoespartana".',
   },
   {
     nombre: 'Napoleón Narváez',
@@ -66,9 +73,24 @@ const educadores = [
       'Historiador neoespartano epónimo de la escuela fundada en 1946. Documentó la historia de Margarita y Tacarigua, incluyendo la participación de José Jesús Guevara en el Congreso de Angostura.',
   },
   {
-    nombre: 'Maestros Normalistas (1951–1964)',
+    nombre: 'Toñito Millán',
     descripcion:
-      'Docentes formados en Escuelas Normales que transformaron la enseñanza en Tacarigua con metodología y dedicación ejemplar, sentando bases para el 28,3 % de profesionales universitarios.',
+      'Primer Maestro Normalista tacarigüero (1951). Su espíritu libertario lo llevó a combatir a Pérez Jiménez y posteriormente ejercer en El Tigre y Valencia. Homenajeado como Ciudadano Ejemplar.',
+  },
+  {
+    nombre: 'Juana María Gil Ordaz',
+    descripcion:
+      'Maestra Normalista graduada (1961) que ejerció como Directora en la Escuela "Napoleón Narváez". Condecorada con la "Orden Victor Aumaitre Villarroel" por su 36 años de servicio educativo.',
+  },
+  {
+    nombre: 'Agustín Landaeta',
+    descripcion:
+      'Maestro Normalista (1963) y Licenciado en Educación (1990). Director de escuelas en San Sebastián y lideró el Grupo Escolar "Nuestra Señora de La Asunción". Fue SubDirector desde 1994.',
+  },
+  {
+    nombre: 'Florentino Larez',
+    descripcion:
+      'Maestro Normalista (1961) que ejerció en San Antonio de Irapa y luego en Porlamar y Santa Ana. Fundador del periódico "Los Angeles" y pionero en agrupaciones musicales. Jubilado en 1986.',
   },
 ];
 
@@ -77,37 +99,26 @@ const Educacion = () => {
 
   return (
     <div className={styles.container}>
-      {/* Hero */}
-      <div className={styles.hero}>
-        <div className={styles.heroOverlay} />
-        <img
-          src={IMAGES.educacionHero.src}
-          alt={IMAGES.educacionHero.alt}
-          className={styles.heroImg}
-          onError={(e) => { e.currentTarget.src = IMAGES.educacionHero.fallback; }}
-        />
-        <div className={styles.heroText}>
-          <div className={styles.heroTextInner}>
-            <span className={styles.badge}>Módulo II · Sociedad</span>
-            <h2>Educación en Tacarigua</h2>
-            <p>
-              Desde el 12 de julio de 1875, cuando Guzmán Blanco decretó la Escuela Federal N° 860,
-              Tacarigua ha construido su historia educativa con el esfuerzo de maestros, familias
-              y comunidades enteras — camino que la llevó a ser reconocida como La Atenas Neoespartana.
-            </p>
-          </div>
-        </div>
+      {/* Título principal */}
+      <div className={styles.header}>
+        <h2 className={styles.title}>Educación en Tacarigua</h2>
       </div>
 
       {/* Intro */}
       <div className={styles.intro}>
         <p>
-          La educación en Nueva Esparta tuvo un inicio difícil. El mismo Bolívar, en 1827,
+          La educación en Nueva Esparta tuvo un inicio difícil. El mismo Libertador Simón Bolívar, en 1827,
           negó la fundación de un Colegio Nacional en el Estado argumentando falta de
           presupuesto. No fue sino hasta 1833 que el Vicepresidente Andrés Narvarte creó el
           Colegio Nacional de Margarita en La Asunción — y tardó casi siete años en abrir
           sus puertas. Tacarigua vivió estas mismas carencias, pero su comunidad nunca dejó
-          de luchar por el acceso al conocimiento.
+          de luchar por el acceso al conocimiento, ganándose el apodo de la "Atenas de Margarita"
+          debido a la gran cantidad de educadores, poetas e intelectuales nacidos en su seno.
+        </p>
+        <p>
+          La historia educativa registra que los jóvenes tacarigüeros caminaban largas distancias,
+          cruzando cerros con sus silletas al hombro para recibir clases bajo árboles o en humildes casas
+          particulares de maestros voluntarios, antes de la creación de las primeras escuelas oficiales.
         </p>
         <p>
           <em>
@@ -116,8 +127,27 @@ const Educacion = () => {
             almuerzo al viejo; y los años pasaban con su carga de angustias y tormentos…
             cerro arriba."
           </em>
-          <span className={styles.cita}>— Actualización Memoria Histórica, Módulo II: Educación, 2022</span>
         </p>
+      </div>
+
+      {/* Botón de Descarga PDF */}
+      <div className={styles.downloadSection}>
+        <a
+          href="/MODULO-II-EDUCACION-2022.pdf"
+          download="MODULO-II-EDUCACION-2022.pdf"
+          className={styles.downloadBtn}
+          title="Descargar PDF del Módulo II: Educación (2022)"
+        >
+          📥 Módulo II: Educación (2022)
+        </a>
+        <a
+          href="/MODULO-II-EDUCACION-Final.pdf"
+          download="MODULO-II-EDUCACION-Final.pdf"
+          className={styles.downloadBtn}
+          title="Descargar PDF del Módulo II: Educación (Versión Final)"
+        >
+          📥 Educación (Versión Final)
+        </a>
       </div>
 
       {/* Línea de tiempo */}
@@ -166,7 +196,9 @@ const Educacion = () => {
         <div className={styles.educadoresList}>
           {educadores.map((ed, i) => (
             <div key={i} className={styles.educadorCard}>
-              <div className={styles.educadorAvatar}>👨‍🏫</div>
+              <div className={styles.educadorAvatar}>
+                {ed.nombre.charAt(0)}
+              </div>
               <div>
                 <h4>{ed.nombre}</h4>
                 <p>{ed.descripcion}</p>

@@ -7,6 +7,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
+    watch: {
+      // Exclude locked PDFs to prevent EBUSY crash on Windows
+      ignored: ['**/public/**/*.pdf', '**/public/**/*.PDF'],
+    },
     proxy: {
       '/api': {
         target: 'http://localhost:4000',

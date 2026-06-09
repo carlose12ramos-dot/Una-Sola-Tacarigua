@@ -57,10 +57,9 @@ function Home() {
       <section className={styles.section}>
         <div className={styles.inner}>
           <div className={styles.header}>
-            <span className={styles.badge}>Descubre</span>
-            <h2 className={styles.sectionTitle}>Explora Tacarigua</h2>
+            <h1 className={styles.sectionTitle}>Un Solo Pueblo</h1>
             <p className={styles.sectionDesc}>
-              Conoce nuestra cultura, geografía, historia y servicios comunitarios
+              Conoce nuestra cultura, geografía, historia y servicios comunitarios en un solo lugar.
             </p>
           </div>
 
@@ -94,8 +93,10 @@ function Home() {
       <section className={styles.highlightSection}>
         <div className={styles.inner}>
           <div className={styles.header}>
-            <span className={styles.badge}>Destacados</span>
-            <h2 className={styles.sectionTitle}>Patrimonio de Tacarigua</h2>
+            <h1 className={styles.sectionTitle}>La Historia Que Nos Une</h1>
+            <p className={styles.sectionDesc}>
+              Explora relatos, personajes y eventos que han moldeado la identidad de Tacarigua a lo largo de los siglos.
+            </p>
           </div>
           <div className={styles.highlightGrid}>
             {homeCardsMock.map((card) => (

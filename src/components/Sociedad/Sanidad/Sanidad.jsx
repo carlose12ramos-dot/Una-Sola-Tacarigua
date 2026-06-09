@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './Sanidad.module.css';
-import { IMAGES } from '../../../data/images';
 
 const historiaAgua = [
   {
@@ -11,17 +10,17 @@ const historiaAgua = [
     icono: '💧',
   },
   {
-    periodo: 'Siglo XIX',
+    periodo: '1927 – 1939',
     titulo: 'Galerías, Cajas y Molinos',
     descripcion:
-      'Se construyeron galerías filtrantes, cajas recolectoras y se instalaron alcantarillas y burritos (molinos artesanales) para captar y distribuir el agua desde los cerros hasta las zonas habitadas del valle.',
+      'Con el ingreso del siglo XX, se construyeron galerías filtrantes (720m y 780m), cajas recolectoras y molinos de viento. El Molino de Aleja y El Molino de Las Delicias permitían bomber agua para consumo familiar.',
     icono: '⚙️',
   },
   {
-    periodo: 'Siglo XX',
-    titulo: 'El Acueducto Submarino',
+    periodo: '1960 – Presente',
+    titulo: 'Acueducto Submarino',
     descripcion:
-      'La construcción del acueducto submarino marcó un antes y un después en el acceso al agua potable en la Isla de Margarita, beneficiando directamente a comunidades como Tacarigua que habían dependido exclusivamente de fuentes naturales.',
+      'La construcción del acueducto submarino marcó un antes y un después. Traía agua desde Sucre (3200 l/s) hasta comunidades como Tacarigua, aunque hoy enfrentamos racionamiento de 25-32 días sin suministro.',
     icono: '🚰',
   },
 ];
@@ -48,6 +47,18 @@ const medicinaTrad = [
       'Los sobadores y curanderos utilizaban hierbas, arbustos y remedios de la serranía tacarigüera para aliviar males. Esta práctica, originada con los indios Tacaribas, perduró como primera línea de salud antes de la llegada de la medicina formal.',
     icono: '🌿',
   },
+  {
+    nombre: 'Curanderos Emblemáticos',
+    descripcion:
+      'Ladislao Romero (curaba tifus, tétano, dolores) y Antonio Romero Mata (sobador de huesos, preparaba colirios) fueron figuras destacadas que combinaban oraciones con remedios de monte.',
+    icono: '✨',
+  },
+  {
+    nombre: 'Sobadores Legendarios',
+    descripcion:
+      'Jóvito Antonio Moya (masajista con "Mentol Davis") y Esteban Rivera atendían personas desde Anaco hasta California, curando torceduras, zafaduras y picaduras de animales ponzoñosos.',
+    icono: '💪',
+  },
 ];
 
 const personajes = [
@@ -57,15 +68,23 @@ const personajes = [
   },
   {
     nombre: 'Esteban Rivera',
-    resumen: 'Contribuyó significativamente al bienestar sanitario de la población.',
+    resumen: 'Sobador y curandero destacado, heredero de las tradiciones guaiqueríes.',
   },
   {
     nombre: 'Luis Laplana',
-    resumen: 'Reconocido por su labor médica y humana en la comunidad tacarigüera.',
+    resumen: 'Médico español que hizo historia en Tacarigua (1946-1948), primer médico residente ampliamente recordado.',
   },
   {
     nombre: 'Idahís Marcano',
-    resumen: 'Investigadora y asesora clave en la documentación de la historia sanitaria.',
+    resumen: 'Investigadora y asesora clave en la documentación de la historia sanitaria, 33 años en el Dispensario.',
+  },
+  {
+    nombre: 'Jóvito Antonio Moya',
+    resumen: 'Masajista y sobador aprendiz de un viejo indio en la Hacienda de Isla de Gato, atendió desde El Tigre hasta California.',
+  },
+  {
+    nombre: 'Helvecia Marcano',
+    resumen: 'Primera enfermera graduada tacarigüera (1954), pionera en la profesión de salud.',
   },
 ];
 
@@ -74,36 +93,16 @@ const Sanidad = () => {
 
   return (
     <div className={styles.container}>
-      {/* Hero */}
-      <div className={styles.hero}>
-        <div className={styles.heroOverlay} />
-        <img
-          src={IMAGES.centroSaludCpt3.src}
-          alt={IMAGES.centroSaludCpt3.alt}
-          className={styles.heroImg}
-          onError={(e) => { e.currentTarget.src = IMAGES.centroSaludCpt3.fallback; }}
-        />
-        <div className={styles.heroText}>
-          <div className={styles.heroTextInner}>
-            <span className={styles.badge}>Módulo IV · Sociedad</span>
-            <h2>Sanidad y Salud</h2>
-            <p>
-              Desde los manantiales de la serranía hasta el acueducto submarino.
-              Una historia de agua, curanderos, parteras y la lucha por la salud pública
-              en nuestra comunidad.
-            </p>
-          </div>
-        </div>
+      {/* Header */}
+      <div className={styles.header}>
+        <h2 className={styles.title}>Sanidad y Salud</h2>
       </div>
 
       {/* Presentación */}
       <div className={styles.intro}>
         <p>
           Es posible que la presencia de los indios Tacaribas en el Valle de los Olleros haya
-          tenido lugar hace unos 1.500 años, durante la Cuarta o Quinta Ocupación de la Isla
-          de Margarita por nuestros antepasados Guaiqueríes. Al llegar al valle, se quedaron:
-          zona fértil, ríos abundantes, clima acogedor. Ahí levantaron sus refugios de palmas
-          y comenzaron a usar arbustos y hierbas para curar sus males.
+          tenido lugar hace unos 1.500 años. Al llegar al valle, se quedaron: zona fértil, ríos abundantes, clima acogedor. Ahí levantaron sus refugios de palmas y comenzaron a usar arbustos y hierbas para curar sus males.
         </p>
         <p>
           <em>
@@ -112,8 +111,27 @@ const Sanidad = () => {
             lado, utilizaban arbustos y hierbas como una manera de curar sus males; así
             empezó la época sanitaria en nuestra región: primitiva y silvestre."
           </em>
-          <span className={styles.cita}>— Memoria Histórica, Módulo IV: Sanidad, 2022</span>
         </p>
+      </div>
+
+      {/* Botón de Descarga PDF */}
+      <div className={styles.downloadSection}>
+        <a
+          href="/MODULO-IV-SANIDAD.pdf"
+          download="MODULO-IV-SANIDAD.pdf"
+          className={styles.downloadBtn}
+          title="Descargar PDF del Módulo IV: Sanidad"
+        >
+          📥 Módulo IV: Sanidad
+        </a>
+        <a
+          href="/MODULO-IV-SANIDAD-Final.pdf"
+          download="MODULO-IV-SANIDAD-Final.pdf"
+          className={styles.downloadBtn}
+          title="Descargar PDF del Módulo IV: Sanidad (Edición Especial)"
+        >
+          📥 Sanidad (Edición Especial)
+        </a>
       </div>
 
       {/* Sub-navegación */}

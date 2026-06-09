@@ -7,17 +7,17 @@ const SLIDES = [
   {
     image: IMAGES.plazaHexagonal,
     title: '¡Bienvenidos a la Parroquia Guevara!',
-    subtitle: 'La Tacarigua de Margarita — memoria, cultura y tradición en el corazón de Nueva Esparta',
+    subtitle: 'La Tacarigua de Margarita: memoria histórica, cultura y tradición en el corazón de Nueva Esparta',
   },
   {
     image: IMAGES.mapaTacarigua,
-    title: 'Mapa de Una Sola Tacarigua',
+    title: 'Mapa de Tacarigua',
     subtitle: 'Descubre el valle, los cerros y el paso del Portachuelo que unen a toda la comunidad.',
   },
   {
     image: IMAGES.p6100004,
-    title: 'La Atenas Neoespartana',
-    subtitle: '28,3 % de profesionales universitarios y una tradición educativa desde 1875',
+    title: 'Corazones unidos en una misma fe',
+    subtitle: 'Nuestras Iglesias y capillas, testigos de devoción, fe y tradición.',
   },
   {
     image: IMAGES.paisajeHero,
@@ -27,7 +27,7 @@ const SLIDES = [
   {
     image: IMAGES.iglesiaPlazaAerea,
     title: 'Patrimonio Cultural',
-    subtitle: 'Fiestas patronales, música folklórica y tradiciones artesanales de los Olleros',
+    subtitle: 'Fiestas patronales, música folklórica, costumbres, tradiciones y gastronomía que enriquecen nuestra identidad',
   },
 ];
 

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "auto-book-1",
+    "titulo": "Algunas-Tradiciones-Margariteñas",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Algunas-Tradiciones-Margarite%C3%B1as.pdf",
+    "imagen": "/Libros/Portada libros/Algunas-Tradiciones-Margarite%C3%B1as.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-2",
+    "titulo": "Altagracia-Tres-nombre-y-un-solo-pueblo",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Altagracia-Tres-nombre-y-un-solo-pueblo.pdf",
+    "imagen": "/Libros/Portada libros/Altagracia-Tres-nombre-y-un-solo-pueblo.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-3",
+    "titulo": "AMO-A-DOS-TÚ-ERES-ALGO-MÁS",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/AMO-A-DOS-T%C3%9A-ERES-ALGO-M%C3%81S.pdf",
+    "imagen": "/Libros/Portada libros/Amo a dos tu eres algo mas.jpg",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-4",
+    "titulo": "Amores-de-mi-Pueblo-y-Otros-Relatos",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Amores-de-mi-Pueblo-y-Otros-Relatos.pdf",
+    "imagen": "/Libros/Portada libros/Amores-de-mi-Pueblo-y-Otros-Relatos-1.jpg",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-5",
+    "titulo": "Brotes-Sobre-la-Tierra-Ñera",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Brotes-Sobre-la-Tierra-%C3%91era.pdf",
+    "imagen": "/Libros/Portada libros/Brotes-Sobre-la-Tierra-%C3%91era.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-6",
+    "titulo": "Consejas-y-Leyendas-Margariteñas",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Consejas-y-Leyendas-Margarite%C3%B1as.pdf",
+    "imagen": "/Libros/Portada libros/Consejas-y-Leyendas-Margarite%C3%B1as.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-7",
+    "titulo": "El-Cercado-Su-gente-y-su-Ceramica",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-Cercado-Su-gente-y-su-Ceramica.pdf",
+    "imagen": "/Libros/Portada libros/El-Cercado-Su-gente-y-su-Ceramica.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-8",
+    "titulo": "El-Corazón-de-Jesús-2da-Edición",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-Coraz%C3%B3n-de-Jes%C3%BAs-2da-Edici%C3%B3n.pdf",
+    "imagen": "/Libros/Portada libros/El-Coraz%C3%B3n-de-Jes%C3%BAs-2da-Edici%C3%B3n.png",
+    "extra": "Libro PDF"
+  },
+{
+    "id": "auto-book-10",
+    "titulo": "El-Corazon-de-Jesus-de-Tacarigua-Afuera-Tacarigua-de-Margarita-1895",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-Corazon-de-Jesus-de-Tacarigua-Afuera-Tacarigua-de-Margarita-1895 4ta edición 2025.pdf",
+    "imagen": "/Libros/Portada libros/Corazon%20de%20jesus%204ta%20edici%C3%B3n%202025.jpeg",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-11",
+    "titulo": "El-Corazón-de-Jesús-de-Tacarigua-Afuera",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-Coraz%C3%B3n-de-Jes%C3%BAs-de-Tacarigua-Afuera.pdf",
+    "imagen": "/Libros/Portada libros/El-Coraz%C3%B3n-de-Jes%C3%BAs-de-Tacarigua-Afuera.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-12",
+    "titulo": "El-General-Francisco-Esteban-Gómez-en-la-memoria-del-pueblo",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-General-Francisco-Esteban-G%C3%B3mez-en-la-memoria-del-pueblo.pdf",
+    "imagen": "/Libros/Portada libros/El-General-Francisco-Esteban-G%C3%B3mez-en-la-memoria-del-pueblo.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-13",
+    "titulo": "El-General-Juan-Bautista-Arismendi",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-General-Juan-Bautista-Arismendi.pdf",
+    "imagen": "/Libros/Portada libros/El-General-Juan-Bautista-Arismendi.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-14",
+    "titulo": "El-General-Santiago-Mariño-en-Décimas-Populares",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-General-Santiago-Mari%C3%B1o-en-D%C3%A9cimas-Populares.pdf",
+    "imagen": "/Libros/Portada libros/El-General-Santiago-Mari%C3%B1o-en-D%C3%A9cimas-Populares.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-15",
+    "titulo": "El-Gua-Gua-Gua-de-los-Guaicos",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-Gua-Gua-Gua-de-los-Guaicos.pdf",
+    "imagen": "/Libros/Portada libros/El-Gua-Gua-Gua-de-los-Guaicos.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-16",
+    "titulo": "El-Maco-de-Bolívar-y-su-Artesanía-del-cuero",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-Maco-de-Bol%C3%ADvar-y-su-Artesan%C3%ADa-del-cuero.pdf",
+    "imagen": "/Libros/Portada libros/El-Maco-de-Bol%C3%ADvar-y-su-Artesan%C3%ADa-del-cuero.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-17",
+    "titulo": "El-Murmullo-del-Bernal",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-Murmullo-del-Bernal.pdf",
+    "imagen": "/Libros/Portada libros/El-Murmullo-del-Bre%C3%B1al.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-18",
+    "titulo": "El-Umbral-de-mi-Camino-Autobiografia-novelada.-Julian-Salazar-Velasquez",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/El-Umbral-de-mi-Camino-Autobiografia-novelada.-Julian-Salazar-Velasquez.pdf",
+    "imagen": "/Libros/Portada libros/El-Umbral-de-mi-Camino-300x400.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-19",
+    "titulo": "Ensoñación",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Enso%C3%B1aci%C3%B3n.pdf",
+    "imagen": "/Libros/Portada libros/Enso%C3%B1aci%C3%B3n-1.jpg",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-20",
+    "titulo": "Gente-de-mi-Pueblo-y-Otros-Relatos",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Gente-de-mi-Pueblo-y-Otros-Relatos.pdf",
+    "imagen": "/Libros/Portada libros/Gente%20de%20mi%20pueblo%20y%20otros%20relatos.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-21",
+    "titulo": "Huellas-y-Caminos",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Huellas-y-Caminos.pdf",
+    "imagen": "/Libros/Portada libros/Huellas-y-Caminos-1.jpg",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-22",
+    "titulo": "Ingenuidades-Miteñas-Relatos",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Ingenuidades-Mite%C3%B1as-Relatos.pdf",
+    "imagen": "/Libros/Portada libros/Ingenuidades-Mite%C3%B1as-Relatos.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-23",
+    "titulo": "Juegos-Tradicionales-en-Margarita",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Juegos-Tradicionales-en-Margarita.pdf",
+    "imagen": "/Libros/Portada libros/Juegos-Tradicionales-en-Margarita.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-24",
+    "titulo": "La-Artesania-Tradicional-Margariteña-1",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/La-Artesania-Tradicional-Margarite%C3%B1a-1.pdf",
+    "imagen": "/Libros/Portada libros/La-Artesania-Tradicional-Margarite%C3%B1a.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-25",
+    "titulo": "La-Asunción-Ciudad-Porcera",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/La-Asunci%C3%B3n-Ciudad-Porcera.pdf",
+    "imagen": "/Libros/Portada libros/La-Asunci%C3%B3n-Ciudad-Porcera.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-26",
+    "titulo": "LA-EDUCACION-PRIMARIA-EN-TACARIGUA-5",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/LA-EDUCACION-PRIMARIA-EN-TACARIGUA-5.pdf",
+    "imagen": "/Libros/Portada libros/La-educacion-en-Tacarigua.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-27",
+    "titulo": "La-Guardia-de-los-Recuerdos",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/La-Guardia-de-los-Recuerdos.pdf",
+    "imagen": "/Libros/Portada libros/La-Guardia-de-los-Recuerdos.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-28",
+    "titulo": "La-Tacarigua-De-Margarita",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/La-Tacarigua-De-Margarita.pdf",
+    "imagen": "/Libros/Portada libros/La-Tacarigua-De-Margarita.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-29",
+    "titulo": "La-Virgen-del-Valle-su-Historia-y-sus-Leyendas",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/La-Virgen-del-Valle-su-Historia-y-sus-Leyendas.pdf",
+    "imagen": "/Libros/Portada libros/La-Virgen-del-Valle-su-Historia-y-sus-Leyendas.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-30",
+    "titulo": "La-Voz-de-un-Pueblo-Agradecido",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/La-Voz-de-un-Pueblo-Agradecido.pdf",
+    "imagen": "/Libros/Portada libros/La-Voz-de-un-Pueblo-Agradecido.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-31",
+    "titulo": "Las-Escuelas-Federales-en-Nueva-Esparta",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Las-Escuelas-Federales-en-Nueva-Esparta.pdf",
+    "imagen": "/Libros/Portada libros/Las-Escuelas-Federales-en-Nueva-Esparta-1.jpg",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-32",
+    "titulo": "Leyendas-y-Creencias-Margariteñas",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Leyendas-y-Creencias-Margarite%C3%B1as.pdf",
+    "imagen": "/Libros/Portada libros/Leyendas-y-Creencias-Margarite%C3%B1as.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-33",
+    "titulo": "Los-Signos-de-la-Muerte",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Los-Signos-de-la-Muerte.pdf",
+    "imagen": "/Libros/Portada libros/Los-Signos-de-la-Muerte.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-34",
+    "titulo": "Los-Terrazgos-de-Cheguaco",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Los-Terrazgos-de-Cheguaco.pdf",
+    "imagen": "/Libros/Portada libros/Los-Terrazgos-de-Cheguaco.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-35",
+    "titulo": "Margarita-y-su-Artesania-Primitiva",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Margarita-y-su-Artesania-Primitiva.pdf",
+    "imagen": "/Libros/Portada libros/Margarita-y-su-Artesania-Primitiva.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-36",
+    "titulo": "Matasiete-y-La-Libertad",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Matasiete-y-La-Libertad.pdf",
+    "imagen": "/Libros/Portada libros/Matasiete-y-La-Libertad.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-37",
+    "titulo": "Mis-Bodas-de-Oro-con-Margarita",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Mis-Bodas-de-Oro-con-Margarita.pdf",
+    "imagen": "/Libros/Portada libros/Mis-Bodas-de-Oro-con-Margarita-1.jpg",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-38",
+    "titulo": "Mitos-y-creencias-Margariteñas",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Mitos-y-creencias-Margarite%C3%B1as.pdf",
+    "imagen": "/Libros/Portada libros/Mitos-y-creencias-Margarite%C3%B1as.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-39",
+    "titulo": "Obras-Selecta",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Obras-Selecta.pdf",
+    "imagen": "/Libros/Portada libros/Obras-Selecta.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-40",
+    "titulo": "Osa-Dia",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Osa-Dia.pdf",
+    "imagen": "/Libros/Portada libros/Osa-Dia-1.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-41",
+    "titulo": "Periodo-y-Ausencia",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Periodo-y-Ausencia.pdf",
+    "imagen": "/Libros/Portada libros/Periodo-y-Ausencia-1.jpg",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-42",
+    "titulo": "Por-Los-Senderos-de-Margarita-Cuentos-de-Camino",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Por-Los-Senderos-de-Margarita-Cuentos-de-Camino.pdf",
+    "imagen": "/Libros/Portada libros/Por-Los-Senderos-de-Margarita-Cuentos-de-Camino.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-43",
+    "titulo": "Rafael-Gil-Sánchez",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Rafael-Gil-S%C3%A1nchez.pdf",
+    "imagen": "/Libros/Portada libros/Rafael-Gil-S%C3%A1nchez.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-44",
+    "titulo": "Refranero-Popular-Margariteno",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Refranero-Popular-Margariteno.pdf",
+    "imagen": "/Libros/Portada libros/Refranero-Popular-Margarite%C3%B1o-Dimes-y-Diretes.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-45",
+    "titulo": "TACARIGUA-Y-SUS-16-HOMONIMAS-1",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/TACARIGUA-Y-SUS-16-HOMONIMAS-1.pdf",
+    "imagen": "/Libros/Portada libros/TACARIGUA-Y-SUS-16-HOMONIMAS-Portada.jpg",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-46",
+    "titulo": "Tacarigüita-El-Portachuelo-y-la-Virgen-de-Papaché",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Tacarig%C3%BCita-El-Portachuelo-y-la-Virgen-de-Papach%C3%A9.pdf",
+    "imagen": "/Libros/Portada libros/Tacarig%C3%BCita-El-Portachuelo-y-la-Virgen-de-Papach%C3%A9.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-47",
+    "titulo": "Un-Grito-en-la-Hondonada",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Un-Grito-en-la-Hondonada.pdf",
+    "imagen": "/Libros/Portada libros/Un-Grito-En-La-Hondonada-Poemas.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-48",
+    "titulo": "Usos-y-Costumbres-Tradicionales-en-Margarita",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Usos-y-Costumbres-Tradicionales-en-Margarita.pdf",
+    "imagen": "/Libros/Portada libros/Usos-y-Costumbres-Tradicionales-en-Margarita.png",
+    "extra": "Libro PDF"
+  },
+  {
+    "id": "auto-book-49",
+    "titulo": "Vivencias-Y-Ausencias",
+    "autor": "Autor local",
+    "categoria": "Historia Local",
+    "formato": "Libros",
+    "url": "/Libros/Vivencias-Y-Ausencias.pdf",
+    "imagen": "/Libros/Portada libros/Vivencias-Y-Ausencias-1.jpg",
+    "extra": "Libro PDF"
+  }
+]

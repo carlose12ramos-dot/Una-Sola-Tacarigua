@@ -1,7 +1,6 @@
 .footer {
   margin-top: auto;
   background: linear-gradient(to bottom, var(--oxford-navy) 0%, var(--oxford-navy-dark) 100%);
-  border-top: 4px solid var(--goldenrod);
   box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.15);
 }
 
@@ -40,22 +39,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--goldenrod), var(--copper));
+  background: linear-gradient(135deg, var(--goldenrod) 0%, var(--copper) 100%);
+  transition: var(--transicion-suave);
   flex-shrink: 0;
+  mask: url('/images/logotacarigua.png') no-repeat center/contain;
+  -webkit-mask: url('/images/logotacarigua.png') no-repeat center/contain;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
 }
 
-.brandLetter {
-  font-weight: 700;
-  font-size: 1.125rem;
-  color: var(--oxford-navy);
-  font-family: var(--fuente-display);
+.brandText {
+  display: block;
 }
 
 .brandTitle {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
   color: var(--cream);
   font-family: var(--fuente-display);
-  font-size: 1.125rem;
-  margin: 0;
+  line-height: 1.2;
+}
+
+.brandSubtitle {
+  display: block;
+  font-size: 0.625rem;
+  letter-spacing: 0.05em;
+  color: var(--goldenrod);
+  opacity: 0.9;
 }
 
 .brandDesc {

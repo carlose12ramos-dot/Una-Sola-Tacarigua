@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './HistoriaModule.module.css';
 import { BookOpen, Droplet, Sparkles, Landmark, Clock3, Scroll, MapPin } from 'lucide-react';
-import { IMAGES } from '../data/images';
 
 const HISTORIA_PDF_PATH = '/images/TacariguaHistoria%20-%20Wikipedia%2C%20la%20enciclopedia%20libre.pdf';
 
@@ -15,16 +14,16 @@ const COMMUNITY_VIDEOS = [
 
 const LEGAL_DOCUMENTS = [
   {
-    src: IMAGES.docLegalFun.src,
+    src: '/images/doclegalfun.png',
     fullSrc: '/images/doclegalfun.png',
-    alt: IMAGES.docLegalFun.alt,
+    alt: 'Documento Legal de Tacarigua',
     title: 'Documento Legal de Tacarigua',
     description: 'Documento histórico que registra la organización y demarcación territorial del valle de Tacarigua, clave para entender su identidad comunitaria.',
   },
   {
-    src: IMAGES.documentoLegalFundacion.src,
+    src: '/images/documentolegalfundación.png',
     fullSrc: '/images/documentolegalfundación.png',
-    alt: IMAGES.documentoLegalFundacion.alt,
+    alt: 'Acta de Fundación',
     title: 'Acta de Fundación',
     description: 'Documento original de fundación de Tacarigua, testimonio histórico del establecimiento de la parroquia.',
   },
@@ -83,7 +82,7 @@ const timelineEvents = [
     id: 2,
     anio: '1579',
     titulo: 'Contacto con Miguel Maza de Lizana',
-    descripcion: 'El primer contacto documentado entre los indios Tacaribas y los españoles se produjo durante el mandato de Miguel Maza de Lizana. La fecha más probable propuesta es el 29 de septiembre de 1579.',
+    descripcion: 'El primer contacto documentado entre los indios Tacaribas y los españoles se produjo durante el mandato de Miguel Maza de Lizana. La fecha más probable propuesta es el 29 de septiembre de 1579, día de San Miguel Arcángel.',
     tag: 'Conquista española',
   },
   {
@@ -105,7 +104,7 @@ const timelineEvents = [
 const HISTORIA_SECTIONS = [
   {
     title: 'Origen del nombre Tacarigua',
-    content: 'El nombre Tacarigua proviene del pueblo indígena Guaiquerí y está vinculado al árbol balsa. La primera referencia documental aparece en la Información de Testigos de 1580, cuando Miguel Maza de Lizana habló del valle y sus pueblos.',
+    content: 'El nombre Tacarigua proviene del pueblo indígena Guaiquerí y está vinculado al árbol balsa. La primera referencia documental aparece en la Información de Testigos de 1580.',
   },
   {
     title: 'Cinco oleadas indígenas',
@@ -113,16 +112,16 @@ const HISTORIA_SECTIONS = [
   },
   {
     title: 'Valle, agua y alfarería',
-    content: 'El valle de Tacarigua fue conocido como El Valle de los Olleros o Valle de Arimacoa por su cerámica. Sus habitantes cultivaban maíz, yuca y algodón, vivían en chozas cónicas de palma y aprovechaban las quebradas y lagunas para sostener su economía.',
+    content: 'El valle de Tacarigua fue conocido como El Valle de los Olleros o Valle de Arimacoa por su cerámica. Sus habitantes cultivaban maíz, yuca y algodón.',
   },
   {
     title: 'Independencia y República',
-    content: 'Durante la guerra de independencia Tacarigua sirvió como hospital de campaña y base patriota. En 1881 fue Distrito Tacarigua y en 1916 se integró como parroquia Guevara del municipio Gómez.',
+    content: 'Durante la guerra de independencia Tacarigua sirvió como hospital de campaña y base patriota. En 1881 fue Distrito Tacarigua y en 1916 se integró como parroquia Guevara.',
   },
 ];
 
 const HistoriaModule = () => {
-  const [activeId, setActiveId] = useState(3);
+  const [activeId, setActiveId] = useState(2);
   const [modalImage, setModalImage] = useState(null);
 
   const handleToggle = (id) => {
@@ -139,16 +138,18 @@ const HistoriaModule = () => {
 
   return (
     <section className={styles.container} id="historia">
-      <header className={styles.header}>
-        <span className={styles.badge}>Historia Viva</span>
-        <h1 className={styles.title}>Historia de Tacarigua</h1>
-        <div className={styles.divider} />
-        <p className={styles.lead}>
-          La historia de Tacarigua se revela en sus documentos, sus relatos y en
-          el paisaje que ha sostenido a la comunidad durante siglos.
-        </p>
-      </header>
 
+      {/* Header principal */}
+      <div className={styles.headerSection}>
+        <h2 className={styles.title}>Historia de Tacarigua</h2>
+        <div className={styles.divider}></div>
+        <p className={styles.lead}>
+        </p>
+      </div>
+
+      
+
+      {/* Feature cards */}
       <section className={styles.featureSection} aria-label="Aspectos históricos">
         <div className={styles.featureGrid}>
           {HISTORY_FEATURES.map((feature) => {
@@ -166,6 +167,7 @@ const HistoriaModule = () => {
         </div>
       </section>
 
+      {/* Videos */}
       <section className={styles.mediaSection} aria-label="Material audiovisual">
         <div className={styles.mediaHeader}>
           <span className={styles.mediaBadge}>Audiovisual</span>
@@ -194,6 +196,7 @@ const HistoriaModule = () => {
         ))}
       </section>
 
+      {/* Documentos legales */}
       <section className={styles.mediaSection} aria-label="Documentos legales">
         <div className={styles.mediaHeader}>
           <span className={styles.mediaBadge}>Documentos</span>
@@ -234,6 +237,7 @@ const HistoriaModule = () => {
         </div>
       </section>
 
+      {/* Datos y curiosidades */}
       <section className={styles.factSection} aria-label="Datos históricos">
         <div className={styles.mediaHeader}>
           <span className={styles.mediaBadge}>Sabías qué</span>
@@ -260,12 +264,14 @@ const HistoriaModule = () => {
         </div>
       </section>
 
+      {/* PDF download */}
       <section className={styles.mediaSection} aria-label="TacariguaHistoria">
         <div className={styles.mediaHeader}>
           <span className={styles.mediaBadge}>Historia oficial</span>
           <h3 className={styles.mediaTitle}>TacariguaHistoria</h3>
           <p className={styles.mediaLead}>
-            El valle de Tacarigua fue conocido como El Valle de los Olleros o Valle de Arimacoa por la cerámica indígena. Sus habitantes cultivaban maíz, yuca y algodón, vivían en chozas cónicas de palma y aprovechaban las quebradas y lagunas para sostener su economía.
+            El valle de Tacarigua fue conocido como El Valle de los Olleros o Valle de Arimacoa por su cerámica indígena.
+            Sus habitantes cultivaban maíz, yuca y algodón.
           </p>
         </div>
 
@@ -293,6 +299,7 @@ const HistoriaModule = () => {
         </div>
       </section>
 
+      {/* Modal */}
       {modalImage && (
         <div className={styles.modalOverlay} onClick={closeModal}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
@@ -306,6 +313,7 @@ const HistoriaModule = () => {
         </div>
       )}
 
+      {/* Timeline interactivo */}
       <div className={styles.timelineSection}>
         <h2 className={styles.timelineTitle}>Historia &amp; Crónicas</h2>
         <div className={styles.timeline}>

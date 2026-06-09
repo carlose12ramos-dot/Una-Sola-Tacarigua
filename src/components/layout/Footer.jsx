@@ -19,10 +19,11 @@ function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <div className={styles.brandHeader}>
-              <div className={styles.brandIcon}>
-                <span className={styles.brandLetter}>T</span>
+              <div className={styles.brandIcon} aria-hidden="true" />
+              <div className={styles.brandText}>
+                <span className={styles.brandTitle}>Una Sola Tacarigua</span>
+                <span className={styles.brandSubtitle}>Cultura y Tradición</span>
               </div>
-              <h3 className={styles.brandTitle}>Una Sola Tacarigua</h3>
             </div>
             <p className={styles.brandDesc}>
               Tu portal digital para descubrir la rica cultura, historia y servicios de la Parroquia Guevara en la Isla de Margarita.
