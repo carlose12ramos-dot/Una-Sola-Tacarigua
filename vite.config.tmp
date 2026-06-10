@@ -2,29 +2,8 @@
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 
-function noCacheMiddleware() {
-  return (_req, _res, next) => {
-    _res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0')
-    _res.setHeader('Pragma', 'no-cache')
-    _res.setHeader('Expires', '0')
-    next()
-  }
-}
-
 export default defineConfig({
-  plugins: [
-    react({
-      babel: {
-        plugins: [],
-      },
-    }),
-    {
-      name: 'no-cache-middleware',
-      configureServer(server) {
-        server.middlewares.use(noCacheMiddleware())
-      },
-    },
-  ],
+  plugins: [react()],
   server: {
     port: 3000,
     host: true,
@@ -46,8 +25,6 @@ export default defineConfig({
   preview: {
     headers: {
       'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
-      'Pragma': 'no-cache',
-      'Expires': '0',
     },
   },
   build: {

@@ -22,7 +22,7 @@ export const IMAGES = {
     alt: 'Plaza de Tacarigua con pavimento hexagonal multicolor y la iglesia San Jerónimo',
   },
   valleSateliteNasa: {
-    ...img('valle-tacarigua-vista-satelite-nasa.webp', 'La_Isla_de_Margarita_y_el_valle_de_Tacarigua_vistos_desde_el_espacio_-_FOTO_NASA.jpg'),
+    ...img('valle-tacarigua-vista-satelite-nasa.webp', 'La_Isla_de_Margarita_y_el_valle_de_Tacarigua_vistos_desde_el_espacio_-_FOTO_NASA1.jpg'),
     alt: 'Vista satelital del valle de Tacarigua en la Isla de Margarita — imagen NASA',
   },
   vallePanoramica: {
@@ -34,7 +34,7 @@ export const IMAGES = {
     alt: 'Paisaje del valle tacarigüero con montañas y vegetación',
   },
   mapaTacarigua: {
-    ...img('Mapa%20Tacarigua.png', 'Mapa%20Tacarigua.png'),
+    ...img('Mapa Tacarigua.png', 'Mapa Tacarigua.png'),
     alt: 'Mapa de Tacarigua que muestra la ubicación del valle y la Parroquia Guevara en Margarita',
   },
   culturaInicio: {
@@ -78,7 +78,7 @@ export const IMAGES = {
     alt: 'Espacio comunitario de Tacarigua en el Valle de los Olleros, tradición alfarera de la parroquia',
   },
   bandaNorte: {
-    ...img('valle-tacarigua-vista-satelite-nasa.webp', 'La_Isla_de_Margarita_y_el_valle_de_Tacarigua_vistos_desde_el_espacio_-_FOTO_NASA.jpg'),
+    ...img('valle-tacarigua-vista-satelite-nasa.webp', 'La_Isla_de_Margarita_y_el_valle_de_Tacarigua_vistos_desde_el_espacio_-_FOTO_NASA1.jpg'),
     alt: 'Ubicación de Tacarigua en la Banda del Norte de Margarita — vista satelital',
   },
   portachuelo: {

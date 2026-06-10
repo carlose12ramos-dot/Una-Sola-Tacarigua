@@ -1,0 +1,102 @@
+[
+  {
+    "id": "doc-1",
+    "titulo": "Módulo I - Historia de Tacarigua (2da Revisión 2022)",
+    "autor": "Historia",
+    "categoria": "Historia",
+    "formato": "Documentos",
+    "url": "/EDICION-MODULO-I-HISTORIA-2022-2DA-REVISION.pdf",
+    "imagen": "/Portada documentos/Portada Tacarigua Historia 2.png",
+    "extra": "Documento PDF"
+  },
+  {
+    "id": "doc-2",
+    "titulo": "Módulo I - Tacarigua Histórica",
+    "autor": "Historia",
+    "categoria": "Historia",
+    "formato": "Documentos",
+    "url": "/Proy.Tacarigua-Historica-Modulo-I.pdf",
+    "imagen": "/Portada documentos/Portada Tacarigua Historica.png",
+    "extra": "Documento PDF"
+  },
+  {
+    "id": "doc-3",
+    "titulo": "Módulo II - Educación (2022)",
+    "autor": "Educación",
+    "categoria": "Educación",
+    "formato": "Documentos",
+    "url": "/MODULO-II-EDUCACION-2022.pdf",
+    "imagen": "/Portada documentos/Portada Tacarigua Educativa.png",
+    "extra": "Documento PDF"
+  },
+  {
+    "id": "doc-4",
+    "titulo": "Módulo II - Educación (Edición Final)",
+    "autor": "Educación",
+    "categoria": "Educación",
+    "formato": "Documentos",
+    "url": "/MODULO-II-EDUCACION-Final.pdf",
+    "imagen": "/Portada documentos/Portada Tacarigua Educativa 2.png",
+    "extra": "Documento PDF"
+  },
+  {
+    "id": "doc-5",
+    "titulo": "Módulo III - Cultura",
+    "autor": "Cultura",
+    "categoria": "Cultura",
+    "formato": "Documentos",
+    "url": "/MODULO-III-Cultura.pdf",
+    "imagen": "/Portada documentos/Portada Tacarigua Cultural.png",
+    "extra": "Documento PDF"
+  },
+  {
+    "id": "doc-6",
+    "titulo": "Módulo Cultural (Edición Completa)",
+    "autor": "Cultura",
+    "categoria": "Cultura",
+    "formato": "Documentos",
+    "url": "/MOD-CULT.pdf",
+    "imagen": "/Portada documentos/Portada Tacarigua Cultural 2.png",
+    "extra": "Documento PDF"
+  },
+  {
+    "id": "doc-7",
+    "titulo": "Módulo IV - Sanidad",
+    "autor": "Salud",
+    "categoria": "Salud",
+    "formato": "Documentos",
+    "url": "/MODULO-IV-SANIDAD.pdf",
+    "imagen": "/Portada documentos/Portada Tacarigua Sanitaria.png",
+    "extra": "Documento PDF"
+  },
+  {
+    "id": "doc-8",
+    "titulo": "Módulo IV - Sanidad (Edición Final)",
+    "autor": "Salud",
+    "categoria": "Salud",
+    "formato": "Documentos",
+    "url": "/MODULO-IV-SANIDAD-Final.pdf",
+    "imagen": "/Portada documentos/Portada Tacarigua Sanitaria 2.png",
+    "extra": "Documento PDF"
+  },
+  {
+    "id": "doc-9",
+    "titulo": "Módulo V - Deportes",
+    "autor": "Deportes",
+    "categoria": "Deportes",
+    "formato": "Documentos",
+    "url": "/MODULO-V-DEPORTES.pdf",
+    "imagen": "/Portada documentos/Portada Tacarigua Deportiva.png",
+    "extra": "Documento PDF"
+  },
+  {
+    "id": "doc-10",
+    "titulo": "Módulo V - Deportes (Edición Final)",
+    "autor": "Deportes",
+    "categoria": "Deportes",
+    "formato": "Documentos",
+    "url": "/MODULO-V-DEPORTES-Final.pdf",
+    "imagen": "/Portada documentos/Portada Tacarigua Deportiva 2.png",
+    "extra": "Documento PDF"
+  }
+]

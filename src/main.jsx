@@ -14,12 +14,24 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 
 // ── Service Worker: habilita modo offline + caché de teselas de mapa ──
-if ('serviceWorker' in navigator) {
+// Solo registrar en producción; en desarrollo Vite HMR se encarga de las actualizaciones
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
       .register('/service-worker.js', { scope: '/' })
       .then(reg => {
         console.log('[SW] Registrado. Scope:', reg.scope);
+        reg.addEventListener('updatefound', () => {
+          const newWorker = reg.installing;
+          if (newWorker) {
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'activated') {
+                console.log('[SW] Nueva versión activada, recargando...');
+                window.location.reload();
+              }
+            });
+          }
+        });
       })
       .catch(err => {
         console.warn('[SW] Error al registrar:', err);

@@ -245,7 +245,7 @@ export const bibliotecaMock = [
     formato: 'Libros',
     descripcion: 'Obra fundamental de 1971 que documenta la historia, tradiciones y personajes de Tacarigua. Base de la investigación de la Memoria Histórica comunitaria.',
     paginas: 'Referencia histórica',
-    imagen: '/images/Captura de pantalla 2026-05-26 115552.png',
+    imagen: '/images/plaza-hexagonal-tacarigua.webp',
   },
   {
     id: 2,
@@ -255,7 +255,7 @@ export const bibliotecaMock = [
     formato: 'Libros',
     descripcion: 'Crónica sobre la devoción al Dulce Corazón de María en Tacarigüita, la figura de Don José Núñez "Papaché" y la entronización del Divino Niño en 1992.',
     paginas: 'Patrimonio espiritual',
-    imagen: '/images/Captura de pantalla 2026-05-26 115656.png',
+    imagen: '/images/iglesia-plaza-tacarigua-aerea.webp',
   },
   {
     id: 3,
@@ -265,7 +265,7 @@ export const bibliotecaMock = [
     formato: 'Libros',
     descripcion: 'Actualización de la memoria histórica: período prehispánico, encuentro con Miguel Maza de Lizana, Valle de los Olleros, Independencia, Diego Urbaneja y desarrollo territorial.',
     paginas: '97 págs.',
-    imagen: '/images/Captura de pantalla 2026-05-26 115552.png',
+    imagen: '/images/plaza-hexagonal-tacarigua.webp',
   },
   {
     id: 4,

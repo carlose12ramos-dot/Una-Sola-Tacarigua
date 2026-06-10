@@ -854,3 +854,70 @@
   50% { transform: scale(1.2); opacity: 0.7; }
   100% { transform: scale(1); opacity: 1; }
 }
+
+/* ── Documento Modal Actions ── */
+.docModalActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+}
+
+/* ── Lightbox Image Modal ── */
+.imagenModalContent {
+  background: var(--black);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75);
+  animation: modalFadeIn 0.3s ease-out forwards;
+  overflow: hidden;
+}
+
+.lightboxImage {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  background: #000;
+  display: block;
+}
+
+.lightboxCaption {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.6));
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lightboxCaption h3 {
+  font-family: var(--fuente-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.lightboxCaption p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ── Responsive tabs for smaller screens ── */
+@media (max-width: 700px) {
+  .tabs {
+    gap: 0.5rem;
+  }
+  .tab, .tabActive {
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+  }
+}

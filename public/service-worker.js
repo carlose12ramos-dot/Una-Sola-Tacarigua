@@ -8,7 +8,7 @@
  *  • Navegación offline → /index.html desde caché
  */
 
-const CACHE_VERSION = 'v7';
+const CACHE_VERSION = 'v8';
 const SHELL_CACHE   = `tacarigua-shell-${CACHE_VERSION}`;
 const TILES_CACHE   = `tacarigua-tiles-${CACHE_VERSION}`;
 const API_CACHE     = `tacarigua-api-${CACHE_VERSION}`;
@@ -159,21 +159,46 @@ async function handleApi(request) {
 
 // ── Estrategia: App shell ─────────────────────────────────────
 async function handleShell(request) {
-  const cached = await caches.match(request);
-  if (cached) return cached;
+  const cache = await caches.open(SHELL_CACHE);
+  const cached = await cache.match(request);
 
-  try {
-    const response = await fetch(request);
-    if (response.ok) {
-      const cache = await caches.open(SHELL_CACHE);
-      cache.put(request, response.clone());
-    }
-    return response;
-  } catch {
-    // Para navegación, sirve index.html (SPA fallback)
-    if (request.mode === 'navigate') {
-      return caches.match('/index.html') || caches.match('/offline.html');
-    }
-    return caches.match('/offline.html');
+  const networkFetch = fetch(request)
+    .then(async response => {
+      if (response.ok) {
+        await cache.put(request, response.clone());
+      }
+      return response;
+    })
+    .catch(() => null);
+
+  // En desarrollo/actualizaciones frecuentes, el problema típico es:
+  // el SW devuelve HTML/JS/CSS viejo desde caché.
+  // Solución: estrategia network-first para navegaciones (mode=navigate)
+  // y para cualquier recurso tipo HTML.
+  const isNavigate = request.mode === 'navigate';
+  const acceptHeader = request.headers.get('accept') || '';
+  const isHtml = acceptHeader.includes('text/html');
+  if (isNavigate || isHtml) {
+
+    const networkResponse = await networkFetch;
+    if (networkResponse) return networkResponse;
+
+    // Fallback: si la red falla, usamos caché (o offline)
+    if (cached) return cached;
+    return caches.match('/index.html') || caches.match('/offline.html');
   }
+
+  // Para el resto de assets del shell: cache-first con revalidación en background
+  if (cached) {
+    networkFetch.catch(() => {});
+    return cached;
+  }
+
+  const networkResponse = await networkFetch;
+  if (networkResponse) return networkResponse;
+
+  return request.mode === 'navigate'
+    ? caches.match('/index.html') || caches.match('/offline.html')
+    : caches.match('/offline.html');
 }
+
