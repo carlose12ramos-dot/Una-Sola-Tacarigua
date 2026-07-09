@@ -23,58 +23,51 @@ function AdminLoginModule({ onLogin, error, loading }) {
 
           <div className={styles.brandCopy}>
             <h2>La identidad cultural de Tacarigua, en un solo lugar.</h2>
-            <p>Gestiona usuarios, contenidos y moderaciones con una experiencia visual cercana al espíritu del proyecto.</p>
           </div>
         </div>
 
         <div className={styles.formSide}>
           <div className={styles.headline}>
             <p className={styles.kicker}>Acceso administrativo</p>
-            <h1>Entrar a Una Sola Tacarigua</h1>
-            <p className={styles.subtitle}>
-              Inicia sesión con tu correo oficial para gestionar contenido, moderaciones y usuarios.
-            </p>
+            <h1>Iniciar Sesión</h1>
           </div>
 
           <form className={styles.loginForm} onSubmit={handleSubmit}>
-          <div className={styles.fieldGroup}>
-            <label htmlFor="admin-email">Correo institucional</label>
-            <input
-              id="admin-email"
-              value={correo}
-              onChange={(event) => setCorreo(event.target.value)}
-              type="email"
-              placeholder="carlos@tacarigua.org"
-              required
-            />
-          </div>
+            <div className={styles.fieldGroup}>
+              <label htmlFor="admin-email">Correo institucional</label>
+              <input
+                id="admin-email"
+                value={correo}
+                onChange={(event) => setCorreo(event.target.value)}
+                type="email"
+                placeholder="carlos@tacarigua.org"
+                required
+              />
+            </div>
 
-          <div className={styles.fieldGroup}>
-            <label htmlFor="admin-password">Contraseña secreta</label>
-            <input
-              id="admin-password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              type="password"
-              placeholder="●●●●●●●●"
-              required
-            />
-          </div>
+            <div className={styles.fieldGroup}>
+              <label htmlFor="admin-password">Contraseña secreta</label>
+              <input
+                id="admin-password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                type="password"
+                placeholder="●●●●●●●●"
+                required
+              />
+            </div>
 
-          {error && <div className={styles.loginError}>{error}</div>}
+            {error && <div className={styles.loginError}>{error}</div>}
 
-          <button type="submit" className={styles.submitButton} disabled={loading}>
-            {loading ? 'Validando credenciales...' : 'Ingresar al panel'}
-          </button>
-        </form>
+            <button type="submit" className={styles.submitButton} disabled={loading}>
+              {loading ? 'Validando credenciales...' : 'Ingresar al panel'}
+            </button>
+          </form>
 
-        <div className={styles.hintPanel}>
-          <div className={styles.hintTitle}>Pista segura</div>
-          <p>
-            Para el demo, usa el admin oficial <strong>carlos@tacarigua.org</strong> y la contraseña <strong>password123</strong>.
-          </p>
+          <footer className={styles.adminFooter}>
+            <p>Panel de Administración &copy; {new Date().getFullYear()} <span>Una Sola Tacarigua</span></p>
+          </footer>
         </div>
-      </div>
       </section>
     </div>
   );

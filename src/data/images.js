@@ -59,11 +59,57 @@ export const IMAGES = {
     ...img('iglesia-san-jeronimo-aerea.webp', 'SaveClip.App_475906724_18350852341179168_4160617441825350742_n.jpg'),
     alt: 'Vista aérea del centro de Tacarigua con la iglesia y el entorno educativo comunitario',
   },
+  primeraEscuelaFederal: {
+    ...img('Primera Escuela Federal.jpeg', 'Primera Escuela Federal.jpeg'),
+    alt: 'Placa conmemorativa de la educación oficial en Tacarigua, decretada el 12 de julio de 1875',
+  },
+  evaristoAlfonzo: {
+    ...img('Evaristo Alfonzo.png', 'Evaristo Alfonzo.png'),
+    alt: 'Retrato de Evaristo Alfonzo Guerra, primer profesional universitario de la Parroquia Guevara',
+  },
+
+  /* ── Sociedad: Educación - Escuelas ── */
+  escuelaNapoleonNarvaez: {
+    ...img('Ueb Napoleon Narvaez.jfif', 'Ueb Napoleon Narvaez.jfif'),
+    alt: 'Fachada de la U.E. Napoleón Narváez en Tacarigua',
+  },
+  escuelaCruzMillanGarcia: {
+    ...img('Uee Cruz Millán García.jfif', 'Uee Cruz Millán García.jfif'),
+    alt: 'Fachada de la U.E.E. Cruz Millán García en Tacarigua',
+  },
+  escuelaRoraima: {
+    ...img('U.E RORAIMA.jpg', 'U.E RORAIMA.jpg'),
+    alt: 'Fachada de la U.E. Roraima en Tacarigua',
+  },
+  colegioDivinaPastora: {
+    ...img('Uec colegio divina pastora.jfif', 'Uec colegio divina pastora.jfif'),
+    alt: 'Fachada del Colegio Divina Pastora en Tacarigua',
+  },
 
   /* ── Sociedad: Sanidad ── */
   centroSaludCpt3: {
-    ...img('centro-salud-cpt3-tacarigua.webp', 'SaveClip.App_649857402_17940416358159625_3299975488844600819_n.jpg'),
+    ...img('consultorio-popular-tacarigua.webp', 'SaveClip.App_649857402_17940416358159625_3299975488844600819_n.jpg'),
     alt: 'Fachada del Consultorio Popular Tipo III (CPT III) en Tacarigua, Nueva Esparta',
+  },
+  manantial: {
+    ...img('Manantial.jpg', 'Manantial.jpg'),
+    alt: 'Manantial de la serranía tacarigüera, fuente histórica del agua del pueblo',
+  },
+  galeria: {
+    ...img('galería.jpg', 'galería.jpg'),
+    alt: 'Galería filtrante excavada en la montaña Palma Real, Tacarigua',
+  },
+  tuberiasCajaAgua: {
+    ...img('Tubería caja de agua.jpg', 'Tubería caja de agua.jpg'),
+    alt: 'Tuberías y caja de agua histórica del acueducto de Tacarigua (1889)',
+  },
+  molino: {
+    ...img('molino.jpg', 'molino.jpg'),
+    alt: 'Molino de viento histórico de Tacarigua, utilizado para bombear agua salobre',
+  },
+  asim: {
+    ...img('asim.jfif', 'asim.jfif'),
+    alt: 'Acueducto Submarino Interinsular de Margarita (ASIM) — tuberías que conectan el continente venezolano con la isla',
   },
 
   /* ── Sociedad: Deportes ── */
@@ -118,6 +164,27 @@ export const IMAGES = {
   docLegalFun: {
     src: `${base}/doclegalfun.png`,
     alt: 'Documento legal - doclegalfun.png',
+  },
+  /* ── Cultura: Centros Culturales ── */
+  moculta: {
+    ...img('Moculta.png', 'Moculta.png'),
+    alt: 'Sede del Movimiento Cultural Tacarigua Adentro (MOCULTA) en San Sebastián',
+  },
+  logoMoculta: {
+    ...img('logomoculta.png', 'logomoculta.png'),
+    alt: 'Logo oficial del Movimiento Cultural Tacarigua Adentro (MOCULTA)',
+  },
+  cdcpprn: {
+    ...img('CDCPPRN.jpeg', 'CDCPPRN.jpeg'),
+    alt: 'Casa de la Cultura Poeta Pedro Rivero Navarro en Tacarigua',
+  },
+  cdct: {
+    ...img('cdct.jpg', 'cdct.jpg'),
+    alt: 'Comité de Desarrollo Cultural de Tacarigua (C.D.C.)',
+  },
+  cdcta: {
+    ...img('cdcta.jpeg', 'cdcta.jpeg'),
+    alt: 'Comité de Desarrollo Cultural Tacarigua (C.D.C.T.)',
   },
 };
 

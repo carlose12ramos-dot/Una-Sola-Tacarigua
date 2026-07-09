@@ -1,361 +1,408 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './HistoriaModule.module.css';
-import { BookOpen, Droplet, Sparkles, Landmark, Clock3, Scroll, MapPin } from 'lucide-react';
+import { BookOpen, Droplet, Sparkles, Landmark, Clock3, Scroll, MapPin, ChevronDown, Download } from 'lucide-react';
+import HeroHeader from '../components/ui/HeroHeader';
+import ScrollReveal, { StaggerItem, StaggerContainer } from '../components/ui/ScrollReveal';
 
-const HISTORIA_PDF_PATH = '/images/TacariguaHistoria%20-%20Wikipedia%2C%20la%20enciclopedia%20libre.pdf';
-
-const COMMUNITY_VIDEOS = [
-  {
-    src: '/images/videos/Historia Tacarigua.mp4',
-    title: 'Historia Tacarigua',
-    caption: 'Recorrido audiovisual por los hitos históricos de Tacarigua, documentado por el Equipo de Trabajo (2018–2022).',
-  },
-];
-
-const LEGAL_DOCUMENTS = [
-  {
-    src: '/images/doclegalfun.png',
-    fullSrc: '/images/doclegalfun.png',
-    alt: 'Documento Legal de Tacarigua',
-    title: 'Documento Legal de Tacarigua',
-    description: 'Documento histórico que registra la organización y demarcación territorial del valle de Tacarigua, clave para entender su identidad comunitaria.',
-  },
-  {
-    src: '/images/documentolegalfundación.png',
-    fullSrc: '/images/documentolegalfundación.png',
-    alt: 'Acta de Fundación',
-    title: 'Acta de Fundación',
-    description: 'Documento original de fundación de Tacarigua, testimonio histórico del establecimiento de la parroquia.',
-  },
-];
-
-const HISTORY_FEATURES = [
-  {
-    icon: Landmark,
-    title: 'Valle ancestral',
-    description: 'Tacarigua es un semivalle fértil entre cerros como El Tamoco y El Portachuelo. El agua y la alfarería le dieron identidad desde tiempos indígenas.',
-  },
-  {
-    icon: Droplet,
-    title: 'Agua estratégica',
-    description: 'En 1971 la UCV describió la zona como la hidrósfera más importante del oriente de Venezuela por sus manantiales, quebradas y lagunas.',
-  },
-  {
-    icon: BookOpen,
-    title: 'Nombre con historia',
-    description: 'El topónimo Tacarigua tiene origen guaiquerí y se propagó desde Miranda hasta Nueva Esparta junto a las rutas indígenas.',
-  },
-  {
-    icon: Clock3,
-    title: 'Parroquia Guevara',
-    description: 'Desde 1916 Tacarigua forma parte de la parroquia Guevara del municipio Gómez, conservando su memoria republicana.',
-  },
-];
-
-const QUICK_FACTS = [
-  {
-    icon: Scroll,
-    label: '1579',
-    text: 'La fecha más probable del contacto entre los indios Tacaribas y los españoles es el 29 de septiembre de 1579, día de San Miguel Arcángel.',
-  },
-  {
-    icon: MapPin,
-    label: '15+ Tacariguas',
-    text: 'El nombre Tacarigua existe en más de 15 poblaciones de Venezuela y en una localidad de Trinidad y Tobago.',
-  },
-  {
-    icon: Sparkles,
-    label: 'Cerámica',
-    text: 'La alfarería indígena del valle de Tacarigua produjo ánforas, tinajones y platos que se intercambiaban con comunidades vecinas.',
-  },
-];
-
-const timelineEvents = [
-  {
-    id: 1,
-    anio: 'Antes de 500 d.C.',
-    titulo: 'Primeros pobladores indígenas',
-    descripcion: 'La presencia humana en el territorio de lo que hoy es Tacarigua se remonta a unos 1.500 años antes del presente. Cinco oleadas de ocupación indígena modelaron la cultura local, con ocupaciones denominadas Punta Gorda, El Agua y Playa Guacuco.',
-    tag: 'Período prehispánico',
-  },
-  {
-    id: 2,
-    anio: '1579',
-    titulo: 'Contacto con Miguel Maza de Lizana',
-    descripcion: 'El primer contacto documentado entre los indios Tacaribas y los españoles se produjo durante el mandato de Miguel Maza de Lizana. La fecha más probable propuesta es el 29 de septiembre de 1579, día de San Miguel Arcángel.',
-    tag: 'Conquista española',
-  },
-  {
-    id: 3,
-    anio: '1813–1818',
-    titulo: 'Independencia y el Portachuelo',
-    descripcion: 'El Portachuelo de Tacarigua fue un punto estratégico clave en la guerra de independencia. Entre 1815 y 1818, el pueblo sirvió de hospital y pastizal para la caballería patriota.',
-    tag: 'Independencia',
-  },
-  {
-    id: 4,
-    anio: '1832–1916',
-    titulo: 'Evolución administrativa',
-    descripcion: 'Tacarigua experimentó cambios administrativos sucesivos hasta que en 1916 fue constituida como parroquia Guevara del municipio Gómez, denominación que mantiene en la actualidad.',
-    tag: 'República',
-  },
-];
-
-const HISTORIA_SECTIONS = [
-  {
-    title: 'Origen del nombre Tacarigua',
-    content: 'El nombre Tacarigua proviene del pueblo indígena Guaiquerí y está vinculado al árbol balsa. La primera referencia documental aparece en la Información de Testigos de 1580.',
-  },
-  {
-    title: 'Cinco oleadas indígenas',
-    content: 'Los estudios reconocen cinco ocupaciones indígenas: desde Punta Gorda y El Agua hasta Playa Guacuco. En el valle se desarrolló la cerámica, el cultivo del maíz y la crianza de algodón.',
-  },
-  {
-    title: 'Valle, agua y alfarería',
-    content: 'El valle de Tacarigua fue conocido como El Valle de los Olleros o Valle de Arimacoa por su cerámica. Sus habitantes cultivaban maíz, yuca y algodón.',
-  },
-  {
-    title: 'Independencia y República',
-    content: 'Durante la guerra de independencia Tacarigua sirvió como hospital de campaña y base patriota. En 1881 fue Distrito Tacarigua y en 1916 se integró como parroquia Guevara.',
-  },
-];
+const ICON_MAP = {
+  Landmark, Droplet, BookOpen, Clock3, Scroll, MapPin, Sparkles,
+};
 
 const HistoriaModule = () => {
-  const [activeId, setActiveId] = useState(2);
+  const [activeId, setActiveId] = useState(null);
   const [modalImage, setModalImage] = useState(null);
+  const [timelineEvents, setTimelineEvents] = useState([]);
+  const [featuresData, setFeaturesData] = useState([]);
+  const [quickFactsData, setQuickFactsData] = useState([]);
+  const [seccionesData, setSeccionesData] = useState([]);
+  const [videosData, setVideosData] = useState([]);
+  const [documentosData, setDocumentosData] = useState([]);
+  const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
-  const handleToggle = (id) => {
-    setActiveId(activeId === id ? null : id);
-  };
+  useEffect(() => {
+    fetch(`${API_BASE}/historia/features`)
+      .then(res => res.json())
+      .then(data => { if (data?.length) setFeaturesData(data); })
+      .catch(() => {});
+    fetch(`${API_BASE}/historia/datos-rapidos`)
+      .then(res => res.json())
+      .then(data => { if (data?.length) setQuickFactsData(data); })
+      .catch(() => {});
+    fetch(`${API_BASE}/historia/secciones`)
+      .then(res => res.json())
+      .then(data => { if (data?.length) setSeccionesData(data); })
+      .catch(() => {});
+    fetch(`${API_BASE}/historia/videos`)
+      .then(res => res.json())
+      .then(data => { if (data?.length) setVideosData(data); })
+      .catch(() => {});
+    fetch(`${API_BASE}/historia/documentos`)
+      .then(res => res.json())
+      .then(data => {
+        if (data?.length) {
+          setDocumentosData(data.map(d => ({
+            src: d.src,
+            fullSrc: d.full_src,
+            alt: d.alt,
+            title: d.titulo,
+            description: d.descripcion,
+          })));
+        }
+      })
+      .catch(() => {});
+    fetch(`${API_BASE}/historia`)
+      .then(res => res.json())
+      .then(data => {
+        // Filter out inactive and sort by orden
+        const sorted = data
+          .filter(item => item.activo !== false)
+          .sort((a, b) => a.orden - b.orden);
+        setTimelineEvents(sorted);
+        if (sorted.length > 0) setActiveId(sorted[0].id);
+      })
+      .catch(err => console.error('Error fetching historia:', err));
+  }, []);
 
-  const openModal = (documentData) => {
-    setModalImage(documentData);
-  };
-
-  const closeModal = () => {
-    setModalImage(null);
-  };
+  const handleToggle = (id) => setActiveId(activeId === id ? null : id);
 
   return (
-    <section className={styles.container} id="historia">
+    <motion.section
+      className={styles.container}
+      id="historia"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <Helmet>
+        <title>Historia | Una Sola Tacarigua</title>
+        <meta name="description" content="Descubre la historia de Tacarigua, sus orígenes indígenas, su papel en la independencia y su desarrollo administrativo." />
+      </Helmet>
 
-      {/* Header principal */}
-      <div className={styles.headerSection}>
-        <h2 className={styles.title}>Historia de Tacarigua</h2>
-        <div className={styles.divider}></div>
-        <p className={styles.lead}>
-        </p>
-      </div>
+      <HeroHeader
+        title="Historia y Orígenes"
+        description="Un viaje a través del tiempo, desde los primeros asentamientos de la tribu Tacariba hasta su consolidación como la Tacarigua de Margarita."
+        theme="heritage"
+        shape="diagonal"
+        images={[
+          '/Portada documentos/Portada Tacarigua Historica.png',
+          '/Portada documentos/Portada Tacarigua Historia 2.png',
+          '/images/documentolegalfundación.png',
+          '/images/dbu.jpg',
+          '/images/historiat.jpg',
+          '/images/images.jfif',
+          '/images/iscj.jpg'
+        ]}
+      />
 
-      
+      <div className={styles.innerContent}>
 
-      {/* Feature cards */}
-      <section className={styles.featureSection} aria-label="Aspectos históricos">
-        <div className={styles.featureGrid}>
-          {HISTORY_FEATURES.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <article key={feature.title} className={styles.featureCard}>
-                <div className={styles.featureIcon}>
-                  <Icon size={20} />
-                </div>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureText}>{feature.description}</p>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Videos */}
-      <section className={styles.mediaSection} aria-label="Material audiovisual">
-        <div className={styles.mediaHeader}>
-          <span className={styles.mediaBadge}>Audiovisual</span>
-          <h3 className={styles.mediaTitle}>Memoria en video</h3>
-          <p className={styles.mediaLead}>
-            Material documental audiovisual sobre la historia de Tacarigua.
-          </p>
-        </div>
-
-        {COMMUNITY_VIDEOS.map((item) => (
-          <div key={item.src} className={styles.mediaCard}>
-            <video
-              className={styles.mediaVideo}
-              controls
-              preload="metadata"
-              aria-label={item.title}
-            >
-              <source src={item.src} type="video/mp4" />
-              Tu navegador no soporta reproducción de video.
-            </video>
-            <div className={styles.mediaCaption}>
-              <h4>{item.title}</h4>
-              <p>{item.caption}</p>
+        {/* Feature cards */}
+        <section className={styles.featureSection} aria-label="Aspectos históricos">
+          <StaggerContainer delay={0.1}>
+            <div className={styles.featureGrid}>
+              {(featuresData.length > 0 ? featuresData : []).map((feature, i) => {
+                const Icon = ICON_MAP[feature.icono_nombre] || Landmark;
+                return (
+                  <StaggerItem key={feature.titulo || feature.title} index={i}>
+                    <motion.article
+                      className={styles.featureCard}
+                      whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    >
+                      <div className={styles.featureIcon}><Icon size={20} /></div>
+                      <h3 className={styles.featureTitle}>{feature.titulo || feature.title}</h3>
+                      <p className={styles.featureText}>{feature.descripcion || feature.description}</p>
+                    </motion.article>
+                  </StaggerItem>
+                );
+              })}
             </div>
-          </div>
-        ))}
-      </section>
+          </StaggerContainer>
+        </section>
 
-      {/* Documentos legales */}
-      <section className={styles.mediaSection} aria-label="Documentos legales">
-        <div className={styles.mediaHeader}>
-          <span className={styles.mediaBadge}>Documentos</span>
-          <h3 className={styles.mediaTitle}>Documentos Legales y Fundacionales</h3>
-          <p className={styles.mediaLead}>
-            Documentos históricos que respaldan la fundación y organización territorial de Tacarigua.
-          </p>
-        </div>
-
-        <div className={styles.documentsGrid}>
-          {LEGAL_DOCUMENTS.map((doc) => (
-            <div key={doc.title} className={styles.documentCard}>
-              <div className={styles.documentImageWrapper}>
-                <img
-                  src={doc.src}
-                  alt={doc.alt}
-                  className={styles.documentImage}
-                  loading="lazy"
-                  onClick={() => openModal(doc)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === 'Enter' && openModal(doc)}
-                />
+        {/* Videos */}
+        <section className={styles.mediaSection} aria-label="Material audiovisual">
+          <ScrollReveal variant="up" delay={0.1}>
+            <div className={styles.mediaHeader}>
+              <h3 className={styles.mediaTitle}>Memoria en video</h3>
+              <p className={styles.mediaLead}>Material documental audiovisual sobre la historia de Tacarigua.</p>
+            </div>
+          </ScrollReveal>
+          {(videosData.length > 0 ? videosData : []).map((item) => (
+            <ScrollReveal key={item.src} variant="scale" delay={0.2}>
+              <div className={styles.mediaCard}>
+                <video className={styles.mediaVideo} controls preload="metadata" aria-label={item.title}>
+                  <source src={item.src} type="video/mp4" />
+                </video>
+                <div className={styles.mediaCaption}>
+                  <h4>{item.title}</h4>
+                  <p>{item.caption}</p>
+                </div>
               </div>
-              <div className={styles.documentContent}>
-                <h4 className={styles.documentTitle}>{doc.title}</h4>
-                <p className={styles.documentDescription}>{doc.description}</p>
-                <button
-                  type="button"
-                  className={styles.documentButton}
-                  onClick={() => openModal(doc)}
+            </ScrollReveal>
+          ))}
+        </section>
+
+        {/* Documentos legales */}
+        <section className={styles.mediaSection} aria-label="Documentos legales">
+          <ScrollReveal variant="up" delay={0.1}>
+            <div className={styles.mediaHeader}>
+              <h3 className={styles.mediaTitle}>Documentos Legales y Fundacionales</h3>
+              <p className={styles.mediaLead}>Documentos históricos que respaldan la fundación y organización territorial de Tacarigua.</p>
+            </div>
+          </ScrollReveal>
+          <div className={styles.documentsGrid}>
+            {(documentosData.length > 0 ? documentosData : []).map((doc, i) => (
+              <ScrollReveal key={doc.titulo || doc.title} variant={i % 2 === 0 ? 'left' : 'right'} delay={0.15 * i}>
+                <motion.div
+                  className={styles.documentCard}
+                  whileHover={{ y: -4 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
                 >
-                  Ver documento
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+                  <div className={styles.documentImageWrapper}>
+                    <img
+                      src={doc.src} alt={doc.alt}
+                      className={styles.documentImage}
+                      loading="lazy"
+                      onClick={() => setModalImage(doc)}
+                      role="button" tabIndex={0}
+                      onKeyDown={(e) => e.key === 'Enter' && setModalImage(doc)}
+                    />
+                  </div>
+                  <div className={styles.documentContent}>
+                    <h4 className={styles.documentTitle}>{doc.title}</h4>
+                    <p className={styles.documentDescription}>{doc.description}</p>
+                    <motion.button
+                      type="button"
+                      className={styles.documentButton}
+                      onClick={() => setModalImage(doc)}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                    >
+                      Ver documento
+                    </motion.button>
+                  </div>
+                </motion.div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </section>
 
-      {/* Datos y curiosidades */}
-      <section className={styles.factSection} aria-label="Datos históricos">
-        <div className={styles.mediaHeader}>
-          <span className={styles.mediaBadge}>Sabías qué</span>
-          <h3 className={styles.mediaTitle}>Datos y curiosidades de Tacarigua</h3>
-          <p className={styles.mediaLead}>
-            Voces históricas y datos poco conocidos que ayudan a comprender mejor el pasado tacarigüero.
-          </p>
-        </div>
-        <div className={styles.factGrid}>
-          {QUICK_FACTS.map((fact) => {
-            const Icon = fact.icon;
-            return (
-              <div key={fact.label} className={styles.factCard}>
-                <div className={styles.factIcon}>
-                  <Icon size={18} />
+        {/* Datos curiosidades */}
+        <section className={styles.factSection} aria-label="Datos históricos">
+          <ScrollReveal variant="up" delay={0.1}>
+            <div className={styles.mediaHeader}>
+              <h3 className={styles.mediaTitle}>Datos y curiosidades de Tacarigua</h3>
+              <p className={styles.mediaLead}>Voces históricas y datos poco conocidos que ayudan a comprender mejor el pasado tacarigüero.</p>
+            </div>
+          </ScrollReveal>
+          <StaggerContainer delay={0.1}>
+            <div className={styles.factGrid}>
+              {(quickFactsData.length > 0 ? quickFactsData : []).map((fact, i) => {
+                const Icon = ICON_MAP[fact.icono_nombre] || Scroll;
+                return (
+                  <StaggerItem key={fact.label} index={i}>
+                    <motion.div
+                      className={styles.factCard}
+                      whileHover={{ scale: 1.03, y: -4 }}
+                      transition={{ type: 'spring', stiffness: 250 }}
+                    >
+                      <div className={styles.factIcon}><Icon size={18} /></div>
+                      <div>
+                      <h4 className={styles.factLabel}>{fact.label}</h4>
+                      <p className={styles.factText}>{fact.texto || fact.text}</p>
+                      </div>
+                    </motion.div>
+                  </StaggerItem>
+                );
+              })}
+            </div>
+          </StaggerContainer>
+        </section>
+
+        {/* PDF */}
+        <section className={styles.mediaSection}>
+          <ScrollReveal variant="up" delay={0.1}>
+            <div className={styles.mediaHeader}>
+              <h3 className={styles.mediaTitle}>Tacarigua Histórica</h3>
+              <p className={styles.mediaLead}>El valle de Tacarigua fue conocido como El Valle de los Olleros o Valle de Arimacoa por su cerámica indígena.</p>
+            </div>
+          </ScrollReveal>
+          <StaggerContainer delay={0.05}>
+            <div className={styles.documentsGrid}>
+              {(seccionesData.length > 0 ? seccionesData : []).map((section, i) => (
+                <StaggerItem key={section.title} index={i}>
+                  <motion.div
+                    className={styles.documentCard}
+                    whileHover={{ y: -4, boxShadow: '0 16px 32px rgba(0,0,0,0.08)' }}
+                    transition={{ type: 'spring', stiffness: 200 }}
+                  >
+                    <div className={styles.documentContent}>
+                      <h4 className={styles.documentTitle}>{section.titulo || section.title}</h4>
+                      <p className={styles.documentDescription}>{section.contenido || section.content}</p>
+                    </div>
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerContainer>
+          <ScrollReveal variant="up" delay={0.3}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                border: '1px solid rgba(212,160,69,0.2)',
+                borderRadius: '1.25rem',
+                padding: '2rem',
+                marginTop: '2rem',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.15), 0 0 0 1px rgba(212,160,69,0.08)',
+              }}
+            >
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <span style={{
+                  display: 'inline-block',
+                  padding: '0.35rem 1.1rem',
+                  background: 'linear-gradient(135deg, var(--goldenrod), var(--copper))',
+                  borderRadius: '9999px',
+                  fontWeight: 700,
+                  fontSize: '0.78rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  color: 'var(--oxford-navy)',
+                  marginBottom: '0.75rem',
+                }}>
+                  <Scroll size={14} style={{ marginRight: '0.35rem', display: 'inline', verticalAlign: 'middle' }} />
+                  DOCUMENTO HISTÓRICO
+                </span>
+                <h3 style={{ color: 'var(--goldenrod)', fontWeight: 700, margin: 0, fontSize: '1.15rem' }}>
+                  Módulos de Historia para Descargar
+                </h3>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.88rem', marginTop: '0.4rem' }}>
+                  Accede a los documentos completos sobre la historia de Tacarigua
+                </p>
+              </div>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <motion.a
+                  className={styles.ctaButton}
+                  href="/Proy.Tacarigua-Historica-Modulo-I.pdf"
+                  download target="_blank" rel="noreferrer"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  <Download size={16} style={{ marginRight: '0.35rem' }} />
+                  Proy. Tacarigua Histórica Módulo I
+                </motion.a>
+                <motion.a
+                  className={styles.ctaButton}
+                  href="/EDICION-MODULO-I-HISTORIA-2022-2DA-REVISION.pdf"
+                  download target="_blank" rel="noreferrer"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  <Download size={16} style={{ marginRight: '0.35rem' }} />
+                  Edición Módulo I - 2da Revisión
+                </motion.a>
+              </div>
+            </motion.div>
+          </ScrollReveal>
+        </section>
+
+        {/* Modal */}
+        <AnimatePresence>
+          {modalImage && (
+            <motion.div
+              className={styles.modalOverlay}
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              onClick={() => setModalImage(null)}
+            >
+              <motion.div
+                className={styles.modalContent}
+                initial={{ scale: 0.85, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.85, opacity: 0 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 22 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button type="button" className={styles.modalClose} onClick={() => setModalImage(null)} aria-label="Cerrar">×</button>
+                <div className={styles.modalHeader}>
+                  <h3>{modalImage.title}</h3>
+                  <p>{modalImage.description}</p>
                 </div>
-                <div>
-                  <h4 className={styles.factLabel}>{fact.label}</h4>
-                  <p className={styles.factText}>{fact.text}</p>
+                <img src={modalImage.fullSrc || modalImage.src} alt={modalImage.alt} className={styles.modalImage} />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Timeline */}
+        <div className={styles.timelineSection}>
+          <ScrollReveal variant="up" delay={0.1}>
+            <h2 className={styles.timelineTitle}>Historia &amp; Crónicas</h2>
+          </ScrollReveal>
+          <div className={styles.timeline}>
+            {timelineEvents.map((evento, index) => (
+              <ScrollReveal
+                key={evento.id}
+                variant={index % 2 === 0 ? 'left' : 'right'}
+                delay={0.1 + index * 0.1}
+              >
+                <div className={`${styles.timelineItem} ${index % 2 === 0 ? styles.left : styles.right}`}>
+                  <div className={styles.nodeWrapper}>
+                    <div className={styles.node} />
+                  </div>
+                  <motion.div
+                    className={`${styles.card} ${activeId === evento.id ? styles.cardActive : ''}`}
+                    onClick={() => handleToggle(evento.id)}
+                    role="button"
+                    aria-expanded={activeId === evento.id}
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && handleToggle(evento.id)}
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ type: 'spring', stiffness: 250 }}
+                  >
+                    <div className={styles.cardHeader}>
+                      <div className={styles.cardMeta}>
+                        <span className={styles.yearBadge}>{evento.anio}</span>
+                        <span className={styles.tagBadge}>{evento.tag}</span>
+                      </div>
+                      <h3 className={styles.cardTitle}>{evento.titulo}</h3>
+                      <motion.span
+                        className={styles.expandIcon}
+                        animate={{ rotate: activeId === evento.id ? 180 : 0 }}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <ChevronDown size={16} />
+                      </motion.span>
+                    </div>
+                    <AnimatePresence>
+                      {activeId === evento.id && (
+                        <motion.div
+                          className={styles.cardBody}
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          style={{ overflow: 'hidden' }}
+                        >
+                          <p className={styles.cardDesc}>{evento.descripcion}</p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* PDF download */}
-      <section className={styles.mediaSection} aria-label="TacariguaHistoria">
-        <div className={styles.mediaHeader}>
-          <span className={styles.mediaBadge}>Historia oficial</span>
-          <h3 className={styles.mediaTitle}>TacariguaHistoria</h3>
-          <p className={styles.mediaLead}>
-            El valle de Tacarigua fue conocido como El Valle de los Olleros o Valle de Arimacoa por su cerámica indígena.
-            Sus habitantes cultivaban maíz, yuca y algodón.
-          </p>
-        </div>
-
-        <div className={styles.documentsGrid}>
-          {HISTORIA_SECTIONS.map((section) => (
-            <div key={section.title} className={styles.documentCard}>
-              <div className={styles.documentContent}>
-                <h4 className={styles.documentTitle}>{section.title}</h4>
-                <p className={styles.documentDescription}>{section.content}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.heroActions}>
-          <a
-            className={styles.ctaButton}
-            href={HISTORIA_PDF_PATH}
-            download
-            target="_blank"
-            rel="noreferrer"
-          >
-            Descargar PDF TacariguaHistoria
-          </a>
-        </div>
-      </section>
-
-      {/* Modal */}
-      {modalImage && (
-        <div className={styles.modalOverlay} onClick={closeModal}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <button type="button" className={styles.modalClose} onClick={closeModal} aria-label="Cerrar">×</button>
-            <div className={styles.modalHeader}>
-              <h3>{modalImage.title}</h3>
-              <p>{modalImage.description}</p>
-            </div>
-            <img src={modalImage.fullSrc || modalImage.src} alt={modalImage.alt} className={styles.modalImage} />
+              </ScrollReveal>
+            ))}
           </div>
         </div>
-      )}
-
-      {/* Timeline interactivo */}
-      <div className={styles.timelineSection}>
-        <h2 className={styles.timelineTitle}>Historia &amp; Crónicas</h2>
-        <div className={styles.timeline}>
-          {timelineEvents.map((evento, index) => (
-            <div
-              key={evento.id}
-              className={`${styles.timelineItem} ${index % 2 === 0 ? styles.left : styles.right}`}
-            >
-              <div className={styles.nodeWrapper}>
-                <div className={styles.node}></div>
-              </div>
-
-              <div
-                className={`${styles.card} ${activeId === evento.id ? styles.cardActive : ''}`}
-                onClick={() => handleToggle(evento.id)}
-                role="button"
-                aria-expanded={activeId === evento.id}
-                tabIndex={0}
-                onKeyDown={(e) => e.key === 'Enter' && handleToggle(evento.id)}
-              >
-                <div className={styles.cardHeader}>
-                  <div className={styles.cardMeta}>
-                    <span className={styles.yearBadge}>{evento.anio}</span>
-                    <span className={styles.tagBadge}>{evento.tag}</span>
-                  </div>
-                  <h3 className={styles.cardTitle}>{evento.titulo}</h3>
-                  <span className={styles.expandIcon}>
-                    {activeId === evento.id ? '▲' : '▼'}
-                  </span>
-                </div>
-
-                {activeId === evento.id && (
-                  <div className={styles.cardBody}>
-                    <p className={styles.cardDesc}>{evento.descripcion}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

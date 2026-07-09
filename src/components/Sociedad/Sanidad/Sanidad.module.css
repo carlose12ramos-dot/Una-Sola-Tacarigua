@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  max-width: 920px;
+  max-width: var(--max-width);
   margin: 0 auto;
   animation: fadeIn 0.5s ease;
   padding: 0 1rem;
@@ -229,10 +229,72 @@
 }
 
 /* ── Card Grid ── */
+.dispensarioDestacado {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.dispensarioCardLarge {
+  background: #fff;
+  border: 1px solid #e4eff4;
+  border-radius: 16px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.dispensarioImageWrap {
+  width: 280px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid #e4eff4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.dispensarioImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dispensarioCardLargeContent {
+  flex: 1;
+}
+
+.dispensarioHeaderInline {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.dispensarioIconInline {
+  font-size: 1.8rem;
+}
+
+.dispensarioTitleInline {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--oxford-navy);
+  margin: 0;
+}
+
+.dispensarioTextLarge {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.65;
+  margin-top: 0.8rem;
+}
+
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
 }
 
 .dispensarioCard {
@@ -256,7 +318,7 @@
 }
 
 .dispensarioCard h4 {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--oxford-navy);
   margin: 0;
@@ -272,7 +334,7 @@
 
 .dispensarioCard p {
   font-size: 0.9rem;
-  color: #000;
+  color: #333;
   line-height: 1.6;
   margin: 0;
   text-align: justify;
@@ -428,4 +490,294 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(29, 53, 87, 0.35);
   background: linear-gradient(135deg, hsl(195, 70%, 39%), hsl(195, 70%, 49%));
+}
+
+/* ── Interactive water card additions ── */
+.timelineCard {
+  cursor: pointer;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.tcImageWrap {
+  width: 150px;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid #e4eff4;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+
+.tcImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.timelineCard:hover .tcImage {
+  transform: scale(1.05);
+}
+
+.tcResumen {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+.tcVerMas {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: hsl(195,70%,42%);
+  margin-top: 0.2rem;
+  display: inline-block;
+}
+
+/* ── Modal overlay and modal layout ── */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 32, 75, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.aguaModal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 36px rgba(15, 32, 75, 0.25);
+  position: relative;
+  animation: modalScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes modalScaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.modalClose {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.modalClose:hover {
+  background: var(--oxford-navy);
+  color: #fff;
+  border-color: var(--oxford-navy);
+}
+
+.aguaModalImageWrap {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.aguaModalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aguaModalBody {
+  padding: 2rem;
+}
+
+.aguaModalPeriodo {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: hsl(195,70%,42%);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.aguaModalTitle {
+  font-size: 1.6rem;
+  color: var(--oxford-navy);
+  margin: 0 0 1rem;
+  font-weight: 800;
+}
+
+.aguaModalContent {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;
+}
+
+.aguaModalContent p {
+  margin: 0 0 1rem;
+}
+
+.aguaModalContent p:last-child {
+  margin: 0;
+}
+
+.modalSubTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--oxford-navy);
+  margin: 1.5rem 0 0.6rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3rem;
+}
+
+@media (max-width: 650px) {
+  .timelineCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tcImageWrap {
+    width: 100%;
+    height: 180px;
+  }
+  .aguaModalBody {
+    padding: 1.2rem;
+  }
+  .aguaModalImageWrap {
+    height: 180px;
+  }
+  .dispensarioCardLarge {
+    flex-direction: column;
+    padding: 1.2rem;
+    gap: 1.2rem;
+  }
+  .dispensarioImageWrap {
+    width: 100%;
+    height: 180px;
+  }
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
+/* ── Personajes de la Sanidad ── */
+.personajesList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-start;
+}
+
+.personajeCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #eef6ff;
+  border-radius: 50px;
+  padding: 0.45rem 1rem 0.45rem 0.45rem;
+  border: 1px solid rgba(29, 53, 87, 0.15);
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  /* reset button defaults */
+  font-family: inherit;
+  text-align: left;
+  outline: none;
+}
+
+.personajeCard:hover {
+  box-shadow: 0 6px 18px rgba(15, 32, 75, 0.12);
+  transform: translateY(-2px);
+  border-color: hsl(195, 70%, 42%);
+}
+
+.personajeCard:focus-visible {
+  box-shadow: 0 0 0 3px hsla(195, 70%, 42%, 0.4);
+}
+
+.personajeAvatar {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  background: hsl(195, 70%, 42%);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.personajeNombre {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--oxford-navy);
+  white-space: nowrap;
+}
+
+/* ── Modal Personaje ── */
+.personajeModal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.2rem 2rem 2.5rem;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.25s ease;
+}
+
+.personajeModalAvatar {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: hsl(195, 70%, 42%);
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  box-shadow: 0 4px 14px rgba(25, 118, 210, 0.25);
+}
+
+.personajeModalTitle {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--oxford-navy);
+  margin: 0 0 1rem;
+}
+
+.personajeModalDesc {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #333;
+  text-align: justify;
+  margin: 0;
 }

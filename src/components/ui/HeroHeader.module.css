@@ -1,0 +1,496 @@
+.headerSection {
+  position: relative;
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.kickerBadge {
+  display: inline-flex;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-family: var(--fuente-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 0 0 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.description {
+  font-size: 1.15rem;
+  max-width: 700px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================================
+   THEMES (Colores y contrastes)
+   ========================================= */
+
+/* Common enhancements for headers */
+.headerSection {
+  position: relative;
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (min-width: 768px) {
+  .headerSection {
+    min-height: calc(100vh - 7rem);
+  }
+}
+
+.title {
+  font-family: var(--fuente-display);
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  margin: 0 0 1.5rem;
+  line-height: 1.15;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.kickerBadge {
+  display: inline-flex;
+  padding: 0.55rem 1.35rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+}
+
+/* Glow animation for premium look */
+.decorations::before,
+.decorations::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  animation: floatGlow 12s ease-in-out infinite alternate;
+}
+
+.decorations::before {
+  width: 400px;
+  height: 400px;
+  top: -150px;
+  right: -100px;
+  background: radial-gradient(circle, var(--glow-primary, rgba(218,165,32,0.3)) 0%, transparent 80%);
+}
+
+.decorations::after {
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  left: -80px;
+  background: radial-gradient(circle, var(--glow-secondary, rgba(188,108,37,0.35)) 0%, transparent 80%);
+  animation-delay: -6s;
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(40px, 30px) scale(1.15);
+  }
+}
+
+/* Primary: Default Tacarigua (Dorado/Bronce tierra) */
+.theme-primary {
+  background: linear-gradient(135deg, #E6C229 0%, #D4AF37 45%, #996515 100%);
+  color: #4A3510;
+  --glow-primary: rgba(212, 175, 55, 0.4);
+  --glow-secondary: rgba(153, 101, 21, 0.3);
+}
+.theme-primary .kickerBadge {
+  background: rgba(218, 165, 32, 0.18);
+  color: var(--copper);
+  border: 1px solid rgba(218, 165, 32, 0.35);
+}
+.theme-primary .description {
+  color: rgba(29, 53, 87, 0.9);
+}
+.theme-primary .decorations { color: rgba(218, 165, 32, 0.08); }
+
+/* Sunset: Cálido para Cultura/Costumbres */
+.theme-sunset {
+  background: linear-gradient(135deg, #FFE8D6 0%, #FFD8BE 40%, #FCD2A9 100%);
+  color: #a72d07;
+  --glow-primary: rgba(230, 74, 25, 0.35);
+  --glow-secondary: rgba(218, 165, 32, 0.35);
+}
+.theme-sunset .kickerBadge {
+  background: linear-gradient(135deg, #e64a19, #bf360c);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(230, 74, 25, 0.3);
+}
+.theme-sunset .description {
+  color: #8c2605;
+}
+.theme-sunset .decorations { color: rgba(230, 74, 25, 0.08); }
+
+/* Nature: Geografía / Naturaleza */
+.theme-nature {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 40%, #A5D6A7 100%);
+  color: #1b5e20;
+  --glow-primary: rgba(46, 125, 50, 0.35);
+  --glow-secondary: rgba(218, 165, 32, 0.3);
+}
+.theme-nature .kickerBadge {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+}
+.theme-nature .description {
+  color: #2e7d32;
+}
+.theme-nature .decorations { color: rgba(46, 125, 50, 0.08); }
+
+/* Sepia: Historia / Tradición */
+.theme-sepia {
+  background: linear-gradient(135deg, #EFEBE9 0%, #D7CCC8 45%, #BCAAA4 100%);
+  color: #3e2723;
+  --glow-primary: rgba(93, 64, 55, 0.35);
+  --glow-secondary: rgba(188, 108, 37, 0.3);
+}
+.theme-sepia .kickerBadge {
+  background: linear-gradient(135deg, #5d4037, #3e2723);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(93, 64, 55, 0.3);
+}
+.theme-sepia .description {
+  color: #4e342e;
+}
+.theme-sepia .decorations { color: rgba(93, 64, 55, 0.08); }
+
+/* Heritage: Historia Viva (Carmesí/Borgoña oscuro) */
+.theme-heritage {
+  background: linear-gradient(135deg, #F9EBEA 0%, #E6B0AA 45%, #C0392B 100%);
+  color: #641E16;
+  --glow-primary: rgba(192, 57, 43, 0.35);
+  --glow-secondary: rgba(123, 36, 28, 0.3);
+}
+.theme-heritage .kickerBadge {
+  background: linear-gradient(135deg, #922B21, #641E16);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(146, 43, 33, 0.3);
+}
+.theme-heritage .description {
+  color: #7B241C;
+}
+.theme-heritage .decorations { color: rgba(192, 57, 43, 0.08); }
+
+/* Library: Biblioteca (Bronze tierra) */
+.theme-library {
+  background: linear-gradient(135deg, #FDF5E6 0%, #D4A574 45%, #8B5E3C 100%);
+  color: #4E2E1A;
+  --glow-primary: rgba(178, 120, 62, 0.35);
+  --glow-secondary: rgba(101, 60, 28, 0.3);
+}
+.theme-library .kickerBadge {
+  background: linear-gradient(135deg, #A0673C, #5C3317);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(139, 94, 60, 0.3);
+}
+.theme-library .description {
+  color: #5C3317;
+}
+.theme-library .decorations { color: rgba(178, 120, 62, 0.08); }
+
+/* Ocean: Sociedad / Azul brillante */
+.theme-ocean {
+  background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 40%, #90CAF9 100%);
+  color: #0d47a1;
+  --glow-primary: rgba(25, 118, 210, 0.35);
+  --glow-secondary: rgba(0, 150, 136, 0.3);
+}
+.theme-ocean .kickerBadge {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+.theme-ocean .description {
+  color: #1565c0;
+}
+.theme-ocean .decorations { color: rgba(25, 118, 210, 0.08); }
+
+/* Vibrant: Interactivo (Participa) */
+.theme-vibrant {
+  background: linear-gradient(135deg, #FCE4EC 0%, #F3E5F5 45%, #E1BEE7 100%);
+  color: #880e4f;
+  --glow-primary: rgba(194, 24, 91, 0.35);
+  --glow-secondary: rgba(103, 58, 183, 0.3);
+}
+.theme-vibrant .kickerBadge {
+  background: linear-gradient(135deg, #c2185b, #880e4f);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(194, 24, 91, 0.3);
+}
+.theme-vibrant .description {
+  color: #ad1457;
+}
+.theme-vibrant .decorations { color: rgba(194, 24, 91, 0.08); }
+
+/* =========================================
+   SHAPES (Decoraciones de fondo)
+   ========================================= */
+.decorations {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Minimal (Nada) */
+.shape-minimal { }
+
+/* Waves */
+.waveSvg {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-width: 1000px;
+  color: var(--cream); /* Se fusiona con el fondo de la página */
+}
+
+/* Curves */
+.curveBottom {
+  position: absolute;
+  bottom: -50px;
+  left: -10%;
+  width: 120%;
+  height: 150px;
+  background: var(--cream);
+  border-radius: 50% 50% 0 0;
+}
+
+/* Diagonal */
+.diagonalBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: var(--cream);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+
+/* Geometric */
+.geoShape {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5; /* Hereda el color suave de .decorations */
+}
+.geo1 {
+  width: 300px; height: 300px;
+  top: -100px; left: -100px;
+}
+.geo2 {
+  width: 200px; height: 200px;
+  bottom: -50px; right: -50px;
+}
+.geo3 {
+  width: 100px; height: 100px;
+  top: 50px; right: 20%;
+}
+
+/* Dots Pattern */
+.dotsPattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(currentColor 2px, transparent 2px);
+  background-size: 30px 30px;
+  opacity: 0.35;
+}
+
+@media (max-width: 768px) {
+  .headerSection {
+    padding: 6rem 1.5rem 4rem;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+}
+
+.heroActions { margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; }
+
+/* =========================================
+   COLLAGE BACKGROUND
+   ========================================= */
+.collageContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  /* display:grid + grid-template-* are injected via inline style in HeroHeader.jsx */
+}
+
+.collageOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.5) 0%, rgba(15, 23, 42, 0.2) 100%);
+}
+
+.hasCollage {
+  color: #ffffff !important;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.9), 0 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+/* Forzar color blanco en el título aunque el tema herede colores azules/marrones */
+.hasCollage .title {
+  color: #ffffff !important;
+  text-shadow: 0 3px 20px rgba(0,0,0,0.95), 0 2px 6px rgba(0,0,0,0.9) !important;
+}
+
+.hasCollage .description {
+  color: #f0f0f0 !important;
+  font-weight: 500;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.95), 0 1px 4px rgba(0,0,0,0.9);
+}
+
+.hasCollage .kickerBadge {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.collageImageWrapper {
+  position: relative;
+  min-height: 0; /* critical for grid stretch */
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .collageContainer {
+    /* En móvil mostramos una sola columna */
+    grid-template-columns: 1fr !important;
+    grid-template-rows: unset !important;
+  }
+  .collageImageWrapper {
+    grid-column: span 1 !important;
+    min-height: 200px;
+  }
+}
+
+.collageImage {
+  position: absolute;
+  inset: -5%; /* Reduced inset for tighter blur */
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  object-position: center;
+  animation: slowZoom 20s infinite alternate ease-in-out;
+  /* Default soft radial blend */
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+}
+
+/* Efecto Diamante suave para Nosotros + Colores vibrantes */
+.theme-primary .collageImage {
+  -webkit-mask-image: linear-gradient(135deg, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 95%);
+  mask-image: linear-gradient(135deg, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 95%);
+  filter: saturate(1.2) contrast(1.1);
+}
+
+/* Difuminado Horizontal para Cultura + Tono cálido atardecer */
+.theme-sunset .collageImage {
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 2%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 98%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,0) 2%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 98%);
+  filter: sepia(0.25) contrast(1.15) brightness(1.05) hue-rotate(-5deg);
+  mix-blend-mode: multiply;
+}
+
+/* Viñeta circular para Historia (Heritage) + Contraste y calidez */
+.theme-heritage .collageImage {
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 95%);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 95%);
+  filter: sepia(0.2) contrast(1.25) saturate(1.1) brightness(0.9);
+  mix-blend-mode: luminosity;
+}
+
+/* Fusión en cascada/diagonal para Biblioteca (Library) + Tono bronze tierra cálido */
+.theme-library .collageImage {
+  -webkit-mask-image: linear-gradient(160deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.8) 45%, rgba(0,0,0,0.8) 55%, rgba(0,0,0,0) 90%);
+  mask-image: linear-gradient(160deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.8) 45%, rgba(0,0,0,0.8) 55%, rgba(0,0,0,0) 90%);
+  filter: sepia(0.3) saturate(1.2) contrast(1.1) brightness(1.0);
+  mix-blend-mode: multiply;
+}
+
+/* Formas orgánicas asimétricas para Sociedad + Tono fresco azulado */
+.theme-ocean .collageImage {
+  -webkit-mask-image: radial-gradient(circle at 40% 50%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 95%);
+  mask-image: radial-gradient(circle at 40% 50%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 95%);
+  filter: saturate(1.1) contrast(1.15) hue-rotate(5deg);
+}
+
+/* Cortes transversales fluidos para Geografía + Verdes realzados */
+.theme-nature .collageImage {
+  -webkit-mask-image: linear-gradient(45deg, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 95%);
+  mask-image: linear-gradient(45deg, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 95%);
+  filter: saturate(1.3) contrast(1.1);
+}
+
+.collageImageWrapper:nth-child(even) .collageImage {
+  animation-direction: alternate-reverse;
+  animation-duration: 25s;
+}
+
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}

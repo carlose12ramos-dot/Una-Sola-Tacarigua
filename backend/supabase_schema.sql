@@ -50,6 +50,7 @@ CREATE TABLE sugerencias (
     detalles TEXT NOT NULL,
     estado VARCHAR(20) DEFAULT 'pendiente' CHECK (estado IN ('pendiente', 'en_revision', 'aprobado', 'rechazado')),
     imagen VARCHAR(255),
+    adjuntos JSONB,
     creado_en TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
 );
 
@@ -200,9 +201,7 @@ INSERT INTO sociedad_sanidad (nombre_centro, tipo, direccion, horarios) VALUES
 ('Ambulatorio de Tacarigua', 'Ambulatorio', 'Calle Principal', '24 horas'),
 ('Farmacia del Pueblo', 'Farmacia', 'Frente a la Plaza Bolívar', '8:00 AM - 8:00 PM');
 
--- Educación
-INSERT INTO sociedad_educacion (institucion, nivel, resena_historica) VALUES
-('U.E.N. Francisco Esteban Gómez', 'Básica y Diversificada', 'Institución histórica del pueblo de Tacarigua.');
+-- Educación (seed eliminado — datos incorrectos, las instituciones auténticas están en el frontend)
 
 -- Cultores
 INSERT INTO cultura_cultores (nombre, disciplina, localidad) VALUES

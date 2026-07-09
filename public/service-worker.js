@@ -79,6 +79,13 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
+  // EVITAR INTERCEPTAR MULTIMEDIA (Soluciona el error 0:00 en videos y audios)
+  // Los navegadores usan peticiones parciales (Range) para streaming.
+  // Si el Service Worker las intercepta sin una lógica compleja de Range, el video se cuelga.
+  if (event.request.headers.has('range')) {
+    return;
+  }
+
   const url = new URL(event.request.url);
 
   // 1. Teselas de mapa → Stale-While-Revalidate con cuota

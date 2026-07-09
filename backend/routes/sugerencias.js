@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import pool from '../db.js';
+import { verifyToken } from '../middleware/authMiddleware.js';
 
 const router = Router();
 
@@ -16,7 +17,7 @@ router.get('/', async (req, res) => {
 
 // POST: Crear/enviar una sugerencia ciudadana
 router.post('/', async (req, res) => {
-  const { usuario_nombre, tipo_aporte, detalles, imagen } = req.body;
+  const { usuario_nombre, tipo_aporte, detalles, imagen, adjuntos } = req.body;
   
   if (!usuario_nombre || !tipo_aporte || !detalles) {
     return res.status(400).json({ error: 'Faltan campos requeridos (usuario_nombre, tipo_aporte, detalles)' });
@@ -24,11 +25,11 @@ router.post('/', async (req, res) => {
 
   try {
     const query = `
-      INSERT INTO sugerencias (usuario_nombre, tipo_aporte, detalles, estado, imagen)
-      VALUES ($1, $2, $3, 'pendiente', $4)
+      INSERT INTO sugerencias (usuario_nombre, tipo_aporte, detalles, estado, imagen, adjuntos)
+      VALUES ($1, $2, $3, 'pendiente', $4, $5)
       RETURNING *
     `;
-    const values = [usuario_nombre, tipo_aporte, detalles, imagen || null];
+    const values = [usuario_nombre, tipo_aporte, detalles, imagen || null, adjuntos ? JSON.stringify(adjuntos) : null];
     const result = await pool.query(query, values);
     
     res.status(201).json(result.rows[0]);
@@ -39,7 +40,7 @@ router.post('/', async (req, res) => {
 });
 
 // PUT: Modificar el estado de moderación (Aprobar/Rechazar)
-router.put('/:id/estado', async (req, res) => {
+router.put('/:id/estado', verifyToken, async (req, res) => {
   const { id } = req.params;
   const { estado } = req.body; // 'aprobado' o 'rechazado'
 
@@ -64,6 +65,19 @@ router.put('/:id/estado', async (req, res) => {
   } catch (error) {
     console.error('Error en PUT /api/sugerencias/:id/estado:', error);
     res.status(500).json({ error: 'Error al actualizar el estado de moderación' });
+  }
+});
+
+// DELETE: Eliminar una sugerencia
+router.delete('/:id', verifyToken, async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await pool.query('DELETE FROM sugerencias WHERE id = $1 RETURNING id', [id]);
+    if (result.rowCount === 0) return res.status(404).json({ error: 'Sugerencia no encontrada' });
+    res.json({ success: true, message: 'Sugerencia eliminada' });
+  } catch (error) {
+    console.error('Error en DELETE /api/sugerencias:', error);
+    res.status(500).json({ error: 'Error al eliminar la sugerencia' });
   }
 });
 

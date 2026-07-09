@@ -1,13 +1,17 @@
 .footer {
   margin-top: auto;
   background: linear-gradient(to bottom, var(--oxford-navy) 0%, var(--oxford-navy-dark) 100%);
-  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(218, 165, 32, 0.4);
 }
 
 .inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .grid {
@@ -155,24 +159,8 @@
   margin-top: 2px;
 }
 
-.bottomBar {
-  border-top: 1px solid rgba(218, 165, 32, 0.2);
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .bottomBar {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
 .copyright {
+  margin: 0;
   font-size: 0.875rem;
   color: var(--cream);
   opacity: 0.7;
@@ -180,10 +168,12 @@
 }
 
 .devCredit {
+  margin: 0;
   font-size: 0.8rem;
   color: var(--goldenrod);
   opacity: 0.85;
   margin-top: 0.25rem;
+  text-align: center;
 }
 
 .legal {

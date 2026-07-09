@@ -74,10 +74,10 @@ function HeroBanner() {
       ))}
 
       <button type="button" className={`${styles.arrow} ${styles.arrowLeft}`} onClick={prev} aria-label="Slide anterior">
-        <ChevronLeft size={24} />
+        <ChevronLeft size={20} />
       </button>
       <button type="button" className={`${styles.arrow} ${styles.arrowRight}`} onClick={next} aria-label="Slide siguiente">
-        <ChevronRight size={24} />
+        <ChevronRight size={20} />
       </button>
 
       <div className={styles.dots}>

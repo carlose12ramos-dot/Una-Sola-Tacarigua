@@ -1,207 +1,296 @@
+﻿import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
 import styles from './NosotrosModule.module.css';
-import { IMAGES } from '../data/images';
+import HeroHeader from '../components/ui/HeroHeader';
+import ScrollReveal, { StaggerItem, StaggerContainer } from '../components/ui/ScrollReveal';
+import { Phone, Mail, User, MessageCircle } from 'lucide-react';
 
-const PROJECT_FEATURES = [
-  {
-    icon: '📜',
-    title: 'Memoria Histórica Verificada',
-    description: 'En febrero de 2018, un grupo de tacarigüeros nativos y amigos de la comunidad creó un Equipo de Trabajo para reconstruir la memoria histórica en cinco módulos: Historia, Educación, Cultura, Sanidad y Deportes, con asesoría de la Academia de la Historia de Nueva Esparta.',
+const IMAGES = {
+  TACARIGUA: {
+    src: '/images/TACARIGUA.webp',
+    fallback: '/images/TACARIGUA.jpg',
+    alt: 'Vista aerea de la Iglesia y Plaza de Tacarigua de Margarita',
   },
-  {
-    icon: '🏺',
-    title: 'Patrimonio de Cultores',
-    description: 'Directorio de músicos, artesanos, cronistas y compositores documentados en el Módulo de Cultura: desde José España Gil, el mejor requintista de Venezuela, hasta los olleros del Valle y los 76 libros publicados por autores tacarigüeros.',
+  CREATOR: {
+    src: '/images/Carlos Ramos.png',
+    alt: 'Carlos Eduardo Ramos González - Creador del Proyecto',
   },
-  {
-    icon: '📖',
-    title: 'Biblioteca Comunitaria',
-    description: 'Acceso a las obras de José Joaquín Salazar Franco "Cheguaco", los módulos de Memoria Histórica, archivos periodísticos como "El Alarmador" (1966) y registros de música folclórica y tradiciones vivas de Tacarigua.',
-  },
-  {
-    icon: '🎓',
-    title: 'La Atenas Neoespartana',
-    description: 'Tacarigua fue de las primeras nueve poblaciones del estado en recibir escuelas en el siglo XIX. Con un 28,3 % de profesionales universitarios registrado ante la UNESCO, la comunidad es reconocida como La Atenas Neoespartana.',
-  },
-];
+};
 
-const PROJECT_VALUES = [
-  {
-    icon: '🔍',
-    title: 'Veracidad',
-    description: 'Información verificada y documentada con fuentes confiables',
-  },
-  {
-    icon: '🤝',
-    title: 'Comunidad',
-    description: 'Trabajo colaborativo con los habitantes de Tacarigua de Margarita',
-  },
-  {
-    icon: '💡',
-    title: 'Innovación',
-    description: 'Uso de tecnología moderna para preservar la historia',
-  },
-  {
-    icon: '🌍',
-    title: 'Accesibilidad',
-    description: 'Conocimiento disponible para todos, sin barreras',
-  },
-  {
-    icon: '❤️',
-    title: 'Pasión',
-    description: 'Amor profundo por nuestra tierra y su historia',
-  },
-  {
-    icon: '📚',
-    title: 'Educación',
-    description: 'Compromiso con el aprendizaje y la difusión cultural',
-  },
-];
-
-const PROJECT_STATS = [
-  {
-    label: 'Libros Publicados',
-    value: '76+',
-    icon: '📚',
-  },
-  {
-    label: 'Profesionales Universitarios',
-    value: '28.3%',
-    icon: '🎓',
-  },
-  {
-    label: 'Años de Historia',
-    value: '445',
-    icon: '📜',
-  },
-  {
-    label: 'Módulos de Memoria',
-    value: '5',
-    icon: '🗂️',
-  },
-];
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 function NosotrosModule() {
+  const [featuresData, setFeaturesData] = useState([]);
+  const [valuesData, setValuesData] = useState([]);
+  const [statsData, setStatsData] = useState([]);
+  const [misionVisionData, setMisionVisionData] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API_BASE}/nosotros/features`)
+      .then(res => res.json())
+      .then(data => { if (data?.length) setFeaturesData(data.map(d => ({ icon: d.icono, title: d.titulo, description: d.descripcion }))); })
+      .catch(() => {});
+    fetch(`${API_BASE}/nosotros/valores`)
+      .then(res => res.json())
+      .then(data => { if (data?.length) setValuesData(data.map(d => ({ icon: d.icono, title: d.titulo, description: d.descripcion }))); })
+      .catch(() => {});
+    fetch(`${API_BASE}/nosotros/stats`)
+      .then(res => res.json())
+      .then(data => { if (data?.length) setStatsData(data.map(d => ({ icon: d.icono, label: d.label, value: d.valor }))); })
+      .catch(() => {});
+    fetch(`${API_BASE}/nosotros/mision-vision`)
+      .then(res => res.json())
+      .then(data => {
+        if (data?.length) {
+          setMisionVisionData(data.map(d => ({
+            icon: d.tipo === 'mision' ? '\u{1F3AF}' : '\u{1F52D}',
+            title: d.titulo,
+            text: d.contenido,
+          })));
+        }
+      })
+      .catch(() => {});
+  }, []);
   return (
-    <section className={styles.container}>
-      {/* Header */}
-      <div className={styles.headerSection}>
-        <h2 className={styles.title}>Sobre Nosotros</h2>
-        <div className={styles.divider}></div>
-        <p className={styles.lead}>
-          Preservando la memoria histórica de Tacarigua de Margarita, Estado Nueva Esparta, Venezuela, para las generaciones futuras.
-        </p>
+    <motion.section
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <Helmet>
+        <title>Nosotros | Una Sola Tacarigua</title>
+        <meta name="description" content="Conoce la mision, vision y los valores del proyecto Una Sola Tacarigua." />
+      </Helmet>
+
+      <HeroHeader
+        title="Sobre Nosotros"
+        description="Preservando la memoria historica de Tacarigua de Margarita, Estado Nueva Esparta, Venezuela, para las generaciones futuras."
+        theme="primary"
+        shape="waves"
+        images={[
+          '/images/calle.jpg',
+          '/images/San-Sebastian-1.jpg',
+          '/Imagenes Santos/nosotros.jpg',
+          '/Imagenes Santos/nosotros 2.jpg'
+        ]}
+      />
+
+      <div className={styles.innerContent}>
+
+        {/* Mission / Vision */}
+        <section className={styles.featureSection}>
+          <StaggerContainer delay={0.05}>
+            <div className={styles.featureGridDouble}>
+              {(misionVisionData.length > 0 ? misionVisionData : [
+                { icon: '\u{1F3AF}', title: 'Nuestra Mision', text: 'Digitalizar y preservar la memoria historica de Tacarigua de Margarita, haciendo accesible su rico patrimonio cultural, educativo y social a traves de una plataforma interactiva y colaborativa.' },
+                { icon: '\u{1F52D}', title: 'Nuestra Vision',  text: 'Convertirnos en el referente digital mas completo sobre la historia y cultura de Tacarigua, conectando a las generaciones actuales y futuras con sus raices a traves de la tecnologia y la innovacion.' },
+              ]).map((item, i) => (
+                <StaggerItem key={item.title} index={i}>
+                  <motion.article
+                    className={styles.featureCard}
+                    whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+                    transition={{ type: 'spring', stiffness: 250, damping: 20 }}
+                  >
+                    <div className={styles.featureIcon}>{item.icon}</div>
+                    <h3 className={styles.featureTitle}>{item.title}</h3>
+                    <p className={styles.featureText}>{item.text}</p>
+                  </motion.article>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerContainer>
+        </section>
+
+        {/* Stats */}
+        <section className={styles.mediaSection}>
+          <ScrollReveal variant="up" delay={0.1}>
+            <div className={styles.mediaHeader}>
+              <h3 className={styles.mediaTitle}>Datos Destacados</h3>
+              <p className={styles.mediaLead}>Cifras que reflejan la riqueza historica y cultural de Tacarigua de Margarita.</p>
+            </div>
+          </ScrollReveal>
+          <StaggerContainer delay={0.05}>
+            <div className={styles.statsGrid}>
+              {(statsData.length > 0 ? statsData : []).map((stat, i) => (
+                <StaggerItem key={stat.label} index={i}>
+                  <motion.div
+                    className={styles.statCard}
+                    whileHover={{ scale: 1.05, y: -4 }}
+                    transition={{ type: 'spring', stiffness: 250 }}
+                  >
+                    <div className={styles.statIcon}>{stat.icon}</div>
+                    <div className={styles.statValue}>{stat.value}</div>
+                    <div className={styles.statLabel}>{stat.label}</div>
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerContainer>
+        </section>
+
+        {/* Modules */}
+        <section className={styles.featureSection}>
+          <ScrollReveal variant="up" delay={0.1}>
+            <div className={styles.mediaHeader}>
+              <h3 className={styles.mediaTitle}>Nuestros Modulos</h3>
+              <p className={styles.mediaLead}>Conoce las areas que conforman la memoria historica de Tacarigua.</p>
+            </div>
+          </ScrollReveal>
+          <StaggerContainer delay={0.06}>
+            <div className={styles.featureGrid}>
+              {(featuresData.length > 0 ? featuresData : []).map((feature, i) => (
+                <StaggerItem key={feature.title} index={i}>
+                  <motion.article
+                    className={styles.featureCard}
+                    whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+                    transition={{ type: 'spring', stiffness: 250 }}
+                  >
+                    <div className={styles.featureIcon}>{feature.icon}</div>
+                    <h3 className={styles.featureTitle}>{feature.title}</h3>
+                    <p className={styles.featureText}>{feature.description}</p>
+                  </motion.article>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerContainer>
+        </section>
+
+        {/* Values */}
+        <section className={styles.featureSection}>
+          <ScrollReveal variant="up" delay={0.1}>
+            <div className={styles.mediaHeader}>
+              <h3 className={styles.mediaTitle}>Nuestros Principios</h3>
+              <p className={styles.mediaLead}>Los valores que guian nuestro trabajo en preservar la historia de Tacarigua.</p>
+            </div>
+          </ScrollReveal>
+          <StaggerContainer delay={0.05}>
+            <div className={styles.valuesGrid}>
+              {(valuesData.length > 0 ? valuesData : []).map((value, i) => (
+                <StaggerItem key={value.title} index={i}>
+                  <motion.div
+                    className={styles.valueCard}
+                    whileHover={{ scale: 1.04, y: -4 }}
+                    transition={{ type: 'spring', stiffness: 250 }}
+                  >
+                    <div className={styles.valueIcon}>{value.icon}</div>
+                    <h4 className={styles.valueTitle}>{value.title}</h4>
+                    <p className={styles.valueText}>{value.description}</p>
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerContainer>
+        </section>
+
+        {/* About */}
+        <section className={styles.mediaSection}>
+          <ScrollReveal variant="up" delay={0.1}>
+            <div className={styles.mediaHeader}>
+              <h3 className={styles.mediaTitle}>Por que Una Sola Tacarigua?</h3>
+              <p className={styles.mediaLead}>La historia detras de nuestra plataforma digital.</p>
+            </div>
+          </ScrollReveal>
+          <div className={styles.aboutContent}>
+            <ScrollReveal variant="left" delay={0.2}>
+              <div className={styles.textBlock}>
+                <p className={styles.text}>
+                  La Parroquia Guevara atesora siglos de historia: desde el encuentro de los indios Tacaribas con Miguel Maza de Lizana en 1579, pasando por heroes de la Independencia como Jose Victorino Guzman, hasta el nacimiento del Presidente Diego B. Urbaneja Alayon en 1817.
+                </p>
+                <p className={styles.text}>
+                  Una Sola Tacarigua nace como la plataforma que lleva esa investigacion al mundo digital: accesible, moderada y fiel a las fuentes comunitarias que la hicieron posible.
+                </p>
+                <p className={styles.text}>
+                  Este proyecto busca preservar y difundir el patrimonio historico, cultural, geografico y social de Tacarigua de Margarita, creando una herramienta educativa gratuita para escuelas, investigadores y la comunidad en general. A traves de modulos interactivos, documentacion digital y recursos multimedia, aseguramos que la memoria de nuestro pueblo trascienda generaciones.
+                </p>
+                <p className={styles.text}>
+                  Nuestro objetivo es evitar la perdida de la memoria historica local, fomentar la identidad cultural en las nuevas generaciones y proporcionar un acceso democratizado al conocimiento, demostrando que la tecnologia puede ser una aliada poderosa en la preservacion de nuestras raices.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal variant="right" delay={0.3}>
+              <div className={styles.imageBlock}>
+                <img
+                  src={IMAGES.TACARIGUA.src}
+                  alt={IMAGES.TACARIGUA.alt}
+                  className={styles.sideImage}
+                  loading="lazy"
+                  onError={(e) => { e.currentTarget.src = IMAGES.TACARIGUA.fallback; }}
+                />
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Creator */}
+        <section className={styles.creatorSection}>
+          <ScrollReveal variant="up" delay={0.1}>
+            <div className={styles.mediaHeader}>
+              <h3 className={styles.mediaTitle}>Creador del Proyecto</h3>
+              <p className={styles.mediaLead}>Conoce al desarrollador detrás de Una Sola Tacarigua.</p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal variant="scale" delay={0.2}>
+            <motion.div
+              className={styles.creatorCard}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className={styles.creatorBadge}>
+                <User size={14} />
+                CREADOR DEL PROYECTO
+              </div>
+              <div className={styles.creatorAvatar}>
+                <div className={styles.creatorAvatarInner}>
+                  <img
+                    src={IMAGES.CREATOR.src}
+                    alt={IMAGES.CREATOR.alt}
+                    className={styles.creatorAvatarImg}
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  />
+                </div>
+              </div>
+              <div className={styles.creatorDivider} />
+              <h3 className={styles.creatorName}>Carlos Eduardo Ramos González</h3>
+              <p className={styles.creatorRole}>
+                Estudiante de Ingeniería de Sistemas · Músico · Cultor
+              </p>
+              <p className={styles.creatorBio}>
+                &ldquo;Apasionado por la historia, la cultura y las tradiciones de su tierra natal.
+                Este proyecto nace del amor por Tacarigua de Margarita y el compromiso de
+                preservar su memoria para las futuras generaciones, combinando la formación
+                en ingeniería de sistemas con el profundo respeto por nuestras raíces.&rdquo;
+              </p>
+              <div className={styles.contactList}>
+                <div className={styles.contactItem}>
+                  <Phone size={16} />
+                  <span>(0416) 198-0831</span>
+                </div>
+                <div className={styles.contactItem}>
+                  <Mail size={16} />
+                  <span>carlose12ramos@gmail.com</span>
+                </div>
+              </div>
+              <motion.a
+                href="https://wa.me/584161980831"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.whatsappBtn}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <MessageCircle size={20} />
+                Contáctame por WhatsApp
+              </motion.a>
+            </motion.div>
+          </ScrollReveal>
+        </section>
+
       </div>
-
-      {/* Mission and Vision */}
-      <section className={styles.featureSection}>
-        <div className={styles.featureGrid}>
-          <article className={styles.featureCard}>
-            <div className={styles.featureIcon}>🎯</div>
-            <h3 className={styles.featureTitle}>Nuestra Misión</h3>
-            <p className={styles.featureText}>
-              Digitalizar y preservar la memoria histórica de Tacarigua de Margarita, haciendo accesible su rico patrimonio cultural, educativo y social a través de una plataforma interactiva y colaborativa.
-            </p>
-          </article>
-          <article className={styles.featureCard}>
-            <div className={styles.featureIcon}>🔭</div>
-            <h3 className={styles.featureTitle}>Nuestra Visión</h3>
-            <p className={styles.featureText}>
-              Convertirnos en el referente digital más completo sobre la historia y cultura de Tacarigua, conectando a las generaciones actuales y futuras con sus raíces a través de la tecnología y la innovación.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* Statistics */}
-      <section className={styles.mediaSection}>
-        <div className={styles.mediaHeader}>
-          <span className={styles.mediaBadge}>Estadísticas</span>
-          <h3 className={styles.mediaTitle}>Datos Destacados</h3>
-          <p className={styles.mediaLead}>
-            Cifras que reflejan la riqueza histórica y cultural de Tacarigua de Margarita.
-          </p>
-        </div>
-        <div className={styles.statsGrid}>
-          {PROJECT_STATS.map((stat) => (
-            <div key={stat.label} className={styles.statCard}>
-              <div className={styles.statIcon}>{stat.icon}</div>
-              <div className={styles.statValue}>{stat.value}</div>
-              <div className={styles.statLabel}>{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Main Features */}
-      <section className={styles.featureSection}>
-        <div className={styles.mediaHeader}>
-          <span className={styles.mediaBadge}>Proyecto</span>
-          <h3 className={styles.mediaTitle}>Nuestros Módulos</h3>
-          <p className={styles.mediaLead}>
-            Conoce las áreas que conforman la memoria histórica de Tacarigua.
-          </p>
-        </div>
-        <div className={styles.featureGrid}>
-          {PROJECT_FEATURES.map((feature) => (
-            <article key={feature.title} className={styles.featureCard}>
-              <div className={styles.featureIcon}>{feature.icon}</div>
-              <h3 className={styles.featureTitle}>{feature.title}</h3>
-              <p className={styles.featureText}>{feature.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className={styles.featureSection}>
-        <div className={styles.mediaHeader}>
-          <span className={styles.mediaBadge}>Valores</span>
-          <h3 className={styles.mediaTitle}>Nuestros Principios</h3>
-          <p className={styles.mediaLead}>
-            Los valores que guían nuestro trabajo en preservar la historia de Tacarigua.
-          </p>
-        </div>
-        <div className={styles.valuesGrid}>
-          {PROJECT_VALUES.map((value) => (
-            <div key={value.title} className={styles.valueCard}>
-              <div className={styles.valueIcon}>{value.icon}</div>
-              <h4 className={styles.valueTitle}>{value.title}</h4>
-              <p className={styles.valueText}>{value.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* About Content */}
-      <section className={styles.mediaSection}>
-        <div className={styles.mediaHeader}>
-          <span className={styles.mediaBadge}>Origen</span>
-          <h3 className={styles.mediaTitle}>¿Por qué Una Sola Tacarigua?</h3>
-          <p className={styles.mediaLead}>
-            La historia detrás de nuestra plataforma digital.
-          </p>
-        </div>
-        <div className={styles.aboutContent}>
-          <div className={styles.textBlock}>
-            <p className={styles.text}>
-              La Parroquia Guevara atesora siglos de historia: desde el encuentro de los indios Tacaribas con Miguel Maza de Lizana en 1579, pasando por héroes de la Independencia como José Victorino Guzmán, hasta el nacimiento del Presidente Diego B. Urbaneja Alayón en 1817. Esa memoria, documentada por el cronista José Joaquín Salazar Franco y actualizada en 2022, no debe quedar en el olvido.
-            </p>
-            <p className={styles.text}>
-              Una Sola Tacarigua nace como la plataforma que lleva esa investigación al mundo digital: accesible, moderada y fiel a las fuentes comunitarias que la hicieron posible.
-            </p>
-          </div>
-          <div className={styles.imageBlock}>
-            <img
-              src={IMAGES.iglesiaPlazaAerea.src}
-              alt={IMAGES.iglesiaPlazaAerea.alt}
-              className={styles.sideImage}
-              loading="lazy"
-              onError={(e) => { e.currentTarget.src = IMAGES.iglesiaPlazaAerea.fallback; }}
-            />
-          </div>
-        </div>
-      </section>
-    </section>
+    </motion.section>
   );
 }
 

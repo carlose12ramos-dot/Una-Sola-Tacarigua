@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import styles from './HomeCards.module.css';
-import { homeCardsMock } from '../../data/mockData';
+
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 const HomeCards = () => {
   const [cards, setCards] = useState([]);
   const [activeCard, setActiveCard] = useState(null);
 
   useEffect(() => {
-    // Simular carga Offline-First
-    setCards(homeCardsMock);
+    fetch(`${API_BASE}/home_cards`)
+      .then(res => res.json())
+      .then(data => setCards(data))
+      .catch(err => console.error('Error cargando HomeCards:', err));
   }, []);
 
   const openCard = (card) => setActiveCard(card);

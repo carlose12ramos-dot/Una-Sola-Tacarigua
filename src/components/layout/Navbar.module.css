@@ -162,6 +162,28 @@
   border-color: var(--cream);
 }
 
+.participaBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 2rem; /* Diseño de píldora para destacar */
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--cream);
+  background: transparent;
+  border: 2px solid var(--goldenrod);
+  transition: var(--transicion-suave);
+  cursor: pointer;
+}
+
+.participaBtn:hover {
+  background: rgba(218, 165, 32, 0.15);
+  color: var(--goldenrod);
+  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.2);
+  transform: translateY(-2px);
+}
+
 .menuToggle {
   display: flex;
   align-items: center;
@@ -229,6 +251,15 @@
   margin-top: 0.5rem;
 }
 
+.mobileParticipaBtn {
+  composes: participaBtn;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 @media (min-width: 640px) {
   .mobileInstallBtn { display: none; }
+  .mobileParticipaBtn { display: none; }
 }

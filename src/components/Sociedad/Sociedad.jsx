@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Sociedad.module.css';
 import Educacion from './Educacion/Educacion';
 import Sanidad from './Sanidad/Sanidad';
 import Deportes from './Deportes/Deportes';
+import HeroHeader from '../ui/HeroHeader';
+import ScrollReveal, { StaggerContainer, StaggerItem } from '../ui/ScrollReveal';
 
 const tabs = [
   {
@@ -36,14 +39,13 @@ const tabs = [
 
 const Sociedad = () => {
   const [activeTab, setActiveTab] = useState('educacion');
-  const activeData = tabs.find((t) => t.id === activeTab);
 
   const renderActiveTab = () => {
     switch (activeTab) {
       case 'educacion': return <Educacion />;
-      case 'sanidad':   return <Sanidad />;
-      case 'deportes':  return <Deportes />;
-      default:          return <Educacion />;
+      case 'sanidad': return <Sanidad />;
+      case 'deportes': return <Deportes />;
+      default: return <Educacion />;
     }
   };
 
@@ -51,58 +53,79 @@ const Sociedad = () => {
     <div className={styles.sociedadContainer}>
 
       {/* ── Hero Header ── */}
-      <header className={styles.heroHeader}>
-        <div className={styles.heroHeaderInner}>
-          <h1 className={styles.heroTitle}>La Sociedad Tacarigüera</h1>
-          <p className={styles.heroSubtitle}>
-            Conoce cómo se educó, sanó y destacó en el deporte este pueblo
-            de raíces indígenas que hoy sigue siendo orgullo de Margarita.
-          </p>
-
-          {/* Stat cards */}
+      <HeroHeader
+        title="La Sociedad Tacarigüera"
+        description="Conoce cómo se educó, sanó y destacó en el deporte este pueblo de raíces indígenas que hoy sigue siendo orgullo de Margarita."
+        theme="ocean"
+        shape="waves"
+        images={[
+          '/Portada documentos/Portada Tacarigua Educativa.png',
+          '/Portada documentos/Portada Tacarigua Educativa 2.png',
+          '/Portada documentos/Portada Tacarigua Sanitaria.png',
+          '/Portada documentos/Portada Tacarigua Sanitaria 2.png',
+          '/Portada documentos/Portada Tacarigua Deportiva.png',
+          '/Portada documentos/Portada Tacarigua Deportiva 2.png'
+        ]}
+      >
+        <StaggerContainer delay={0.2}>
           <div className={styles.statRow}>
-            {tabs.map((t) => (
-              <button
-                key={t.id}
+            {tabs.map((t, index) => (
+              <StaggerItem key={t.id} index={index}>
+                <motion.button
+                  type="button"
+                  className={`${styles.statCard} ${activeTab === t.id ? styles.statCardActive : ''}`}
+                  onClick={() => setActiveTab(t.id)}
+                  style={{ '--card-color': t.color }}
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className={styles.statIcon}>{t.icon}</span>
+                  <span className={styles.statValue}>{t.stat}</span>
+                  <span className={styles.statLabel}>{t.statLabel}</span>
+                  <span className={styles.statDesc}>{t.desc}</span>
+                </motion.button>
+              </StaggerItem>
+            ))}
+          </div>
+        </StaggerContainer>
+      </HeroHeader>
+
+      {/* ── Tabs ── */}
+      <ScrollReveal variant="up" delay={0.1}>
+        <div className={styles.tabsWrapper}>
+          <div className={styles.tabsContainer}>
+            {tabs.map((tab) => (
+              <motion.button
                 type="button"
-                className={`${styles.statCard} ${activeTab === t.id ? styles.statCardActive : ''}`}
-                onClick={() => setActiveTab(t.id)}
-                style={{ '--card-color': t.color }}
+                key={tab.id}
+                className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ''}`}
+                onClick={() => setActiveTab(tab.id)}
+                aria-pressed={activeTab === tab.id}
+                style={activeTab === tab.id ? { '--tab-accent': tab.color } : {}}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <span className={styles.statIcon}>{t.icon}</span>
-                <span className={styles.statValue}>{t.stat}</span>
-                <span className={styles.statLabel}>{t.statLabel}</span>
-                <span className={styles.statDesc}>{t.desc}</span>
-              </button>
+                <span className={styles.tabIcon}>{tab.icon}</span>
+                <span className={styles.tabLabel}>{tab.label}</span>
+              </motion.button>
             ))}
           </div>
         </div>
-      </header>
-
-      {/* ── Tabs ── */}
-      <div className={styles.tabsWrapper}>
-        <div className={styles.tabsContainer}>
-          {tabs.map((tab) => (
-            <button
-              type="button"
-              key={tab.id}
-              className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ''}`}
-              onClick={() => setActiveTab(tab.id)}
-              aria-pressed={activeTab === tab.id}
-              style={activeTab === tab.id ? { '--tab-accent': tab.color } : {}}
-            >
-              <span className={styles.tabIcon}>{tab.icon}</span>
-              <span className={styles.tabLabel}>{tab.label}</span>
-            </button>
-          ))}
-        </div>
-      </div>
+      </ScrollReveal>
 
       {/* ── Content ── */}
-      <div className={styles.contentArea} key={activeTab}>
-        {renderActiveTab()}
-      </div>
-
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3 }}
+          className={styles.contentArea}
+        >
+          {renderActiveTab()}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

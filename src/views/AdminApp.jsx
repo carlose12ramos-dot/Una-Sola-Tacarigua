@@ -19,7 +19,9 @@ async function postToApi(path, body) {
 function AdminApp() {
   const [adminUser, setAdminUser] = useState(() => {
     const saved = localStorage.getItem('tacariguaAdmin');
-    return saved ? JSON.parse(saved) : null;
+    if (!saved) return null;
+    try { return JSON.parse(saved); }
+    catch { localStorage.removeItem('tacariguaAdmin'); return null; }
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -37,32 +39,12 @@ function AdminApp() {
         return;
       }
 
-      const { user } = data;
-      localStorage.setItem('tacariguaAdmin', JSON.stringify(user));
-      setAdminUser(user);
-    } catch (fetchError) {
-      const directEndpoint = `${API_BASE}/auth/login`;
-      try {
-        const retryResponse = await fetch(directEndpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ correo, password }),
-        });
-        const retryData = await retryResponse.json();
-
-        if (retryResponse.ok) {
-          const { user } = retryData;
-          localStorage.setItem('tacariguaAdmin', JSON.stringify(user));
-          setAdminUser(user);
-          return;
-        }
-
-        setError(retryData.error || 'No se pudo iniciar sesión.');
-      } catch (retryError) {
-        setError(`Error de conexión con el servidor. Verifica que el backend esté ejecutándose en ${API_BASE}.`);
-      }
+      const { user, token } = data;
+      const adminData = { ...user, token };
+      localStorage.setItem('tacariguaAdmin', JSON.stringify(adminData));
+      setAdminUser(adminData);
+    } catch {
+      setError(`Error de conexión con el servidor. Verifica que el backend esté ejecutándose en ${API_BASE}.`);
     } finally {
       setLoading(false);
     }

@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Download, Trophy } from 'lucide-react';
 import styles from './Deportes.module.css';
 
 const disciplinas = [
@@ -79,7 +81,26 @@ const disciplinas = [
 
 const Deportes = () => {
   const [deporteActivo, setDeporteActivo] = useState(0);
-  const activo = disciplinas[deporteActivo];
+  const [disciplinasData, setDisciplinasData] = useState(disciplinas);
+  const activo = disciplinasData[deporteActivo];
+
+  useEffect(() => {
+    fetch('/api/sociedad/deportes')
+      .then(res => res.json())
+      .then(data => {
+        if (data?.length) {
+          const apiItems = data.map(d => ({
+            nombre: d.disciplina,
+            icono: d.icono || '🏅',
+            color: d.color_hex || 'var(--dep-gold)',
+            descripcion: d.descripcion || '',
+            datos: d.hitos_destacados || [],
+          }));
+          setDisciplinasData(apiItems);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -113,28 +134,73 @@ const Deportes = () => {
       </div>
 
       {/* Botón de Descarga PDF */}
-      <div className={styles.downloadSection}>
-        <a
-          href="/MODULO-V-DEPORTES.pdf"
-          download="MODULO-V-DEPORTES.pdf"
-          className={styles.downloadBtn}
-          title="Descargar PDF del Módulo V: Deportes"
-        >
-          📥 Módulo V: Deportes
-        </a>
-        <a
-          href="/MODULO-V-DEPORTES-Final.pdf"
-          download="MODULO-V-DEPORTES-Final.pdf"
-          className={styles.downloadBtn}
-          title="Descargar PDF del Módulo V: Deportes (Versión Final)"
-        >
-          📥 Deportes (Versión Final)
-        </a>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4 }}
+        style={{
+          background: 'rgba(255,255,255,0.06)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          border: '1px solid rgba(212,160,69,0.2)',
+          borderRadius: '1.25rem',
+          padding: '2rem',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.12), 0 0 0 1px rgba(212,160,69,0.08)',
+          margin: '1.5rem 0',
+        }}
+      >
+        <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
+          <span style={{
+            display: 'inline-block',
+            padding: '0.35rem 1.1rem',
+            background: 'linear-gradient(135deg, var(--goldenrod), var(--copper))',
+            borderRadius: '9999px',
+            fontWeight: 700,
+            fontSize: '0.78rem',
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
+            color: 'var(--oxford-navy)',
+            marginBottom: '0.75rem',
+          }}>
+            <Trophy size={14} style={{ marginRight: '0.35rem', display: 'inline', verticalAlign: 'middle' }} />
+            DOCUMENTO SOCIAL · DEPORTES
+          </span>
+          <h3 style={{ color: 'var(--goldenrod)', fontWeight: 700, margin: 0, fontSize: '1.15rem' }}>
+            Módulos de Deportes para Descargar
+          </h3>
+          <p style={{ color: 'rgba(0,0,0,0.5)', fontSize: '0.88rem', marginTop: '0.4rem' }}>
+            Documentos completos sobre la historia deportiva de Tacarigua
+          </p>
+        </div>
+        <div className={styles.downloadSection}>
+          <motion.a
+            href="/MODULO-V-DEPORTES.pdf"
+            download="MODULO-V-DEPORTES.pdf"
+            className={styles.downloadBtn}
+            title="Descargar PDF del Módulo V: Deportes"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <Download size={16} style={{ marginRight: '0.35rem' }} />
+            Módulo V: Deportes
+          </motion.a>
+          <motion.a
+            href="/MODULO-V-DEPORTES-Final.pdf"
+            download="MODULO-V-DEPORTES-Final.pdf"
+            className={styles.downloadBtn}
+            title="Descargar PDF del Módulo V: Deportes (Versión Final)"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <Download size={16} style={{ marginRight: '0.35rem' }} />
+            Deportes (Versión Final)
+          </motion.a>
+        </div>
+      </motion.div>
 
       {/* Selector de disciplinas */}
       <div className={styles.disciplinasNav}>
-        {disciplinas.map((d, i) => (
+        {disciplinasData.map((d, i) => (
           <button
             key={i}
             className={`${styles.discBtn} ${deporteActivo === i ? styles.discBtnActive : ''}`}

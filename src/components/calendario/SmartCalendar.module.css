@@ -1,0 +1,207 @@
+/* SmartCalendar — dark luxury theme */
+
+.calendarContainer {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.02);
+}
+
+.monthTitle {
+  font-family: var(--fuente-display);
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 900;
+  text-transform: capitalize;
+  letter-spacing: -0.5px;
+}
+
+.yearTitle {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.35);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.navButton {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background: rgba(212,160,69,0.2);
+  border-color: rgba(212,160,69,0.4);
+  color: #d4a045;
+}
+
+/* ── Weekdays ── */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  padding: 1rem 1.5rem 0.5rem;
+}
+
+.weekday {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* ── Days Grid ── */
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  padding: 0.5rem 1rem 1.5rem;
+}
+
+.emptyDay {
+  min-height: 68px;
+}
+
+.day {
+  min-height: 68px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease;
+  position: relative;
+  background: transparent;
+}
+
+.day:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.dayNumber {
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  margin-bottom: auto;
+}
+
+.today .dayNumber {
+  background: #d4a045;
+  color: #1a2e4a;
+  font-weight: 900;
+  animation: pulsGold 2.5s infinite;
+}
+
+@keyframes pulsGold {
+  0%   { box-shadow: 0 0 0 0   rgba(212,160,69,0.5); }
+  70%  { box-shadow: 0 0 0 10px rgba(212,160,69,0); }
+  100% { box-shadow: 0 0 0 0   rgba(212,160,69,0); }
+}
+
+.selected {
+  background: rgba(212,160,69,0.1) !important;
+  border-color: rgba(212,160,69,0.4) !important;
+}
+
+.selected .dayNumber {
+  color: #d4a045;
+  font-weight: 800;
+}
+
+.hasEvents .dayNumber {
+  color: rgba(255,255,255,0.9);
+}
+
+/* ── Event Dots ── */
+.eventDots {
+  display: flex;
+  gap: 3px;
+  margin-top: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.moreDots {
+  font-size: 9px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.4);
+  line-height: 1;
+}
+
+/* Type colors */
+.historia  { background-color: #8b5a2b; }
+.natalicio { background-color: #2e8b57; }
+.religiosa { background-color: #7c3aed; }
+.cultural  { background-color: #d97706; }
+.duelo     { background-color: #6b7280; }
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  padding: 1.25rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.3px;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+  .day { min-height: 52px; }
+  .daysGrid { gap: 2px; padding: 0.5rem; }
+  .header { padding: 1.2rem 1rem; }
+}

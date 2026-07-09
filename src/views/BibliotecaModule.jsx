@@ -1,5 +1,10 @@
-﻿import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
 import { Play, X, Search, BookOpen, Music, Film, Download, ExternalLink, FileText, Image } from 'lucide-react';
+import HeroHeader from '../components/ui/HeroHeader';
+import Pagination from '../components/ui/Pagination';
+import ScrollReveal, { StaggerItem } from '../components/ui/ScrollReveal';
 import styles from './BibliotecaModule.module.css';
 import { bibliotecaMock } from '../data/mockData';
 import librosAutoData from '../data/librosAuto.json';
@@ -23,100 +28,83 @@ const TAB_FORMATO = {
 
 const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
+const ITEMS_PER_PAGE = 12;
+
 function BibliotecaModule() {
   const [filtro, setFiltro] = useState('Libros'); // Default to Libros as requested by user
   const [selected, setSelected] = useState(null);
   const [activeTrack, setActiveTrack] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
-  
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
+
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [pdfModalUrl, setPdfModalUrl] = useState(null);
 
-  // Carga de datos desde la API
+  // Carga de datos local (API deshabilitada temporalmente por duplicidad)
   useEffect(() => {
     let active = true;
     const fetchData = async () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch(`${API_BASE}/biblioteca`);
-        if (!response.ok) {
-          throw new Error('No se pudo cargar la biblioteca desde la API');
-        }
-        const data = await response.json();
-        
         if (active) {
-          if (data && data.length > 0) {
-            // Normalizar elementos
-            const normalized = data.map(item => ({
-              id: item.id,
-              titulo: item.titulo,
-              autor: item.autor,
-              categoria: item.categoria,
-              formato: item.formato, // 'Libros', 'Música', 'Videos'
-              url: item.url_archivo || null,
-              imagen: item.imagen_portada || item.imagen || '/images/plaza-comunitaria-tacarigua.webp',
-              extra: item.formato === 'Libros' ? 'Libro PDF' : 'Archivo digital'
-            }));
-            setItems(normalized);
-          } else {
-            // Si la base de datos está vacía, usar mock
-            useFallbackMock();
-          }
+          const fallbackItems = getFallbackMockItems();
+          setItems(fallbackItems);
           setLoading(false);
         }
       } catch (err) {
-        console.warn('Conexión con la API fallida, usando mockData y libros locales:', err.message);
+        console.warn('Error al cargar datos locales:', err.message);
         if (active) {
-          useFallbackMock();
           setLoading(false);
         }
       }
     };
 
-    const useFallbackMock = () => {
+    const getFallbackMockItems = () => {
       // Usamos el listado auto-generado de libros locales si existe y tiene elementos, de lo contrario usamos bibliotecaMock
-      const fallbackBooks = (librosAutoData && librosAutoData.length > 0) 
-        ? librosAutoData 
+      const fallbackBooks = (librosAutoData && librosAutoData.length > 0)
+        ? librosAutoData
         : bibliotecaMock.filter(item => item.formato === 'Libros').map(item => ({
-            id: item.id,
-            titulo: item.titulo,
-            autor: item.autor,
-            categoria: item.categoria,
-            formato: item.formato,
-            url: `/api/libros/${encodeURIComponent(item.titulo)}.pdf`,
-            imagen: item.imagen || '/images/plaza-comunitaria-tacarigua.webp',
-            extra: item.paginas || 'Libro PDF'
-          }));
+          id: item.id,
+          titulo: item.titulo,
+          autor: item.autor,
+          categoria: item.categoria,
+          formato: item.formato,
+          url: `/api/libros/${encodeURIComponent(item.titulo)}.pdf`,
+          imagen: item.imagen || '/images/plaza-comunitaria-tacarigua.webp',
+          extra: item.paginas || 'Libro PDF'
+        }));
 
       // Integrar música local autogenerada si existe, sino mock
       const fallbackMusic = (musicaAutoData && musicaAutoData.length > 0)
         ? musicaAutoData
         : bibliotecaMock.filter(item => item.formato === 'Música').map(item => ({
-            id: item.id,
-            titulo: item.titulo,
-            autor: item.autor,
-            categoria: item.categoria,
-            formato: item.formato,
-            url: item.url || null,
-            imagen: null,
-            extra: item.duracion || 'Archivo digital'
-          }));
+          id: item.id,
+          titulo: item.titulo,
+          autor: item.autor,
+          categoria: item.categoria,
+          formato: item.formato,
+          url: item.url || null,
+          imagen: null,
+          extra: item.duracion || 'Archivo digital'
+        }));
 
       const fallbackVideos = (videosAutoData && videosAutoData.length > 0)
         ? videosAutoData
         : bibliotecaMock.filter(item => item.formato === 'Videos').map(item => ({
-            id: item.id,
-            titulo: item.titulo,
-            autor: item.autor,
-            categoria: item.categoria,
-            formato: item.formato,
-            url: item.url || null,
-            imagen: item.imagen || '/images/plaza-comunitaria-tacarigua.webp',
-            extra: item.extra || 'Video'
-          }));
+          id: item.id,
+          titulo: item.titulo,
+          autor: item.autor,
+          categoria: item.categoria,
+          formato: item.formato,
+          url: item.url || null,
+          imagen: item.imagen || '/images/plaza-comunitaria-tacarigua.webp',
+          extra: item.extra || 'Video'
+        }));
 
       const otherMockItems = bibliotecaMock.filter(item => item.formato !== 'Libros' && item.formato !== 'Música' && item.formato !== 'Videos').map(item => ({
         id: item.id,
@@ -139,7 +127,7 @@ function BibliotecaModule() {
         ? imagenesAutoData
         : [];
 
-      setItems([...fallbackBooks, ...fallbackMusic, ...fallbackVideos, ...fallbackDocumentos, ...fallbackImagenes, ...otherMockItems]);
+      return [...fallbackBooks, ...fallbackMusic, ...fallbackVideos, ...fallbackDocumentos, ...fallbackImagenes, ...otherMockItems];
     };
 
     fetchData();
@@ -154,8 +142,7 @@ function BibliotecaModule() {
       setActiveTrack(null);
     } else {
       setSelected(item);
-      if (item._trackDirect) {
-        // Pista individual de resultados de búsqueda
+      if (item._trackDirect || (item.formato === 'Música' && item.url && (!item.canciones || item.canciones.length === 0))) {
         setActiveTrack({ titulo: item.titulo, url: item.url });
       } else if (item.formato === 'Música' && item.canciones && item.canciones.length > 0) {
         setActiveTrack(item.canciones[0]);
@@ -163,6 +150,22 @@ function BibliotecaModule() {
         setActiveTrack(null);
       }
     }
+  };
+
+  const getImageUrl = (item) => {
+    const img = item?.imagen || item?.url_archivo || '';
+    return img || '/images/plaza-comunitaria-tacarigua.webp';
+  };
+
+  const getPdfUrl = (item) => {
+    if (!item.url) return null;
+    return item.url;
+  };
+
+  const getPdfViewUrl = (item) => {
+    const url = getPdfUrl(item);
+    if (!url) return null;
+    return url + '#view=FitH';
   };
 
   // Filtrado de ítems por Tab activa
@@ -176,14 +179,15 @@ function BibliotecaModule() {
     return ['Todas', ...Array.from(cats)];
   }, [tabFilteredItems]);
 
-  // Resetear filtros si cambiamos de Tab
-  const handleTabChange = (tab) => {
-    setFiltro(tab);
-    setSelected(null);
-    setActiveTrack(null);
-    setSearchQuery('');
-    setSelectedCategory('Todas');
-  };
+// Resetear filtros si cambiamos de Tab
+   const handleTabChange = (tab) => {
+     setFiltro(tab);
+     setSelected(null);
+     setActiveTrack(null);
+     setSearchQuery('');
+     setSelectedCategory('Todas');
+     setCurrentPage(1);
+   };
 
   // Filtrado final aplicando búsqueda y categoría
   const filteredItems = useMemo(() => {
@@ -291,405 +295,524 @@ function BibliotecaModule() {
         });
     }
 
-    return normalFiltered;
-  }, [tabFilteredItems, searchQuery, selectedCategory, filtro]);
+return normalFiltered;
+   }, [tabFilteredItems, searchQuery, selectedCategory, filtro]);
+
+  // Paginación
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filtro, searchQuery, selectedCategory]);
 
   return (
-    <section className={styles.container} id="biblioteca">
-      <div className={styles.header}>
-        <span className={styles.badge}>Memoria Histórica</span>
-        <h1 className={styles.title}>Biblioteca Digital</h1>
-        <p className={styles.lead}>
-          Explora la colección de libros históricos, música tradicional y archivos multimedia de Tacarigua de Margarita.
-        </p>
-      </div>
+    <motion.section
+      className={styles.container}
+      id="biblioteca"
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.4 }}
+    >
+      <Helmet>
+        <title>Biblioteca | Una Sola Tacarigua</title>
+        <meta name="description" content="Accede a libros historicos, musica, documentos y fotos de la comunidad de Tacarigua." />
+      </Helmet>
+      <HeroHeader
+        title="Biblioteca Digital"
+        description="Tu puerta de acceso al legado cultural de nuestra comunidad: libros históricos, música tradicional y archivos multimedia al alcance de un clic."
+        theme="library"
+        shape="geometric"
+        images={[
+          '/images/BIBLIOTECA-DE-CHEGUACO.jpg',
+          '/images/cheguaco-768x624.jpeg',
+          '/images/cb.png',
+          '/images/bcasona.jpg',
+          '/images/casona.jpg'
+        ]}
+      />
 
-      {/* Tabs Principales */}
-      <div className={styles.tabs}>
-        {TABS.map((tab) => (
-          <button
-            key={tab}
-            type="button"
-            className={filtro === tab ? styles.tabActive : styles.tab}
-            onClick={() => handleTabChange(tab)}
-          >
-            {tab === 'Música' && <Music size={16} style={{ marginRight: '6px' }} />}
-            {tab === 'Libros' && <BookOpen size={16} style={{ marginRight: '6px' }} />}
-            {tab === 'Videos' && <Film size={16} style={{ marginRight: '6px' }} />}
-            {tab === 'Documentos' && <FileText size={16} style={{ marginRight: '6px' }} />}
-            {tab === 'Imágenes' && <Image size={16} style={{ marginRight: '6px' }} />}
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      {/* Barra de Filtros y Búsqueda */}
-      <div className={styles.filterBar}>
-        <div className={styles.searchWrapper}>
-          <Search size={18} className={styles.searchIcon} />
-          <input
-            type="text"
-            placeholder={`Buscar en ${filtro.toLowerCase()}...`}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className={styles.searchInput}
-          />
-          {searchQuery && (
+      <div className={styles.innerContent}>
+        {/* Tabs Principales */}
+        <div className={styles.tabs}>
+          {TABS.map((tab) => (
             <button
+              key={tab}
               type="button"
-              onClick={() => setSearchQuery('')}
-              className={styles.clearSearch}
-              aria-label="Limpiar búsqueda"
+              className={filtro === tab ? styles.tabActive : styles.tab}
+              onClick={() => handleTabChange(tab)}
             >
-              <X size={16} />
+              {tab === 'Música' && <Music size={16} style={{ marginRight: '6px' }} />}
+              {tab === 'Libros' && <BookOpen size={16} style={{ marginRight: '6px' }} />}
+              {tab === 'Videos' && <Film size={16} style={{ marginRight: '6px' }} />}
+              {tab === 'Documentos' && <FileText size={16} style={{ marginRight: '6px' }} />}
+              {tab === 'Imágenes' && <Image size={16} style={{ marginRight: '6px' }} />}
+              {tab}
             </button>
-          )}
+          ))}
         </div>
 
-        <div className={styles.categoryWrapper}>
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className={styles.categorySelect}
-            aria-label="Filtrar por categoría"
-          >
-            {categories.map(cat => (
-              <option key={cat} value={cat}>{cat}</option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      {/* Contenido principal (Grid Premium) */}
-      {loading ? (
-        <div className={styles.loaderContainer}>
-          <div className={styles.spinner} />
-          <p>Cargando elementos de la biblioteca...</p>
-        </div>
-      ) : (
-        <div className={styles.grid}>
-          {filteredItems.length > 0 ? (
-            filteredItems.map((item) => (
-              <div
-                key={item.id}
-                className={selected?.id === item.id ? styles.cardActive : styles.card}
-                onClick={() => handleSelect(item)}
-                onKeyDown={(e) => e.key === 'Enter' && handleSelect(item)}
-                role="button"
-                tabIndex={0}
+        {/* Barra de Filtros y Búsqueda */}
+        <div className={styles.filterBar}>
+          <div className={styles.searchWrapper}>
+            <Search size={18} className={styles.searchIcon} />
+            <input
+              type="text"
+              placeholder={`Buscar en ${filtro.toLowerCase()}...`}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={styles.searchInput}
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className={styles.clearSearch}
+                aria-label="Limpiar búsqueda"
               >
-                <div className={styles.cardMedia}>
-                  {item.formato === 'Música' ? (
-                    <div className={styles.musicPlaceholder}>
-                      <Music size={48} className={styles.placeholderIcon} />
-                    </div>
-                  ) : item.formato === 'Videos' ? (
-                    <video
-                      src={item.url}
-                      className={styles.cardImage}
-                      preload="metadata"
-                      muted
-                      playsInline
-                      onLoadedMetadata={(e) => { e.target.currentTime = 1; }}
-                    />
-                  ) : (
-                    <img
-                      src={item.imagen}
-                      alt={item.titulo || item.categoria || "Imagen"}
-                      className={styles.cardImage}
-                      loading="lazy"
-                      onError={(e) => {
-                        e.target.src = '/images/plaza-comunitaria-tacarigua.webp';
-                      }}
-                    />
-                  )}
-
-                </div>
-
-                <div className={styles.cardContent}>
-                  <span className={styles.cardCategory}>{item.categoria}</span>
-                  <h3 className={styles.cardTitle}>{formatTitle(item.titulo || item.categoria || item.id)}</h3>
-                  <p className={styles.cardAuthor}>{item.autor}</p>
-                  <div className={styles.cardMeta}>
-                    <span className={styles.cardExtra}>{item.extra}</span>
-                  </div>
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className={styles.emptyContainer}>
-              <p className={styles.empty}>No se encontraron elementos con los filtros aplicados.</p>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* MODAL PARA VIDEOS */}
-      {selected && selected.formato === 'Videos' && (
-        <div className={styles.videoModalOverlay} onClick={() => setSelected(null)}>
-          <div className={styles.videoModalContent} onClick={e => e.stopPropagation()}>
-            <button 
-              className={styles.modalCloseBtn} 
-              onClick={() => setSelected(null)}
-              title="Cerrar Video"
-            >
-              <X size={24} />
-            </button>
-            <div className={styles.modalHeader}>
-              <h2 className={styles.modalTitle}>{formatTitle(selected.titulo || selected.categoria || selected.id)}</h2>
-              <p className={styles.modalAuthor}>{selected.autor}</p>
-            </div>
-            {selected.url ? (
-              <video 
-                controls 
-                src={selected.url} 
-                className={styles.modalVideoPlayer}
-                autoPlay
-              >
-                Tu navegador no soporta el elemento de video.
-              </video>
-            ) : (
-              <span className={styles.noFileText}>Video no disponible</span>
+                <X size={16} />
+              </button>
             )}
           </div>
-        </div>
-      )}
 
-      {/* MODAL/PANEL PARA DOCUMENTOS (igual que LIBROS) */}
-      {selected && selected.formato === 'Documentos' && (
-        <div className={`${styles.player} ${selected ? styles.playerVisible : ''}`}>
-          <div className={styles.playerImage} style={{width: 56, height: 72, borderRadius: 6, overflow: 'hidden'}}>
-            <img
-              src={selected.imagen}
-              alt={selected.titulo || selected.categoria || 'Imagen'}
-              className={styles.playerImage}
-              onError={(e) => {
-                e.target.src = '/images/plaza-comunitaria-tacarigua.webp';
-              }}
-              style={{width: '100%', height: '100%', objectFit: 'cover'}}
-            />
+          <div className={styles.categoryWrapper}>
+<select
+               value={selectedCategory}
+               onChange={(e) => setSelectedCategory(e.target.value)}
+               className={styles.categorySelect}
+               aria-label="Filtrar por categoría"
+             >
+               {categories.map(cat => (
+                 <option key={cat} value={cat}>{cat}</option>
+               ))}
+             </select>
+           </div>
+         </div>
+
+{/* Contenido principal (Grid Premium) */}
+        {loading ? (
+          <div className={styles.loaderContainer}>
+            <div className={styles.spinner} />
+            <p>Cargando elementos de la biblioteca...</p>
           </div>
-          <div className={styles.playerInfo}>
-            <div className={styles.playerTitle}>{formatTitle(selected.titulo || selected.categoria || selected.id)}</div>
-            <div className={styles.playerAuthor}>{selected.autor}</div>
-            <div className={styles.playerMeta}>
-              <span className={styles.playerBadge}>{selected.categoria}</span>
-              <span className={styles.playerExtraText}>{selected.extra}</span>
+        ) : (
+          <>
+            <ScrollReveal variant="up" delay={0.1}>
+              <div className={styles.grid}>
+                {currentItems.length > 0 ? (
+                  currentItems.map((item, index) => (
+                    <StaggerItem key={item.id} delay={index * 0.03}>
+                      <motion.div
+                        className={selected?.id === item.id ? styles.cardActive : styles.card}
+                        onClick={() => handleSelect(item)}
+                        onKeyDown={(e) => e.key === 'Enter' && handleSelect(item)}
+                        role="button"
+                        tabIndex={0}
+                        whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <div className={styles.cardMedia}>
+                          {item.formato === 'Música' ? (
+                            <div className={styles.musicPlaceholder}>
+                              <Music size={48} className={styles.placeholderIcon} />
+                            </div>
+                          ) : item.formato === 'Videos' ? (
+                            item.url && (item.url.includes('youtube.com') || item.url.includes('youtu.be')) ? (
+                              <img
+                                src={`https://img.youtube.com/vi/${item.url.includes('youtu.be/') ? item.url.split('youtu.be/')[1].split('?')[0] : new URLSearchParams(item.url.split('?')[1] || '').get('v')}/0.jpg`}
+                                alt={item.titulo}
+                                className={styles.cardImage}
+                                onError={(e) => { e.target.src = '/images/plaza-comunitaria-tacarigua.webp'; }}
+                              />
+                            ) : (
+                              <video
+                                src={encodeURI(item.url)}
+                                className={styles.cardImage}
+                                preload="metadata"
+                                muted
+                                playsInline
+                                onLoadedMetadata={(e) => { e.target.currentTime = 1; }}
+                              />
+                            )
+                          ) : (
+                            <img
+                              src={getImageUrl(item)}
+                              alt={item.titulo || item.categoria || "Imagen"}
+                              className={styles.cardImage}
+                              loading="lazy"
+                              onError={(e) => {
+                                e.target.src = '/images/plaza-comunitaria-tacarigua.webp';
+                              }}
+                            />
+                          )}
+                        </div>
+
+                        <div className={styles.cardContent}>
+                          <span className={styles.cardCategory}>{item.categoria}</span>
+                          <h3 className={styles.cardTitle}>{formatTitle(item.titulo || item.categoria || item.id)}</h3>
+                          <p className={styles.cardAuthor}>{item.autor}</p>
+                          <div className={styles.cardMeta}>
+                            <span className={styles.cardExtra}>{item.extra}</span>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </StaggerItem>
+                  ))
+                ) : (
+                  <div className={styles.emptyContainer}>
+                    <p className={styles.empty}>No se encontraron elementos con los filtros aplicados.</p>
+                  </div>
+                )}
+              </div>
+            </ScrollReveal>
+
+            {filteredItems.length > itemsPerPage && (
+              <ScrollReveal variant="up" delay={0}>
+                <Pagination
+                  currentPage={currentPage}
+                  totalItems={filteredItems.length}
+                  itemsPerPage={itemsPerPage}
+                  onPageChange={setCurrentPage}
+                />
+              </ScrollReveal>
+            )}
+          </>
+        )}
+
+        {/* MODAL PARA VIDEOS */}
+        {selected && selected.formato === 'Videos' && (
+          <div className={styles.videoModalOverlay} onClick={() => setSelected(null)}>
+            <div className={styles.videoModalContent} onClick={e => e.stopPropagation()}>
+              <button
+                className={styles.modalCloseBtn}
+                onClick={() => setSelected(null)}
+                title="Cerrar Video"
+              >
+                <X size={24} />
+              </button>
+              <div className={styles.modalHeader}>
+                <h2 className={styles.modalTitle}>{formatTitle(selected.titulo || selected.categoria || selected.id)}</h2>
+                <p className={styles.modalAuthor}>{selected.autor}</p>
+              </div>
+              {selected.url ? (
+                (selected.url.includes('youtube.com') || selected.url.includes('youtu.be')) ? (
+                  <iframe
+                    className={styles.modalVideoPlayer}
+                    src={selected.url.includes('youtube.com/embed/') ? selected.url : `https://www.youtube.com/embed/${selected.url.includes('youtu.be/') ? selected.url.split('youtu.be/')[1].split('?')[0] : new URLSearchParams(selected.url.split('?')[1] || '').get('v')}?autoplay=1`}
+                    title={selected.titulo}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{ aspectRatio: '16/9', width: '100%' }}
+                  ></iframe>
+                ) : (
+                  <video
+                    key={selected.url}
+                    controls
+                    src={encodeURI(selected.url)}
+                    className={styles.modalVideoPlayer}
+                    autoPlay
+                  >
+                    Tu navegador no soporta el elemento de video.
+                  </video>
+                )
+              ) : (
+                <span className={styles.noFileText}>Video no disponible</span>
+              )}
             </div>
           </div>
+        )}
 
-          <div className={styles.controls}>
-            {selected.url ? (
-              <>
+        {/* MODAL/PANEL PARA DOCUMENTOS */}
+        {selected && selected.formato === 'Documentos' && (
+          <div className={`${styles.player} ${selected ? styles.playerVisible : ''}`}>
+            <div className={styles.playerImage} style={{ width: 56, height: 72, borderRadius: 6, overflow: 'hidden' }}>
+              <img
+                src={getImageUrl(selected)}
+                alt={selected.titulo || selected.categoria || 'Imagen'}
+                className={styles.playerImage}
+                onError={(e) => {
+                  e.target.src = '/images/plaza-comunitaria-tacarigua.webp';
+                }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
+            <div className={styles.playerInfo}>
+              <div className={styles.playerTitle}>{formatTitle(selected.titulo || selected.categoria || selected.id)}</div>
+              <div className={styles.playerAuthor}>{selected.autor}</div>
+              <div className={styles.playerMeta}>
+                <span className={styles.playerBadge}>{selected.categoria}</span>
+                <span className={styles.playerExtraText}>{selected.extra}</span>
+              </div>
+            </div>
+
+            <div className={styles.controls}>
+              {getPdfUrl(selected) ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => setPdfModalUrl(getPdfUrl(selected))}
+                    className={styles.actionBtn}
+                    title="Ver documento"
+                  >
+                    <FileText size={16} />
+                    <span className={styles.btnText}>Ver Documento</span>
+                  </button>
+                  <a
+                    href={getPdfUrl(selected)}
+                    download
+                    className={styles.secondaryBtn}
+                    title="Descargar PDF"
+                  >
+                    <Download size={16} />
+                    <span className={styles.btnText}>Descargar</span>
+                  </a>
+                </>
+              ) : (
+                <span className={styles.noFileText}>Documento no disponible</span>
+              )}
+
+              <button
+                type="button"
+                className={styles.closeBtn}
+                onClick={() => { setSelected(null); setActiveTrack(null); }}
+                aria-label="Cerrar detalles"
+              >
+                <X size={20} />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* MODAL LIGHTBOX PARA IMÁGENES */}
+        {selected && selected.formato === 'Imágenes' && (
+          <div className={styles.videoModalOverlay} onClick={() => setSelected(null)}>
+            <div className={styles.imagenModalContent} onClick={e => e.stopPropagation()}>
+              <button
+                className={styles.modalCloseBtn}
+                onClick={() => setSelected(null)}
+                title="Cerrar imagen"
+              >
+                <X size={24} />
+              </button>
+              <img
+                src={getImageUrl(selected)}
+                alt={selected.titulo || selected.categoria || "Imagen"}
+                className={styles.lightboxImage}
+                onError={(e) => { e.target.src = '/images/plaza-comunitaria-tacarigua.webp'; }}
+              />
+              <div className={styles.lightboxOverlayCaption}>
+                <h3>{formatTitle(selected.titulo || selected.categoria || "Imagen")}</h3>
+                <p>{selected.categoria} · {selected.autor || "Archivo Fotográfico Tacarigua"}</p>
                 <a
-                  href={selected.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.actionBtn}
-                  title="Abrir documento en pestaña nueva"
-                >
-                  <FileText size={16} />
-                  <span className={styles.btnText}>Abrir Documento</span>
-                  <ExternalLink size={12} className={styles.btnIconSub} />
-                </a>
-                <a
-                  href={selected.url}
-                  download={`${selected.titulo || selected.categoria || selected.id}.pdf`}
+                  href={getImageUrl(selected)}
+                  download
                   className={styles.secondaryBtn}
-                  title="Descargar PDF"
+                  title="Descargar imagen"
+                  style={{ marginTop: '8px' }}
                 >
                   <Download size={16} />
                   <span className={styles.btnText}>Descargar</span>
                 </a>
-              </>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Floating Player Panel (Sólo para Libros y Música) */}
+        {selected && selected.formato !== 'Videos' && selected.formato !== 'Documentos' && selected.formato !== 'Imágenes' && (
+          <div className={`${styles.player} ${selected ? styles.playerVisible : ''}`}>
+            {selected.formato === 'Música' ? (
+              <div className={styles.playerMusicPlaceholder}>
+                <Music size={32} className={styles.placeholderIcon} />
+              </div>
             ) : (
-              <span className={styles.noFileText}>Documento no disponible</span>
+              <img
+                src={getImageUrl(selected)}
+                alt={selected.titulo || selected.categoria || "Imagen"}
+                className={styles.playerImage}
+                onError={(e) => {
+                  e.target.src = '/images/plaza-comunitaria-tacarigua.webp';
+                }}
+              />
             )}
-
-            <button
-              type="button"
-              className={styles.closeBtn}
-              onClick={() => { setSelected(null); setActiveTrack(null); }}
-              aria-label="Cerrar detalles"
-            >
-              <X size={20} />
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* MODAL LIGHTBOX PARA IMÁGENES */}
-      {selected && selected.formato === 'Imágenes' && (
-        <div className={styles.videoModalOverlay} onClick={() => setSelected(null)}>
-          <div className={styles.imagenModalContent} onClick={e => e.stopPropagation()}>
-            <button 
-              className={styles.modalCloseBtn} 
-              onClick={() => setSelected(null)}
-              title="Cerrar imagen"
-            >
-              <X size={24} />
-            </button>
-            <img
-              src={selected.imagen}
-              alt={selected.titulo || selected.categoria || "Imagen"}
-              className={styles.lightboxImage}
-              onError={(e) => { e.target.src = '/images/plaza-comunitaria-tacarigua.webp'; }}
-            />
-            <div className={styles.lightboxCaption}>
-              <h3>{selected.titulo || selected.categoria || "Imagen"}</h3>
-              <p>{selected.categoria} · {selected.autor || "Archivo Fotográfico Tacarigua"}</p>
-              <a
-                href={selected.url}
-                download
-                className={styles.secondaryBtn}
-                title="Descargar imagen"
-                style={{marginTop: '8px'}}
-              >
-                <Download size={16} />
-                <span className={styles.btnText}>Descargar</span>
-              </a>
+            <div className={styles.playerInfo}>
+              <div className={styles.playerTitle}>{formatTitle(selected.titulo || selected.categoria || selected.id)}</div>
+              <div className={styles.playerAuthor}>{selected.autor}</div>
+              <div className={styles.playerMeta}>
+                <span className={styles.playerBadge}>{selected.categoria}</span>
+                <span className={styles.playerExtraText}>{selected.extra}</span>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
 
-      {/* Floating Player Panel (Sólo para Libros y Música) */}
-      {selected && selected.formato !== 'Videos' && selected.formato !== 'Documentos' && selected.formato !== 'Imágenes' && ( 
-        <div className={`${styles.player} ${selected ? styles.playerVisible : ''}`}>
-          {selected.formato === 'Música' ? (
-            <div className={styles.playerMusicPlaceholder}>
-              <Music size={32} className={styles.placeholderIcon} />
-            </div>
-          ) : (
-            <img
-              src={selected.imagen}
-              alt={selected.titulo || selected.categoria || "Imagen"}
-              className={styles.playerImage}
-              onError={(e) => {
-                e.target.src = '/images/plaza-comunitaria-tacarigua.webp';
-              }}
-            />
-          )}
-          <div className={styles.playerInfo}>
-            <div className={styles.playerTitle}>{formatTitle(selected.titulo || selected.categoria || selected.id)}</div>
-            <div className={styles.playerAuthor}>{selected.autor}</div>
-            <div className={styles.playerMeta}>
-              <span className={styles.playerBadge}>{selected.categoria}</span>
-              <span className={styles.playerExtraText}>{selected.extra}</span>
-            </div>
-          </div>
-
-          <div className={styles.controls}>
-            {selected.formato === 'Libros' ? (
-              <>
-                {selected.url ? (
-                  <>
-                    <a
-                      href={selected.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.actionBtn}
-                      title="Leer Libro en pestaña nueva"
-                    >
-                      <BookOpen size={16} />
-                      <span className={styles.btnText}>Leer Libro</span>
-                      <ExternalLink size={12} className={styles.btnIconSub} />
-                    </a>
-                    <a
-                      href={selected.url}
-                      download={`${selected.titulo || selected.categoria || selected.id}.pdf`}
-                      className={styles.secondaryBtn}
-                      title="Descargar PDF"
-                    >
-                      <Download size={16} />
-                      <span className={styles.btnText}>Descargar</span>
-                    </a>
-                  </>
-                ) : (
-                  <span className={styles.noFileText}>Archivo no disponible</span>
-                )}
-              </>
-            ) : selected.formato === 'Música' ? (
-              selected._trackDirect && selected.url ? (
-                <div className={styles.audioPlayerWrapper}>
-                  <audio 
-                    controls 
-                    src={selected.url} 
-                    className={styles.audioPlayer}
-                    autoPlay
-                  >
-                    Tu navegador no soporta el elemento de audio.
-                  </audio>
-                  <div className={styles.nowPlayingText}>
-                    Reproduciendo: {selected.titulo || selected.categoria || selected.id}
-                  </div>
-                </div>
-              ) : selected.canciones && selected.canciones.length > 0 ? (
-                <div className={styles.trackListContainer}>
+            <div className={styles.controls}>
+              {selected.formato === 'Libros' ? (
+                <>
+                  {getPdfUrl(selected) ? (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setPdfModalUrl(getPdfUrl(selected))}
+                        className={styles.actionBtn}
+                        title="Leer Libro"
+                      >
+                        <BookOpen size={16} />
+                        <span className={styles.btnText}>Ver Libro</span>
+                      </button>
+                      <a
+                        href={getPdfUrl(selected)}
+                        download
+                        className={styles.secondaryBtn}
+                        title="Descargar PDF"
+                      >
+                        <Download size={16} />
+                        <span className={styles.btnText}>Descargar</span>
+                      </a>
+                    </>
+                  ) : (
+                    <span className={styles.noFileText}>Archivo no disponible</span>
+                  )}
+                </>
+              ) : selected.formato === 'Música' ? (
+                (selected._trackDirect || (selected.url && (!selected.canciones || selected.canciones.length === 0))) ? (
                   <div className={styles.audioPlayerWrapper}>
-                    <audio 
-                      controls 
-                      src={activeTrack ? activeTrack.url : selected.canciones[0].url} 
+                    <audio
+                      key={selected.url}
+                      controls
+                      src={encodeURI(selected.url)}
                       className={styles.audioPlayer}
-                      autoPlay={activeTrack !== null}
+                      autoPlay
                     >
                       Tu navegador no soporta el elemento de audio.
                     </audio>
                     <div className={styles.nowPlayingText}>
-                      Reproduciendo: {activeTrack ? activeTrack.titulo : selected.canciones[0].titulo}
+                      Reproduciendo: {selected.titulo || selected.categoria || selected.id}
                     </div>
                   </div>
-                  <div className={styles.trackList}>
-                    {selected.canciones.map((cancion, idx) => (
-                      <button 
-                        key={idx} 
-                        className={activeTrack?.url === cancion.url ? styles.trackItemActive : styles.trackItem}
-                        onClick={() => setActiveTrack(cancion)}
-                        type="button"
+                ) : selected.canciones && selected.canciones.length > 0 ? (
+                  <div className={styles.trackListContainer}>
+                    <div className={styles.audioPlayerWrapper}>
+                      <audio
+                        key={activeTrack ? activeTrack.url : selected.canciones[0].url}
+                        controls
+                        src={encodeURI(activeTrack ? activeTrack.url : selected.canciones[0].url)}
+                        className={styles.audioPlayer}
+                        autoPlay={activeTrack !== null}
                       >
-                        <span className={styles.trackNumber}>{idx + 1}</span>
-                        <span className={styles.trackTitle}>{cancion.titulo}</span>
-                        {activeTrack?.url === cancion.url && <Play size={14} className={styles.playingIcon} />}
-                      </button>
-                    ))}
+                        Tu navegador no soporta el elemento de audio.
+                      </audio>
+                      <div className={styles.nowPlayingText}>
+                        Reproduciendo: {activeTrack ? activeTrack.titulo : selected.canciones[0].titulo}
+                      </div>
+                    </div>
+                    <div className={styles.trackList}>
+                      {selected.canciones.map((cancion, idx) => (
+                        <button
+                          key={idx}
+                          className={activeTrack?.url === cancion.url ? styles.trackItemActive : styles.trackItem}
+                          onClick={() => setActiveTrack(cancion)}
+                          type="button"
+                        >
+                          <span className={styles.trackNumber}>{idx + 1}</span>
+                          <span className={styles.trackTitle}>{cancion.titulo}</span>
+                          {activeTrack?.url === cancion.url && <Play size={14} className={styles.playingIcon} />}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <span className={styles.noFileText}>Este álbum no tiene pistas disponibles.</span>
-              )
-            ) : null}
+                ) : (
+                  <span className={styles.noFileText}>Este álbum no tiene pistas disponibles.</span>
+                )
+              ) : null}
 
-            {selected.formato === 'Música' && selected.downloadUrl && (
-              <a 
-                href={selected.downloadUrl}
-                download
-                className={styles.secondaryBtn}
-                title="Descargar Álbum Completo (ZIP)"
+              {selected.formato === 'Música' && selected.downloadUrl && (
+                <a
+                  href={selected.downloadUrl}
+                  download
+                  className={styles.secondaryBtn}
+                  title="Descargar Álbum Completo (ZIP)"
+                >
+                  <Download size={16} />
+                  <span className={styles.btnText}>Descargar ZIP</span>
+                </a>
+              )}
+
+              <button
+                type="button"
+                className={styles.closeBtn}
+                onClick={() => { setSelected(null); setActiveTrack(null); }}
+                aria-label="Cerrar detalles"
               >
-                <Download size={16} />
-                <span className={styles.btnText}>Descargar ZIP</span>
-              </a>
-            )}
-
-            <button
-              type="button"
-              className={styles.closeBtn}
-              onClick={() => { setSelected(null); setActiveTrack(null); }}
-              aria-label="Cerrar detalles"
-            >
-              <X size={20} />
-            </button>
+                <X size={20} />
+              </button>
+            </div>
           </div>
+        )}
+      </div>
+
+      {/* PDF FULLSCREEN MODAL */}
+      {pdfModalUrl && (
+        <div
+          style={{
+            position: 'fixed', inset: 0, zIndex: 99999,
+            background: 'rgba(0,0,0,0.92)',
+            display: 'flex', flexDirection: 'column',
+          }}
+        >
+          <div style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            padding: '0.6rem 1.2rem',
+            background: 'rgba(13,27,42,0.98)',
+            borderBottom: '1px solid rgba(218,165,32,0.25)',
+            flexShrink: 0,
+          }}>
+            <span style={{ color: '#d4a045', fontWeight: 700, fontSize: '0.95rem' }}>📖 Visor de Documento</span>
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+              <a
+                href={pdfModalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem',
+                  textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.3rem'
+                }}
+              >
+                <ExternalLink size={14} /> Abrir en pestaña
+              </a>
+              <a
+                href={pdfModalUrl}
+                download
+                style={{
+                  color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem',
+                  textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.3rem'
+                }}
+              >
+                <Download size={14} /> Descargar
+              </a>
+              <button
+                onClick={() => setPdfModalUrl(null)}
+                style={{
+                  background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)',
+                  borderRadius: '8px', padding: '0.4rem 0.9rem',
+                  color: '#fff', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem',
+                  display: 'flex', alignItems: 'center', gap: '0.4rem'
+                }}
+              >
+                <X size={16} /> Cerrar
+              </button>
+            </div>
+          </div>
+          <iframe
+            src={pdfModalUrl}
+            title="Visor PDF"
+            style={{ flex: 1, width: '100%', height: '100%', border: 'none', background: '#fff' }}
+          />
         </div>
       )}
-    </section>
+    </motion.section>
   );
 }
 
 export default BibliotecaModule;
-
-
-
-
-
-
