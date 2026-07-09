@@ -35,7 +35,7 @@ app.use(express.json());
 app.get('/api/libros/:filename', async (req, res) => {
   try {
     const filename = decodeURIComponent(req.params.filename);
-    const filePath = join(__dirname, '..', 'Libros', filename);
+    const filePath = join(__dirname, '..', 'public', 'Libros', filename);
     
     const stats = await stat(filePath);
     
@@ -54,7 +54,7 @@ app.get('/api/libros/:filename', async (req, res) => {
 app.get('/api/portadas/:filename', async (req, res) => {
   try {
     const filename = decodeURIComponent(req.params.filename);
-    const filePath = join(__dirname, '..', 'Libros', 'Portada libros', filename);
+    const filePath = join(__dirname, '..', 'public', 'Libros', 'Portada libros', filename);
     
     const stats = await stat(filePath);
     

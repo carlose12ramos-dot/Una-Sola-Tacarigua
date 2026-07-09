@@ -3,6 +3,11 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "installCommand": "git lfs pull && npm ci --ignore-scripts",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "backend/{.env,.env.production}"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/:path*",
