@@ -8,7 +8,7 @@
  *  • Navegación offline → /index.html desde caché
  */
 
-const CACHE_VERSION = 'v8';
+const CACHE_VERSION = 'v9';
 const SHELL_CACHE   = `tacarigua-shell-${CACHE_VERSION}`;
 const TILES_CACHE   = `tacarigua-tiles-${CACHE_VERSION}`;
 const API_CACHE     = `tacarigua-api-${CACHE_VERSION}`;
