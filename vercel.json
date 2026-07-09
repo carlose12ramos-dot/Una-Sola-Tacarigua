@@ -2,7 +2,7 @@
   "buildCommand": "npm run vercel-build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "installCommand": "npm ci --ignore-scripts",
+  "installCommand": "git lfs pull && npm ci --ignore-scripts",
   "rewrites": [
     {
       "source": "/api/:path*",
