@@ -1,26 +1,26 @@
 [
   {
     "id": "album_1000",
-    "titulo": "Ana Maria Guzman y La Parranda e' Margarita (Varios)",
-    "autor": "Ana Maria Guzman y La Parranda e' Margarita (Varios)",
+    "titulo": "Ana_Maria_Guzman_y_La_Parranda_e__Margarita__Varios_",
+    "autor": "Ana_Maria_Guzman_y_La_Parranda_e__Margarita__Varios_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": "A Belen pastores",
-        "url": "/Musica Tacariguera/Ana Maria Guzman y La Parranda e' Margarita (Varios)/03 A Belen pastores.mp3"
+        "url": "/Musica Tacariguera/Ana_Maria_Guzman_y_La_Parranda_e__Margarita__Varios_/03_A_Belen_pastores.mp3"
       },
       {
         "titulo": "La Llegada Del Mesias",
-        "url": "/Musica Tacariguera/Ana Maria Guzman y La Parranda e' Margarita (Varios)/04 La Llegada Del Mesias.mp3"
+        "url": "/Musica Tacariguera/Ana_Maria_Guzman_y_La_Parranda_e__Margarita__Varios_/04_La_Llegada_Del_Mesias.mp3"
       },
       {
         "titulo": "La puerta del Cielo",
-        "url": "/Musica Tacariguera/Ana Maria Guzman y La Parranda e' Margarita (Varios)/10 La puerta del Cielo.mp3"
+        "url": "/Musica Tacariguera/Ana_Maria_Guzman_y_La_Parranda_e__Margarita__Varios_/10_La_puerta_del_Cielo.mp3"
       },
       {
         "titulo": "Que Reine La Paz",
-        "url": "/Musica Tacariguera/Ana Maria Guzman y La Parranda e' Margarita (Varios)/11 Que Reine La Paz.mp3"
+        "url": "/Musica Tacariguera/Ana_Maria_Guzman_y_La_Parranda_e__Margarita__Varios_/11_Que_Reine_La_Paz.mp3"
       }
     ],
     "imagen": null,
@@ -29,50 +29,50 @@
   },
   {
     "id": "album_1001",
-    "titulo": "Andrés Romero (Asi Canta El Pajarillo)",
-    "autor": "Andrés Romero (Asi Canta El Pajarillo)",
+    "titulo": "Andr_s_Romero__Asi_Canta_El_Pajarillo_",
+    "autor": "Andr_s_Romero__Asi_Canta_El_Pajarillo_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": ". A San Sebastian",
-        "url": "/Musica Tacariguera/Andrés Romero (Asi Canta El Pajarillo)/01. A San Sebastian.mp3"
+        "url": "/Musica Tacariguera/Andr_s_Romero__Asi_Canta_El_Pajarillo_/01._A_San_Sebastian.mp3"
       },
       {
         "titulo": ". Canta Canta Cardenal",
-        "url": "/Musica Tacariguera/Andrés Romero (Asi Canta El Pajarillo)/02. Canta Canta Cardenal.mp3"
+        "url": "/Musica Tacariguera/Andr_s_Romero__Asi_Canta_El_Pajarillo_/02._Canta_Canta_Cardenal.mp3"
       },
       {
         "titulo": ". Dame La Taja",
-        "url": "/Musica Tacariguera/Andrés Romero (Asi Canta El Pajarillo)/03. Dame La Taja.mp3"
+        "url": "/Musica Tacariguera/Andr_s_Romero__Asi_Canta_El_Pajarillo_/03._Dame_La_Taja.mp3"
       },
       {
         "titulo": ". El Turpial",
-        "url": "/Musica Tacariguera/Andrés Romero (Asi Canta El Pajarillo)/04. El Turpial.mp3"
+        "url": "/Musica Tacariguera/Andr_s_Romero__Asi_Canta_El_Pajarillo_/04._El_Turpial.mp3"
       },
       {
         "titulo": ". La Loca Agustina",
-        "url": "/Musica Tacariguera/Andrés Romero (Asi Canta El Pajarillo)/05. La Loca Agustina.mp3"
+        "url": "/Musica Tacariguera/Andr_s_Romero__Asi_Canta_El_Pajarillo_/05._La_Loca_Agustina.mp3"
       },
       {
         "titulo": ". Martir San Sebastian",
-        "url": "/Musica Tacariguera/Andrés Romero (Asi Canta El Pajarillo)/06. Martir San Sebastian.mp3"
+        "url": "/Musica Tacariguera/Andr_s_Romero__Asi_Canta_El_Pajarillo_/06._Martir_San_Sebastian.mp3"
       },
       {
         "titulo": ". Mi Lindo Pueblo Querido",
-        "url": "/Musica Tacariguera/Andrés Romero (Asi Canta El Pajarillo)/07. Mi Lindo Pueblo Querido.mp3"
+        "url": "/Musica Tacariguera/Andr_s_Romero__Asi_Canta_El_Pajarillo_/07._Mi_Lindo_Pueblo_Querido.mp3"
       },
       {
         "titulo": ". Que Linda Tacarigua",
-        "url": "/Musica Tacariguera/Andrés Romero (Asi Canta El Pajarillo)/08. Que Linda Tacarigua.mp3"
+        "url": "/Musica Tacariguera/Andr_s_Romero__Asi_Canta_El_Pajarillo_/08._Que_Linda_Tacarigua.mp3"
       },
       {
         "titulo": ". San Sebastian Querido",
-        "url": "/Musica Tacariguera/Andrés Romero (Asi Canta El Pajarillo)/09. San Sebastian Querido.mp3"
+        "url": "/Musica Tacariguera/Andr_s_Romero__Asi_Canta_El_Pajarillo_/09._San_Sebastian_Querido.mp3"
       },
       {
         "titulo": ". Oh Virgen Del Valle",
-        "url": "/Musica Tacariguera/Andrés Romero (Asi Canta El Pajarillo)/10. Oh Virgen Del Valle.mp3"
+        "url": "/Musica Tacariguera/Andr_s_Romero__Asi_Canta_El_Pajarillo_/10._Oh_Virgen_Del_Valle.mp3"
       }
     ],
     "imagen": null,
@@ -81,18 +81,18 @@
   },
   {
     "id": "album_1002",
-    "titulo": "CLAUDIA FRANCO",
-    "autor": "CLAUDIA FRANCO",
+    "titulo": "CLAUDIA_FRANCO",
+    "autor": "CLAUDIA_FRANCO",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": "Más Que Un Sol",
-        "url": "/Musica Tacariguera/CLAUDIA FRANCO/Más Que Un Sol.mp3"
+        "url": "/Musica Tacariguera/CLAUDIA_FRANCO/M_s_Que_Un_Sol.mp3"
       },
       {
         "titulo": "Tierra pa' Buena",
-        "url": "/Musica Tacariguera/CLAUDIA FRANCO/Tierra pa' Buena.mp3"
+        "url": "/Musica Tacariguera/CLAUDIA_FRANCO/Tierra_pa__Buena.mp3"
       }
     ],
     "imagen": null,
@@ -101,54 +101,54 @@
   },
   {
     "id": "album_1003",
-    "titulo": "Daisy Marquez a San Sebastían",
-    "autor": "Daisy Marquez a San Sebastían",
+    "titulo": "Daisy_Marquez_a_San_Sebast_an",
+    "autor": "Daisy_Marquez_a_San_Sebast_an",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": "AÑOS DE SAN SEBASTIAN",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/100 AÑOS DE SAN SEBASTIAN.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/100_A_OS_DE_SAN_SEBASTIAN.mp3"
       },
       {
         "titulo": "ABUELO DE MI CORAZON",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/ABUELO DE MI CORAZON.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/ABUELO_DE_MI_CORAZON.mp3"
       },
       {
         "titulo": "GLORIOSO SAN SEBASTIAN",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/GLORIOSO SAN SEBASTIAN.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/GLORIOSO_SAN_SEBASTIAN.mp3"
       },
       {
         "titulo": "MARTIRIO",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/MARTIRIO.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/MARTIRIO.mp3"
       },
       {
         "titulo": "OH MARTIR SAN SEBASTIAN",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/OH MARTIR SAN SEBASTIAN.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/OH_MARTIR_SAN_SEBASTIAN.mp3"
       },
       {
         "titulo": "PARA CANTARTE A TI",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/PARA CANTARTE A TI.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/PARA_CANTARTE_A_TI.mp3"
       },
       {
         "titulo": "PARA EDUARDITO",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/PARA EDUARDITO.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/PARA_EDUARDITO.mp3"
       },
       {
         "titulo": "PLEGARIA",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/PLEGARIA.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/PLEGARIA.mp3"
       },
       {
         "titulo": "POUPURRI A SAN SEBASTIAN",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/POUPURRI A SAN SEBASTIAN.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/POUPURRI_A_SAN_SEBASTIAN.mp3"
       },
       {
         "titulo": "UN LUGAR MUY ESPECIAL",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/UN LUGAR MUY ESPECIAL.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/UN_LUGAR_MUY_ESPECIAL.mp3"
       },
       {
         "titulo": "VENEZUELA SAN SEBASTIAN",
-        "url": "/Musica Tacariguera/Daisy Marquez a San Sebastían/VENEZUELA SAN SEBASTIAN.mp3"
+        "url": "/Musica Tacariguera/Daisy_Marquez_a_San_Sebast_an/VENEZUELA_SAN_SEBASTIAN.mp3"
       }
     ],
     "imagen": null,
@@ -157,54 +157,54 @@
   },
   {
     "id": "album_1004",
-    "titulo": "Dalmiro Malaver (Aguinaldos Orientales)",
-    "autor": "Dalmiro Malaver (Aguinaldos Orientales)",
+    "titulo": "Dalmiro_Malaver__Aguinaldos_Orientales_",
+    "autor": "Dalmiro_Malaver__Aguinaldos_Orientales_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": ". Un Nino De Paz y Bien",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/01. Un Nino De Paz y Bien.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/01._Un_Nino_De_Paz_y_Bien.mp3"
       },
       {
         "titulo": ". Llego La Parranda",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/02. Llego La Parranda.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/02._Llego_La_Parranda.mp3"
       },
       {
         "titulo": ". El Cardenalito",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/03. El Cardenalito.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/03._El_Cardenalito.mp3"
       },
       {
         "titulo": ". El Nino Simon",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/04. El Nino Simon.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/04._El_Nino_Simon.mp3"
       },
       {
         "titulo": ". Cantemos Alegres",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/05. Cantemos Alegres.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/05._Cantemos_Alegres.mp3"
       },
       {
         "titulo": ". Mi Virgencita Del Valle",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/07. Mi Virgencita Del Valle.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/07._Mi_Virgencita_Del_Valle.mp3"
       },
       {
         "titulo": ". Margarita Es Margarita",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/08. Margarita Es Margarita.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/08._Margarita_Es_Margarita.mp3"
       },
       {
         "titulo": ". Parrandeando En El Cercado",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/09. Parrandeando En El Cercado.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/09._Parrandeando_En_El_Cercado.mp3"
       },
       {
         "titulo": ". La Pascua Es Para Gozar",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/10. La Pascua Es Para Gozar.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/10._La_Pascua_Es_Para_Gozar.mp3"
       },
       {
         "titulo": ". La Cachapa",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/11. La Cachapa.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/11._La_Cachapa.mp3"
       },
       {
         "titulo": ". La Puerca e Tona",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Aguinaldos Orientales)/12. La Puerca e Tona.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Aguinaldos_Orientales_/12._La_Puerca_e_Tona.mp3"
       }
     ],
     "imagen": null,
@@ -213,66 +213,66 @@
   },
   {
     "id": "album_1005",
-    "titulo": "Dalmiro Malaver (Las Fiestas de San Sebastian)",
-    "autor": "Dalmiro Malaver (Las Fiestas de San Sebastian)",
+    "titulo": "Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_",
+    "autor": "Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": ". Hijos de San Sebastian",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/01. Hijos de San Sebastian.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/01._Hijos_de_San_Sebastian.mp3"
       },
       {
         "titulo": ". Galerones a San Sebastian",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/02. Galerones a San Sebastian.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/02._Galerones_a_San_Sebastian.mp3"
       },
       {
         "titulo": ". Brisas del Palma Real",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/03. Brisas del Palma Real.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/03._Brisas_del_Palma_Real.mp3"
       },
       {
         "titulo": ". Las Fiestas del Santo",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/04. Las Fiestas del Santo.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/04._Las_Fiestas_del_Santo.mp3"
       },
       {
         "titulo": ". Bendito San Sebastian",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/05. Bendito San Sebastian.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/05._Bendito_San_Sebastian.mp3"
       },
       {
         "titulo": ". Personajes de Mi Pueblo",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/06. Personajes de Mi Pueblo.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/06._Personajes_de_Mi_Pueblo.mp3"
       },
       {
         "titulo": ". Casas de Techos Rojos",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/07. Casas de Techos Rojos.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/07._Casas_de_Techos_Rojos.mp3"
       },
       {
         "titulo": ". La Prensa en San Sebastian",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/08. La Prensa en San Sebastian.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/08._La_Prensa_en_San_Sebastian.mp3"
       },
       {
         "titulo": ". ¡Oh Martin san Sebastian!",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/09. ¡Oh Martin san Sebastian!.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/09.__Oh_Martin_san_Sebastian_.mp3"
       },
       {
         "titulo": ". El Catre de Mi Abuela",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/10. El Catre de Mi Abuela.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/10._El_Catre_de_Mi_Abuela.mp3"
       },
       {
         "titulo": ". El Martirio Diocleciano",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/11. El Martirio Diocleciano.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/11._El_Martirio_Diocleciano.mp3"
       },
       {
         "titulo": "y2mate.com - Dalmirito Malaver   San Sebastián Pueblo Mío",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/y2mate.com - Dalmirito Malaver   San Sebastián Pueblo Mío.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/y2mate.com_-_Dalmirito_Malaver___San_Sebasti_n_Pueblo_M_o.mp3"
       },
       {
         "titulo": "y2mate.com - Dalmirito Personajes de mi Pueblo III",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/y2mate.com - Dalmirito Personajes de mi Pueblo III.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/y2mate.com_-_Dalmirito_Personajes_de_mi_Pueblo_III.mp3"
       },
       {
         "titulo": "y2mate.com - Gente de mi Pueblo I",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Las Fiestas de San Sebastian)/y2mate.com - Gente de mi Pueblo I.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Las_Fiestas_de_San_Sebastian_/y2mate.com_-_Gente_de_mi_Pueblo_I.mp3"
       }
     ],
     "imagen": null,
@@ -281,58 +281,58 @@
   },
   {
     "id": "album_1006",
-    "titulo": "Dalmiro Malaver (Mi Esencia)",
-    "autor": "Dalmiro Malaver (Mi Esencia)",
+    "titulo": "Dalmiro_Malaver__Mi_Esencia_",
+    "autor": "Dalmiro_Malaver__Mi_Esencia_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": ". El Puqui Puqui",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/01. El Puqui Puqui.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/01._El_Puqui_Puqui.mp3"
       },
       {
         "titulo": ". Guarapo e Cana En Pecoro",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/02. Guarapo e Cana En Pecoro.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/02._Guarapo_e_Cana_En_Pecoro.mp3"
       },
       {
         "titulo": ". Campesino Tacariguero",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/03. Campesino Tacariguero.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/03._Campesino_Tacariguero.mp3"
       },
       {
         "titulo": ". A Mi Madre",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/04. A Mi Madre.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/04._A_Mi_Madre.mp3"
       },
       {
         "titulo": ". Los Ojos De Chepa",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/05. Los Ojos De Chepa.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/05._Los_Ojos_De_Chepa.mp3"
       },
       {
         "titulo": ". Historia Del Tigre",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/06. Historia Del Tigre.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/06._Historia_Del_Tigre.mp3"
       },
       {
         "titulo": ". Familia Campesina",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/07. Familia Campesina.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/07._Familia_Campesina.mp3"
       },
       {
         "titulo": ". Historia De La Arepa",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/08. Historia De La Arepa.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/08._Historia_De_La_Arepa.mp3"
       },
       {
         "titulo": ". Mi Esencia",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/09. Mi Esencia.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/09._Mi_Esencia.mp3"
       },
       {
         "titulo": ". Clamor Obrero",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/10. Clamor Obrero.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/10._Clamor_Obrero.mp3"
       },
       {
         "titulo": ". Costumbres",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/11. Costumbres.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/11._Costumbres.mp3"
       },
       {
         "titulo": ". San Sebastian Martir",
-        "url": "/Musica Tacariguera/Dalmiro Malaver (Mi Esencia)/12. San Sebastian Martir.mp3"
+        "url": "/Musica Tacariguera/Dalmiro_Malaver__Mi_Esencia_/12._San_Sebastian_Martir.mp3"
       }
     ],
     "imagen": null,
@@ -341,58 +341,58 @@
   },
   {
     "id": "album_1007",
-    "titulo": "EL PAJARILLO Y ERASMO CARDONA",
-    "autor": "EL PAJARILLO Y ERASMO CARDONA",
+    "titulo": "EL_PAJARILLO_Y_ERASMO_CARDONA",
+    "autor": "EL_PAJARILLO_Y_ERASMO_CARDONA",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": "ADORADA IMAJEN - ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/01 - ADORADA IMAJEN - ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/01_-_ADORADA_IMAJEN_-_ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "UNA ESTRELLA Y UN LUCERO - ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/02 -  UNA ESTRELLA Y UN LUCERO - ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/02_-__UNA_ESTRELLA_Y_UN_LUCERO_-_ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "LOS RELATOS DE LA VIDA -  ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/03 - LOS RELATOS DE LA VIDA -  ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/03_-_LOS_RELATOS_DE_LA_VIDA_-__ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "ILUMINAME EL CAMINO - ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/04 - ILUMINAME EL CAMINO - ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/04_-_ILUMINAME_EL_CAMINO_-_ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "EL VERSO QUE YO TE ESCRIVO - ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/05 - EL VERSO QUE YO TE ESCRIVO - ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/05_-_EL_VERSO_QUE_YO_TE_ESCRIVO_-_ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "HOMENAJE A HERNÁN MALAVER - ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/06 - HOMENAJE A HERNÁN MALAVER - ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/06_-_HOMENAJE_A_HERN_N_MALAVER_-_ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "ALIVIA MIS PENAS  -  ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/07 -  ALIVIA MIS PENAS  -  ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/07_-__ALIVIA_MIS_PENAS__-__ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "LA HORMIGITA -  ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/08 -  LA HORMIGITA -  ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/08_-__LA_HORMIGITA_-__ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "MATICES DE MI PUEBLO -  ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/10 -  MATICES DE MI PUEBLO -  ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/10_-__MATICES_DE_MI_PUEBLO_-__ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "JARDIN DE AMOR -  ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/11 -  JARDIN DE AMOR -  ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/11_-__JARDIN_DE_AMOR_-__ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "PARA TI PATRON - ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/12 - PARA TI PATRON - ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/12_-_PARA_TI_PATRON_-_ANDRES_ROMERO.mp3"
       },
       {
         "titulo": "UN CANTO A JOSE RAMON - ANDRES ROMERO",
-        "url": "/Musica Tacariguera/EL PAJARILLO Y ERASMO CARDONA/13 - UN CANTO A JOSE RAMON - ANDRES ROMERO.mp3"
+        "url": "/Musica Tacariguera/EL_PAJARILLO_Y_ERASMO_CARDONA/13_-_UN_CANTO_A_JOSE_RAMON_-_ANDRES_ROMERO.mp3"
       }
     ],
     "imagen": null,
@@ -401,62 +401,62 @@
   },
   {
     "id": "album_1008",
-    "titulo": "Grupo Cachapa (Exitos)",
-    "autor": "Grupo Cachapa (Exitos)",
+    "titulo": "Grupo_Cachapa__Exitos_",
+    "autor": "Grupo_Cachapa__Exitos_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": "asi soy",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/asi soy.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/asi_soy.mp3"
       },
       {
         "titulo": "canto a margarita",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/canto a margarita.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/canto_a_margarita.mp3"
       },
       {
         "titulo": "Don Juan",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/Don Juan.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/Don_Juan.mp3"
       },
       {
         "titulo": "el bajo luz y sonido",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/el bajo luz y sonido.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/el_bajo_luz_y_sonido.mp3"
       },
       {
         "titulo": "el incredulo",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/el incredulo.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/el_incredulo.mp3"
       },
       {
         "titulo": "ella es",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/ella es.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/ella_es.mp3"
       },
       {
         "titulo": "la piragua",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/la piragua.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/la_piragua.mp3"
       },
       {
         "titulo": "Mi barquito",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/Mi barquito.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/Mi_barquito.mp3"
       },
       {
         "titulo": "Oriente",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/Oriente.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/Oriente.mp3"
       },
       {
         "titulo": "Sentimiento Tacariguero",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/Sentimiento Tacariguero.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/Sentimiento_Tacariguero.mp3"
       },
       {
         "titulo": "tacariguena linda",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/tacariguena linda.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/tacariguena_linda.mp3"
       },
       {
         "titulo": "vals del portachuelo",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/vals del portachuelo.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/vals_del_portachuelo.mp3"
       },
       {
         "titulo": "viaje de placer",
-        "url": "/Musica Tacariguera/Grupo Cachapa (Exitos)/viaje de placer.mp3"
+        "url": "/Musica Tacariguera/Grupo_Cachapa__Exitos_/viaje_de_placer.mp3"
       }
     ],
     "imagen": null,
@@ -465,42 +465,42 @@
   },
   {
     "id": "album_1009",
-    "titulo": "Grupo Trapiche (Mi Virgen Del Valle)",
-    "autor": "Grupo Trapiche (Mi Virgen Del Valle)",
+    "titulo": "Grupo_Trapiche__Mi_Virgen_Del_Valle_",
+    "autor": "Grupo_Trapiche__Mi_Virgen_Del_Valle_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": "Mi virgencita del Valle",
-        "url": "/Musica Tacariguera/Grupo Trapiche (Mi Virgen Del Valle)/01-Mi virgencita del Valle.mp3"
+        "url": "/Musica Tacariguera/Grupo_Trapiche__Mi_Virgen_Del_Valle_/01-Mi_virgencita_del_Valle.mp3"
       },
       {
         "titulo": "Pobre Campesino",
-        "url": "/Musica Tacariguera/Grupo Trapiche (Mi Virgen Del Valle)/02-Pobre Campesino.mp3"
+        "url": "/Musica Tacariguera/Grupo_Trapiche__Mi_Virgen_Del_Valle_/02-Pobre_Campesino.mp3"
       },
       {
         "titulo": "Huele a Navidad",
-        "url": "/Musica Tacariguera/Grupo Trapiche (Mi Virgen Del Valle)/03-Huele a Navidad.mp3"
+        "url": "/Musica Tacariguera/Grupo_Trapiche__Mi_Virgen_Del_Valle_/03-Huele_a_Navidad.mp3"
       },
       {
         "titulo": "Tacariguerena",
-        "url": "/Musica Tacariguera/Grupo Trapiche (Mi Virgen Del Valle)/04-Tacariguerena.mp3"
+        "url": "/Musica Tacariguera/Grupo_Trapiche__Mi_Virgen_Del_Valle_/04-Tacariguerena.mp3"
       },
       {
         "titulo": "Adorando a Margarita",
-        "url": "/Musica Tacariguera/Grupo Trapiche (Mi Virgen Del Valle)/05-Adorando a Margarita.mp3"
+        "url": "/Musica Tacariguera/Grupo_Trapiche__Mi_Virgen_Del_Valle_/05-Adorando_a_Margarita.mp3"
       },
       {
         "titulo": "El Caracol",
-        "url": "/Musica Tacariguera/Grupo Trapiche (Mi Virgen Del Valle)/06-El Caracol.mp3"
+        "url": "/Musica Tacariguera/Grupo_Trapiche__Mi_Virgen_Del_Valle_/06-El_Caracol.mp3"
       },
       {
         "titulo": "Perro Callejero",
-        "url": "/Musica Tacariguera/Grupo Trapiche (Mi Virgen Del Valle)/07-Perro Callejero.mp3"
+        "url": "/Musica Tacariguera/Grupo_Trapiche__Mi_Virgen_Del_Valle_/07-Perro_Callejero.mp3"
       },
       {
         "titulo": "Los ensuenos de mi suenos",
-        "url": "/Musica Tacariguera/Grupo Trapiche (Mi Virgen Del Valle)/09-Los ensuenos de mi suenos.mp3"
+        "url": "/Musica Tacariguera/Grupo_Trapiche__Mi_Virgen_Del_Valle_/09-Los_ensuenos_de_mi_suenos.mp3"
       }
     ],
     "imagen": null,
@@ -509,70 +509,70 @@
   },
   {
     "id": "album_1010",
-    "titulo": "Jennifer Moya (Canta a San Sebastian Querido)",
-    "autor": "Jennifer Moya (Canta a San Sebastian Querido)",
+    "titulo": "Jennifer_Moya__Canta_a_San_Sebastian_Querido_",
+    "autor": "Jennifer_Moya__Canta_a_San_Sebastian_Querido_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": ". Valle de Mi Corazon",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/01. Valle de Mi Corazon.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/01._Valle_de_Mi_Corazon.mp3"
       },
       {
         "titulo": ". Mi Margarita y Tu",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/02. Mi Margarita y Tu.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/02._Mi_Margarita_y_Tu.mp3"
       },
       {
         "titulo": ". Mi patria Venezuela",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/03. Mi patria Venezuela.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/03._Mi_patria_Venezuela.mp3"
       },
       {
         "titulo": ". Valle de San Sebastian",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/04. Valle de San Sebastian.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/04._Valle_de_San_Sebastian.mp3"
       },
       {
         "titulo": ". Martir Varon",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/05. Martir Varon.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/05._Martir_Varon.mp3"
       },
       {
         "titulo": ". El Mandado de Tomasa",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/06. El Mandado de Tomasa.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/06._El_Mandado_de_Tomasa.mp3"
       },
       {
         "titulo": ". San Sebastian Quierido",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/07. San Sebastian Quierido.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/07._San_Sebastian_Quierido.mp3"
       },
       {
         "titulo": ". Boceto de Voz",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/08. Boceto de Voz.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/08._Boceto_de_Voz.mp3"
       },
       {
         "titulo": ". A pasear por Venezuela",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/09. A pasear por Venezuela.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/09._A_pasear_por_Venezuela.mp3"
       },
       {
         "titulo": ". Tacarigua del Corazon",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/10. Tacarigua del Corazon.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/10._Tacarigua_del_Corazon.mp3"
       },
       {
         "titulo": ". Glosa a Manuel Romero",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/11. Glosa a Manuel Romero.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/11._Glosa_a_Manuel_Romero.mp3"
       },
       {
         "titulo": ". Mi Nostalgia",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/12. Mi Nostalgia.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/12._Mi_Nostalgia.mp3"
       },
       {
         "titulo": ". Nostalgia sebastina",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/13. Nostalgia sebastina.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/13._Nostalgia_sebastina.mp3"
       },
       {
         "titulo": ". Viejita Mia",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/14. Viejita Mia.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/14._Viejita_Mia.mp3"
       },
       {
         "titulo": ". Una Estrella y un Lucero",
-        "url": "/Musica Tacariguera/Jennifer Moya (Canta a San Sebastian Querido)/15. Una Estrella y un Lucero.mp3"
+        "url": "/Musica Tacariguera/Jennifer_Moya__Canta_a_San_Sebastian_Querido_/15._Una_Estrella_y_un_Lucero.mp3"
       }
     ],
     "imagen": null,
@@ -581,66 +581,66 @@
   },
   {
     "id": "album_1011",
-    "titulo": "Jose Motta y CDC Tacarigua (Como Yo Te Quiero)",
-    "autor": "Jose Motta y CDC Tacarigua (Como Yo Te Quiero)",
+    "titulo": "Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_",
+    "autor": "Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": ". Como Yo Te Quiero",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/01. Como Yo Te Quiero.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/01._Como_Yo_Te_Quiero.mp3"
       },
       {
         "titulo": ". Mi Pueblecito",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/02. Mi Pueblecito.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/02._Mi_Pueblecito.mp3"
       },
       {
         "titulo": ". Mi Pueblo",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/03. Mi Pueblo.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/03._Mi_Pueblo.mp3"
       },
       {
         "titulo": ". Caminos De Abrojos",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/04. Caminos De Abrojos.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/04._Caminos_De_Abrojos.mp3"
       },
       {
         "titulo": ". Tacariguena",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/05. Tacariguena.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/05._Tacariguena.mp3"
       },
       {
         "titulo": ". El Trapiche",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/06. El Trapiche.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/06._El_Trapiche.mp3"
       },
       {
         "titulo": ". Poble Campesino",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/07. Poble Campesino.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/07._Poble_Campesino.mp3"
       },
       {
         "titulo": ". Visitando Tacarigua",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/08. Visitando Tacarigua.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/08._Visitando_Tacarigua.mp3"
       },
       {
         "titulo": ". Canto Al Palma Real",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/09. Canto Al Palma Real.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/09._Canto_Al_Palma_Real.mp3"
       },
       {
         "titulo": ". Fiestas Patronales",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/10. Fiestas Patronales.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/10._Fiestas_Patronales.mp3"
       },
       {
         "titulo": ". Campesino Tacariguero",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/11. Campesino Tacariguero.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/11._Campesino_Tacariguero.mp3"
       },
       {
         "titulo": ". Un Sueno Tacariguero",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/12. Un Sueno Tacariguero.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/12._Un_Sueno_Tacariguero.mp3"
       },
       {
         "titulo": ". Mi Cancion",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/13. Mi Cancion.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/13._Mi_Cancion.mp3"
       },
       {
         "titulo": ". Gaita Tacariguera",
-        "url": "/Musica Tacariguera/Jose Motta y CDC Tacarigua (Como Yo Te Quiero)/14. Gaita Tacariguera.mp3"
+        "url": "/Musica Tacariguera/Jose_Motta_y_CDC_Tacarigua__Como_Yo_Te_Quiero_/14._Gaita_Tacariguera.mp3"
       }
     ],
     "imagen": null,
@@ -649,34 +649,34 @@
   },
   {
     "id": "album_1012",
-    "titulo": "Los Ñeritos (Varios)",
-    "autor": "Los Ñeritos (Varios)",
+    "titulo": "Los__eritos__Varios_",
+    "autor": "Los__eritos__Varios_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": "Tacariguena 2",
-        "url": "/Musica Tacariguera/Los Ñeritos (Varios)/01 Tacariguena 2.mp3"
+        "url": "/Musica Tacariguera/Los__eritos__Varios_/01_Tacariguena_2.mp3"
       },
       {
         "titulo": "Flor bendita 1",
-        "url": "/Musica Tacariguera/Los Ñeritos (Varios)/03 Flor bendita 1.mp3"
+        "url": "/Musica Tacariguera/Los__eritos__Varios_/03_Flor_bendita_1.mp3"
       },
       {
         "titulo": "Dorotea 1",
-        "url": "/Musica Tacariguera/Los Ñeritos (Varios)/05 Dorotea 1.mp3"
+        "url": "/Musica Tacariguera/Los__eritos__Varios_/05_Dorotea_1.mp3"
       },
       {
         "titulo": "La Guardia 1",
-        "url": "/Musica Tacariguera/Los Ñeritos (Varios)/07 La Guardia 1.mp3"
+        "url": "/Musica Tacariguera/Los__eritos__Varios_/07_La_Guardia_1.mp3"
       },
       {
         "titulo": "La hija del Guaiqueri 1",
-        "url": "/Musica Tacariguera/Los Ñeritos (Varios)/09 La hija del Guaiqueri 1.mp3"
+        "url": "/Musica Tacariguera/Los__eritos__Varios_/09_La_hija_del_Guaiqueri_1.mp3"
       },
       {
         "titulo": "Maribi 1",
-        "url": "/Musica Tacariguera/Los Ñeritos (Varios)/11 Maribi 1.mp3"
+        "url": "/Musica Tacariguera/Los__eritos__Varios_/11_Maribi_1.mp3"
       }
     ],
     "imagen": null,
@@ -685,98 +685,98 @@
   },
   {
     "id": "album_1013",
-    "titulo": "Musica Tacariguera Varios Artistas",
-    "autor": "Musica Tacariguera Varios Artistas",
+    "titulo": "Musica_Tacariguera_Varios_Artistas",
+    "autor": "Musica_Tacariguera_Varios_Artistas",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": "AMOR DIVINO",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/AMOR DIVINO.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/AMOR_DIVINO.mp3"
       },
       {
         "titulo": "BUSQUEN AL PUEBLO",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/BUSQUEN AL PUEBLO.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/BUSQUEN_AL_PUEBLO.mp3"
       },
       {
         "titulo": "CACHAPA TACARIGÜERA",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/CACHAPA TACARIGÜERA.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/CACHAPA_TACARIG_ERA.mp3"
       },
       {
         "titulo": "CYNTHIA A SS 2023",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/CYNTHIA A SS 2023.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/CYNTHIA_A_SS_2023.mp3"
       },
       {
         "titulo": "DIBUJANDO TU BAHÍA",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/DIBUJANDO TU BAHÍA.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/DIBUJANDO_TU_BAH_A.mp3"
       },
       {
         "titulo": "Dos Gaitas a la Virgen Marinera - David Millán",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/Dos Gaitas a la Virgen Marinera - David Millán.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/Dos_Gaitas_a_la_Virgen_Marinera_-_David_Mill_n.mp3"
       },
       {
         "titulo": "Ejemplo de Fé - David Millán ft. Tierra Pa' Buena",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/Ejemplo de Fé - David Millán ft. Tierra Pa' Buena.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/Ejemplo_de_F__-_David_Mill_n_ft._Tierra_Pa__Buena.mp3"
       },
       {
         "titulo": "El Amor y el Querer - Johan Sánchez.            (El Turpial Tacariguero)",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/El Amor y el Querer - Johan Sánchez.            (El Turpial Tacariguero).mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/El_Amor_y_el_Querer_-_Johan_S_nchez._____________El_Turpial_Tacariguero_.mp3"
       },
       {
         "titulo": "EL PATRÓN DE NUESTRA TIERRA",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/EL PATRÓN DE NUESTRA TIERRA.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/EL_PATR_N_DE_NUESTRA_TIERRA.mp3"
       },
       {
         "titulo": "FINAL OFRENDA",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/FINAL OFRENDA.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/FINAL_OFRENDA.mp3"
       },
       {
         "titulo": "Gaita Margariteña a SS-Angel",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/Gaita Margariteña a SS-Angel.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/Gaita_Margarite_a_a_SS-Angel.mp3"
       },
       {
         "titulo": "Glorioso San Sebastián Canta_ Cynthia Morao.",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/Glorioso San Sebastián Canta_ Cynthia Morao..mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/Glorioso_San_Sebasti_n_Canta__Cynthia_Morao..mp3"
       },
       {
         "titulo": "LA BATALLA DE JUNÍN-POLO-2DO LUGAR NACIONAL-LETRA CARLOS RAMOS",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/LA BATALLA DE JUNÍN-POLO-2DO LUGAR NACIONAL-LETRA CARLOS RAMOS.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/LA_BATALLA_DE_JUN_N-POLO-2DO_LUGAR_NACIONAL-LETRA_CARLOS_RAMOS.mp3"
       },
       {
         "titulo": "LA CORONA DE LA VIRGEN",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/LA CORONA DE LA VIRGEN.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/LA_CORONA_DE_LA_VIRGEN.mp3"
       },
       {
         "titulo": "La Suegra Chismosa- Johan Sánchez.            (El Turpial Tacariguero)",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/La Suegra Chismosa- Johan Sánchez.            (El Turpial Tacariguero).mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/La_Suegra_Chismosa-_Johan_S_nchez._____________El_Turpial_Tacariguero_.mp3"
       },
       {
         "titulo": "LA TORCUCHITA - JENNIFER MOYA",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/LA TORCUCHITA - JENNIFER MOYA.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/LA_TORCUCHITA_-_JENNIFER_MOYA.mp3"
       },
       {
         "titulo": "LAS PASCUAS",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/LAS PASCUAS.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/LAS_PASCUAS.mp3"
       },
       {
         "titulo": "MI PUEBLO, MI PATRÓN",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/MI PUEBLO, MI PATRÓN.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/MI_PUEBLO__MI_PATR_N.mp3"
       },
       {
         "titulo": "MI SANTO PATRÓN - ANA VICTORIA MOYA",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/MI SANTO PATRÓN - ANA VICTORIA MOYA.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/MI_SANTO_PATR_N_-_ANA_VICTORIA_MOYA.mp3"
       },
       {
         "titulo": "PATRONO TACARIGÜERO",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/PATRONO TACARIGÜERO.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/PATRONO_TACARIG_ERO.mp3"
       },
       {
         "titulo": "SAN RAFAEL LA CEIBA",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/SAN RAFAEL LA CEIBA.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/SAN_RAFAEL_LA_CEIBA.mp3"
       },
       {
         "titulo": "TACARIGUA PUEBLO MÍO",
-        "url": "/Musica Tacariguera/Musica Tacariguera Varios Artistas/TACARIGUA PUEBLO MÍO.mp3"
+        "url": "/Musica Tacariguera/Musica_Tacariguera_Varios_Artistas/TACARIGUA_PUEBLO_M_O.mp3"
       }
     ],
     "imagen": null,
@@ -785,58 +785,58 @@
   },
   {
     "id": "album_1014",
-    "titulo": "Oriente Mio (Isla de Mi Sueños)",
-    "autor": "Oriente Mio (Isla de Mi Sueños)",
+    "titulo": "Oriente_Mio__Isla_de_Mi_Sue_os_",
+    "autor": "Oriente_Mio__Isla_de_Mi_Sue_os_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": "Isla de Mi Sueños",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/01 Isla de Mi Sueños.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/01_Isla_de_Mi_Sue_os.mp3"
       },
       {
         "titulo": "Yo Soy ese Corazon",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/02 Yo Soy ese Corazon.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/02_Yo_Soy_ese_Corazon.mp3"
       },
       {
         "titulo": "Pampatar",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/03 Pampatar.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/03_Pampatar.mp3"
       },
       {
         "titulo": "Homenaje a Barcelona",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/04 Homenaje a Barcelona.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/04_Homenaje_a_Barcelona.mp3"
       },
       {
         "titulo": "Bella Mujer",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/05 Bella Mujer.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/05_Bella_Mujer.mp3"
       },
       {
         "titulo": "Prenda Soñada",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/06 Prenda Soñada.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/06_Prenda_So_ada.mp3"
       },
       {
         "titulo": "Playas Insulares",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/07 Playas Insulares.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/07_Playas_Insulares.mp3"
       },
       {
         "titulo": "Pescador de Tus Encantos",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/08 Pescador de Tus Encantos.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/08_Pescador_de_Tus_Encantos.mp3"
       },
       {
         "titulo": "Canto de Pueblo",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/09 Canto de Pueblo.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/09_Canto_de_Pueblo.mp3"
       },
       {
         "titulo": "La Langosta",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/10 La Langosta.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/10_La_Langosta.mp3"
       },
       {
         "titulo": "Por un Beso de Tu Boca",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/11 Por un Beso de Tu Boca.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/11_Por_un_Beso_de_Tu_Boca.mp3"
       },
       {
         "titulo": "Noche Ideal",
-        "url": "/Musica Tacariguera/Oriente Mio (Isla de Mi Sueños)/12 Noche Ideal.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Isla_de_Mi_Sue_os_/12_Noche_Ideal.mp3"
       }
     ],
     "imagen": null,
@@ -845,58 +845,58 @@
   },
   {
     "id": "album_1015",
-    "titulo": "Oriente Mio (Vol. 1)",
-    "autor": "Oriente Mio (Vol. 1)",
+    "titulo": "Oriente_Mio__Vol__1_",
+    "autor": "Oriente_Mio__Vol__1_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": ". MAR DE LA VIRGEN BONITA",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/01. MAR DE LA VIRGEN BONITA.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/01._MAR_DE_LA_VIRGEN_BONITA.mp3"
       },
       {
         "titulo": ". CUANDO NO SE DE TI",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/02. CUANDO NO SE DE TI.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/02._CUANDO_NO_SE_DE_TI.mp3"
       },
       {
         "titulo": ". EN ESTE PAIS",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/03. EN ESTE PAIS.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/03._EN_ESTE_PAIS.mp3"
       },
       {
         "titulo": ". MEDIA LUNA ANDINA  ANHELANTE",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/04. MEDIA LUNA ANDINA  ANHELANTE.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/04._MEDIA_LUNA_ANDINA__ANHELANTE.mp3"
       },
       {
         "titulo": ". OJO PELAO  PASEANDO POR MARGARITA",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/05. OJO PELAO  PASEANDO POR MARGARITA.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/05._OJO_PELAO__PASEANDO_POR_MARGARITA.mp3"
       },
       {
         "titulo": ". ERA ELLA",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/06. ERA ELLA.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/06._ERA_ELLA.mp3"
       },
       {
         "titulo": ". EPA ISIDORO  CANTO A CARACAS",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/07. EPA ISIDORO  CANTO A CARACAS.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/07._EPA_ISIDORO__CANTO_A_CARACAS.mp3"
       },
       {
         "titulo": ". ORIENTE ES DE OTRO COLOR",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/08. ORIENTE ES DE OTRO COLOR.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/08._ORIENTE_ES_DE_OTRO_COLOR.mp3"
       },
       {
         "titulo": ". JUAN JOSE",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/09. JUAN JOSE.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/09._JUAN_JOSE.mp3"
       },
       {
         "titulo": ". MARACAIBERA",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/10. MARACAIBERA.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/10._MARACAIBERA.mp3"
       },
       {
         "titulo": ". POLO MARGARITEÑO",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/11. POLO MARGARITEÑO.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/11._POLO_MARGARITE_O.mp3"
       },
       {
         "titulo": ". NUBE GRIS",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 1)/12. NUBE GRIS.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__1_/12._NUBE_GRIS.mp3"
       }
     ],
     "imagen": null,
@@ -905,58 +905,58 @@
   },
   {
     "id": "album_1016",
-    "titulo": "Oriente Mio (Vol. 2)",
-    "autor": "Oriente Mio (Vol. 2)",
+    "titulo": "Oriente_Mio__Vol__2_",
+    "autor": "Oriente_Mio__Vol__2_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": ". MUJER MARINERA",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/01. MUJER MARINERA.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/01._MUJER_MARINERA.mp3"
       },
       {
         "titulo": ". ILUSION DE UN BESO",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/02. ILUSION DE UN BESO.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/02._ILUSION_DE_UN_BESO.mp3"
       },
       {
         "titulo": ". LA VIDA DE UNA ROSA",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/03. LA VIDA DE UNA ROSA.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/03._LA_VIDA_DE_UNA_ROSA.mp3"
       },
       {
         "titulo": ". CANTORES DE MARGARITA",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/04. CANTORES DE MARGARITA.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/04._CANTORES_DE_MARGARITA.mp3"
       },
       {
         "titulo": ". PERDIDO EN LA NOSTALGIA",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/05. PERDIDO EN LA NOSTALGIA.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/05._PERDIDO_EN_LA_NOSTALGIA.mp3"
       },
       {
         "titulo": ". EN EL MAR DE TUS ENSUEÑOS",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/06. EN EL MAR DE TUS ENSUEÑOS.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/06._EN_EL_MAR_DE_TUS_ENSUE_OS.mp3"
       },
       {
         "titulo": ". NOSTALGIA DE UN PESCADOR",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/07. NOSTALGIA DE UN PESCADOR.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/07._NOSTALGIA_DE_UN_PESCADOR.mp3"
       },
       {
         "titulo": ". HOMENAJA A LICO LAREZ",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/08. HOMENAJA A LICO LAREZ.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/08._HOMENAJA_A_LICO_LAREZ.mp3"
       },
       {
         "titulo": ". MOTIVO Y PUERTO CABELLO",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/09. MOTIVO Y PUERTO CABELLO.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/09._MOTIVO_Y_PUERTO_CABELLO.mp3"
       },
       {
         "titulo": ". LA OCTAVA MARAVILLA",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/10. LA OCTAVA MARAVILLA.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/10._LA_OCTAVA_MARAVILLA.mp3"
       },
       {
         "titulo": ". MUJER BARCELONESA",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/11. MUJER BARCELONESA.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/11._MUJER_BARCELONESA.mp3"
       },
       {
         "titulo": ". A PARRANDEAR",
-        "url": "/Musica Tacariguera/Oriente Mio (Vol. 2)/12. A PARRANDEAR.mp3"
+        "url": "/Musica Tacariguera/Oriente_Mio__Vol__2_/12._A_PARRANDEAR.mp3"
       }
     ],
     "imagen": null,
@@ -965,34 +965,34 @@
   },
   {
     "id": "album_1017",
-    "titulo": "REENCUENTRO JUVENIL",
-    "autor": "REENCUENTRO JUVENIL",
+    "titulo": "REENCUENTRO_JUVENIL",
+    "autor": "REENCUENTRO_JUVENIL",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": "CACHAPA TACARIGÜERA",
-        "url": "/Musica Tacariguera/REENCUENTRO JUVENIL/CACHAPA TACARIGÜERA.mp3"
+        "url": "/Musica Tacariguera/REENCUENTRO_JUVENIL/CACHAPA_TACARIG_ERA.mp3"
       },
       {
         "titulo": "EL PATRÓN DE NUESTRA TIERRA",
-        "url": "/Musica Tacariguera/REENCUENTRO JUVENIL/EL PATRÓN DE NUESTRA TIERRA.mp3"
+        "url": "/Musica Tacariguera/REENCUENTRO_JUVENIL/EL_PATR_N_DE_NUESTRA_TIERRA.mp3"
       },
       {
         "titulo": "LA CORONA DE LA VIRGEN",
-        "url": "/Musica Tacariguera/REENCUENTRO JUVENIL/LA CORONA DE LA VIRGEN.mp3"
+        "url": "/Musica Tacariguera/REENCUENTRO_JUVENIL/LA_CORONA_DE_LA_VIRGEN.mp3"
       },
       {
         "titulo": "MI PUEBLO, MI PATRÓN",
-        "url": "/Musica Tacariguera/REENCUENTRO JUVENIL/MI PUEBLO, MI PATRÓN.mp3"
+        "url": "/Musica Tacariguera/REENCUENTRO_JUVENIL/MI_PUEBLO__MI_PATR_N.mp3"
       },
       {
         "titulo": "TACARIGUA PUEBLO MÍO",
-        "url": "/Musica Tacariguera/REENCUENTRO JUVENIL/TACARIGUA PUEBLO MÍO.mp3"
+        "url": "/Musica Tacariguera/REENCUENTRO_JUVENIL/TACARIGUA_PUEBLO_M_O.mp3"
       },
       {
         "titulo": "TRADICIÓN Y FE",
-        "url": "/Musica Tacariguera/REENCUENTRO JUVENIL/TRADICIÓN Y FE.mp3"
+        "url": "/Musica Tacariguera/REENCUENTRO_JUVENIL/TRADICI_N_Y_FE.mp3"
       }
     ],
     "imagen": null,
@@ -1001,58 +1001,58 @@
   },
   {
     "id": "album_1018",
-    "titulo": "Simon Guerra (Mis Canciones)",
-    "autor": "Simon Guerra (Mis Canciones)",
+    "titulo": "Simon_Guerra__Mis_Canciones_",
+    "autor": "Simon_Guerra__Mis_Canciones_",
     "categoria": "Álbum Musical",
     "formato": "Música",
     "canciones": [
       {
         "titulo": ". Fiesta De San Sebastian",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/01. Fiesta De San Sebastian.mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/01._Fiesta_De_San_Sebastian.mp3"
       },
       {
         "titulo": ". Mi Nostalgia",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/02. Mi Nostalgia.mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/02._Mi_Nostalgia.mp3"
       },
       {
         "titulo": ". Serenata En Tacarigua",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/03. Serenata En Tacarigua.mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/03._Serenata_En_Tacarigua.mp3"
       },
       {
         "titulo": ". El Compadre Doroteo",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/04. El Compadre Doroteo.mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/04._El_Compadre_Doroteo.mp3"
       },
       {
         "titulo": ". Juegos De La Infancia",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/05. Juegos De La Infancia.mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/05._Juegos_De_La_Infancia.mp3"
       },
       {
         "titulo": ". Cantautores De Mi Pueblo",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/06. Cantautores De Mi Pueblo.mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/06._Cantautores_De_Mi_Pueblo.mp3"
       },
       {
         "titulo": ". A Mi Madre (Galeron)",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/07. A Mi Madre (Galeron).mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/07._A_Mi_Madre__Galeron_.mp3"
       },
       {
         "titulo": ". Campesino Tacariguero",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/08. Campesino Tacariguero.mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/08._Campesino_Tacariguero.mp3"
       },
       {
         "titulo": ". Homenaje a los Zapatos Maqueros (Gaita Margariteña)",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/09. Homenaje a los Zapatos Maqueros (Gaita Margariteña).mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/09._Homenaje_a_los_Zapatos_Maqueros__Gaita_Margarite_a_.mp3"
       },
       {
         "titulo": ". Romantica Mujer",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/10. Romantica Mujer.mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/10._Romantica_Mujer.mp3"
       },
       {
         "titulo": ". Canto A Mi Esposa (Polo)",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/11. Canto A Mi Esposa (Polo).mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/11._Canto_A_Mi_Esposa__Polo_.mp3"
       },
       {
         "titulo": ". Yo Quisiera",
-        "url": "/Musica Tacariguera/Simon Guerra (Mis Canciones)/12. Yo Quisiera.mp3"
+        "url": "/Musica Tacariguera/Simon_Guerra__Mis_Canciones_/12._Yo_Quisiera.mp3"
       }
     ],
     "imagen": null,
