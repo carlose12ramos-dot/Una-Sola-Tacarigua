@@ -2,7 +2,7 @@
   "buildCommand": "npm run vercel-build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "installCommand": "git lfs pull && npm ci --ignore-scripts",
+  "installCommand": "git remote set-url origin https://github.com/carlose12ramos-dot/Una-Sola-Tacarigua.git && git lfs pull && npm ci --ignore-scripts",
   "functions": {
     "api/index.js": {
       "includeFiles": "backend/{.env,.env.production}"
