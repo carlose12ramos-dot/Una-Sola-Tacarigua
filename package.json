@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
+    "vercel-build": "vite build",
     "optimize-images": "node scripts/optimize-images.mjs",
     "init-db": "node scripts/initDb.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
